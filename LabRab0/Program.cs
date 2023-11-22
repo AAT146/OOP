@@ -24,7 +24,7 @@ namespace LabRab0
             // Console.WriteLine($"Число в двоичной системе 2: {BN2(number)}");
             Console.WriteLine($"Число в восьмиричной системе: {OctalNumber(number)}");
             Console.WriteLine($"Число в шестнадцатеричной " +
-                $"системе: {HexDecNumber(number)}");
+                $"системе: {HexNumber(number)}");
         }
 
         /*
@@ -59,7 +59,7 @@ namespace LabRab0
         }
 
         /// <summary>
-        /// Перевод из десятичной в двоичную систему счисления.
+        /// Перевод из десятичной в восьмеричную систему счисления.
         /// </summary>
         /// <param name="num">Число в восьмеричной системе счисления.</param>
         /// <returns>result.</returns>
@@ -70,11 +70,11 @@ namespace LabRab0
         }
 
         /// <summary>
-        /// Перевод из десятичной в двоичную систему счисления.
+        /// Перевод из десятичной в шестнадцатеричную систему счисления.
         /// </summary>
         /// <param name="num">Число в шестнадцатеричной системе счисления.</param>
         /// <returns>result.</returns>
-        private static string HexDecNumber(uint num)
+        private static string HexNumber(uint num)
         {
             string result = Convert.ToString(num, 16);
             return result;
