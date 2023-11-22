@@ -20,10 +20,12 @@ namespace LabRab0
             }
 
             Console.WriteLine($"Число в двоичной системе: {BinaryNumber(number)}");
-            Console.WriteLine($"Число в двоичной системе 2: {BN2(number)}");
+
+            // Console.WriteLine($"Число в двоичной системе 2: {BN2(number)}");
             Console.WriteLine($"Число в восьмиричной системе: {OctalNumber(number)}");
         }
 
+        /*
         /// <summary>
         /// Перевод из десятичной в двоичную систему счисления.
         /// </summary>
@@ -41,7 +43,7 @@ namespace LabRab0
             }
 
             return result;
-        }
+        }*/
 
         /// <summary>
         /// Перевод из десятичной в двоичную систему счисления.
