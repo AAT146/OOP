@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 //TODO: naming
-namespace ClassLibrary1
+namespace LibraryPerson
 {
 	/// <summary>
 	/// Перечисление для определения гендера.

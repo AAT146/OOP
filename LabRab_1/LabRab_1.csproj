@@ -55,9 +55,9 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary2\ClassLibrary1.csproj">
+    <ProjectReference Include="..\ClassLibrary2\LibraryPerson.csproj">
       <Project>{beef829c-0740-4495-9600-4193658c22d5}</Project>
-      <Name>ClassLibrary1</Name>
+      <Name>LibraryPerson</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

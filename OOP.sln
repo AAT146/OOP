@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabRab_1", "LabRab_1\LabRab_1.csproj", "{D054DAFB-C4E8-4B13-8BD9-6F3F2D7B341E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary2\ClassLibrary1.csproj", "{BEEF829C-0740-4495-9600-4193658C22D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryPerson", "ClassLibrary2\LibraryPerson.csproj", "{BEEF829C-0740-4495-9600-4193658C22D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

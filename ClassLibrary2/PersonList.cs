@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
+namespace LibraryPerson
 {
 	/// <summary>
 	/// Класс, содержащищй элементы класса Person
