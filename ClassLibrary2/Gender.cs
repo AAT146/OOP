@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//TODO: naming
+//TODO + : naming (изменено название библиотеки классов)
 namespace LibraryPerson
 {
 	/// <summary>

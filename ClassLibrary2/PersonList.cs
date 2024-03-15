@@ -16,7 +16,7 @@ namespace LibraryPerson
 		/// <summary>
 		/// Список, тип данных - Person.
 		/// </summary>
-		private List<Person> ListPerson = new List<Person>();
+		private List<Person> _listPerson = new List<Person>();
 
 		/// <summary>
 		/// Метод: добавление элемента.
@@ -24,7 +24,7 @@ namespace LibraryPerson
 		/// <param name="person">"Элемент класса Person.</param>
 		public void Add(Person person)
 		{
-			ListPerson.Add(person);
+			_listPerson.Add(person);
 		}
 
 		/// <summary>
@@ -33,7 +33,7 @@ namespace LibraryPerson
 		/// <param name="person">Элемент класса Person.</param>
 		public void RemoveElement(Person person)
 		{
-			ListPerson.Remove(person);
+			_listPerson.Remove(person);
 		}
 
 		/// <summary>
@@ -42,7 +42,7 @@ namespace LibraryPerson
 		/// <param name="index">Индекс элемента.</param>
 		public void RemoveAtIndex(int index) 
 		{
-			ListPerson.RemoveAt(index);
+			_listPerson.RemoveAt(index);
 		}
 
 		/// <summary>
@@ -55,8 +55,8 @@ namespace LibraryPerson
 		public Person FindElementAtIndex(int index)
 		{
 			//TODO: {}
-			if (index >= 0 && index < ListPerson.Count)
-				return ListPerson[index];
+			if (index >= 0 && index < _listPerson.Count)
+				return _listPerson[index];
 			else 
 				throw new IndexOutOfRangeException($"Элемента с индексом {index}" + 
 					"не существует.");
@@ -72,8 +72,8 @@ namespace LibraryPerson
 		public int ReturnIndexElement(Person person) 
 		{
 			//TODO: {}
-			if (ListPerson.Contains(person))
-				return ListPerson.IndexOf(person);
+			if (_listPerson.Contains(person))
+				return _listPerson.IndexOf(person);
 			else
 				throw new IndexOutOfRangeException($"Данный элемент не существует.");
 		}
@@ -83,7 +83,7 @@ namespace LibraryPerson
 		/// </summary>
 		public void ClearList()
 		{
-			ListPerson.Clear();
+			_listPerson.Clear();
 		}
 
 		/// <summary>
@@ -92,20 +92,19 @@ namespace LibraryPerson
 		/// <returns>Вовзрат числа</returns>
 		public int CountElements()
 		{
-			return ListPerson.Count(); 
+			return _listPerson.Count(); 
 		}
 
 		/// <summary>
-		/// Метод: возврат информации о элементе класса Person,
-		/// содержащимся в списке.
+		/// Метод: возврат информации о классе PersonList.
 		/// </summary>
 		/// <returns>Строка по форме GetIngoPerson.</returns>
-		public string GetInfoPersonList()
+		public string GetInfo()
 		{
 			string str = string.Empty;
-			foreach (Person person in ListPerson)
+			foreach (Person person in _listPerson)
 			{
-				str += person.GetInfoPerson();
+				str += person.GetInfo();
 			}
 			return str;
 		}
