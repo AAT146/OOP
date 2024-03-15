@@ -126,6 +126,7 @@ namespace ClassLibrary1
 			return ($"Фамилия: {Surname}, Имя: {Name}, Возраст: {Age}, Пол: {Gender}.\n");
 		}
 
+		//TODO: Вынести в отдельный класс генерацию случайной персоны
 		private static Random rnd = new Random();
 
 		/// <summary>
@@ -134,8 +135,14 @@ namespace ClassLibrary1
 		/// <returns>Объект класса Person.</returns>
 		public static Person GetRandomPerson()
 		{
-			string[] SurnameFemaleRandomList = { "Клоус","Петрова","Зимина",
-				"Морозова","Цох","Шмидт","Кельм","Трубина","Воровай","Зубарева" };
+			//TODO: RSDN
+			string[] SurnameFemaleRandomList = 
+				{ 
+					"Клоус", "Петрова", "Зимина",
+					"Морозова", "Цох", "Шмидт",
+					"Кельм", "Трубина", "Воровай",
+					"Зубарева" 
+				};
 
 			string[] NameFemaleRandomList = { "Анастасия","Виктория","Екатерина",
 				"Елизавета","Нина","Евгения","Виталина","Вера","Надежна","Любовь" };
@@ -164,6 +171,7 @@ namespace ClassLibrary1
 			return new Person(surname, name, age, gender);
 		}
 
+		//TODO: extract
 		/// <summary>
 		/// Метод: чтение персоны с консоли.
 		/// </summary>
@@ -221,6 +229,7 @@ namespace ClassLibrary1
 			Console.WriteLine(person.GetInfoPerson());
 		}
 
+		//TODO: RSDN
 		/// <summary>
 		/// Метод: проверка на пустую строну.
 		/// </summary>
@@ -230,11 +239,13 @@ namespace ClassLibrary1
 		/// null или пустой строке.</exception>
 		public static string CheckStr(string str) 
 		{
+			//TODO: RSDN
 			if (string.IsNullOrEmpty(str))
 				throw new ArgumentException("Ошибка! Заполните параметр.");
 			return str;
 		}
 
+		//TODO: rename
 		/// <summary>
 		/// Метод: преобразование регистров с учетом двойного 
 		/// имени (фамилии).
@@ -246,6 +257,7 @@ namespace ClassLibrary1
 			Regex regex = new Regex(@"[-]");
 			if (regex.IsMatch(str))
 			{
+				//TODO: rename
 				string[] mark = str.Split('-');
 				string str1 = mark[0];
 				string str2 = mark[1];
@@ -254,6 +266,7 @@ namespace ClassLibrary1
 				str = str1 + "-" + str2;
 			}
 			else
+				//TODO: {}
 				str = char.ToUpper(str[0]) + str.Substring(1).ToLower();
 			return str;
 		}

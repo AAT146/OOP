@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//TODO: naming
 namespace ClassLibrary1
 {
 	/// <summary>

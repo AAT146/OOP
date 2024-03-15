@@ -12,6 +12,7 @@ namespace ClassLibrary1
 	/// </summary>
 	public class PersonList
 	{
+		//TODO: RSDN
 		/// <summary>
 		/// Список, тип данных - Person.
 		/// </summary>
@@ -53,6 +54,7 @@ namespace ClassLibrary1
 		/// выходе индекса за границы списка.</exception>
 		public Person FindElementAtIndex(int index)
 		{
+			//TODO: {}
 			if (index >= 0 && index < ListPerson.Count)
 				return ListPerson[index];
 			else 
@@ -69,6 +71,7 @@ namespace ClassLibrary1
 		/// отсутсвии данного индекса.</exception> 
 		public int ReturnIndexElement(Person person) 
 		{
+			//TODO: {}
 			if (ListPerson.Contains(person))
 				return ListPerson.IndexOf(person);
 			else
