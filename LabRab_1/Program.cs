@@ -9,7 +9,7 @@ namespace LabRab_1
     internal class Program
     {
         /// <summary>
-        /// Метод Main. Пункт 3.
+        /// Вход в программу.
         /// </summary>
         private static void Main()
         {
@@ -36,18 +36,18 @@ namespace LabRab_1
             Console.WriteLine("Программно созданы два списка персон.\n");
             Console.ReadKey();
             Console.WriteLine($"Список №1:");
-            DisplayPersonConsole(personList1);
+            PersonConsole.DisplayPersonConsole(personList1);
             Console.WriteLine($"Список №2:");
-            DisplayPersonConsole(personList2);
+            PersonConsole.DisplayPersonConsole(personList2);
             Console.ReadKey();
 
             // с. Добавление нового человека в первый список.
             Console.WriteLine("Добавление нового человека в список №1.\n");
             Console.ReadKey();
-            personList1.Add(ReadPersonConsole());
+            personList1.Add(PersonConsole.ReadPersonConsole());
             Console.WriteLine($"\nОбновленный список №1:\n");
             Console.WriteLine($"Список №1:");
-            DisplayPersonConsole(personList1);
+            PersonConsole.DisplayPersonConsole(personList1);
             Console.ReadKey();
 
             // d. Копирование второго человека из первого списка
@@ -60,9 +60,9 @@ namespace LabRab_1
             Console.WriteLine("Проверка! Один и тот же человек находится" +
                 " в обоих списках\n");
             Console.WriteLine($"Список №1:");
-            DisplayPersonConsole(personList1);
+            PersonConsole.DisplayPersonConsole(personList1);
             Console.WriteLine($"Список №2:");
-            DisplayPersonConsole(personList2);
+            PersonConsole.DisplayPersonConsole(personList2);
             Console.ReadKey();
 
             // e. Удаление второго человека из первого списка.
@@ -74,9 +74,9 @@ namespace LabRab_1
             Console.WriteLine("Проверка! Удаление человека из списка №1" +
                 " не привело к удалению этого же человека из списка №2.\n");
             Console.WriteLine($"Список №1:");
-            DisplayPersonConsole(personList1);
+            PersonConsole.DisplayPersonConsole(personList1);
             Console.WriteLine($"Список №2:");
-            DisplayPersonConsole(personList2);
+            PersonConsole.DisplayPersonConsole(personList2);
             Console.ReadKey();
 
             // f. Очистка второго списка.
@@ -85,76 +85,8 @@ namespace LabRab_1
             personList2.ClearList();
             Console.WriteLine("Проверка! Список №2 пуст.\n");
             Console.WriteLine($"Список №2:");
-            DisplayPersonConsole(personList2);
+            PersonConsole.DisplayPersonConsole(personList2);
             Console.ReadKey();
-        }
-
-        // TODO + : extract
-
-        /// <summary>
-        /// Метод: чтение персоны с консоли.
-        /// </summary>
-        /// <returns>Новая персона (объект класса Person).</returns>
-        private static Person ReadPersonConsole()
-        {
-            Person person = new Person();
-
-            Console.Write("Введите фамилию: ");
-            person.Surname = Console.ReadLine();
-
-            Console.Write("Введите имя: ");
-            person.Name = Console.ReadLine();
-
-            while (true)
-            {
-                try
-                {
-                    Console.Write("Введите возраст: ");
-                    person.Age = Convert.ToInt32(Console.ReadLine());
-                    break;
-                }
-                catch (ArgumentException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Неверный формат. Введите целое число.");
-                }
-            }
-
-            while (true)
-            {
-                try
-                {
-                    Console.Write("Введите пол (женский - 0; мужской - 1): ");
-                    person.Gender = (Gender)Convert.ToInt32(Console.ReadLine());
-                    if (person.Gender == Gender.Female || person.Gender == Gender.Male)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        throw new ArgumentException("Ошибка!" +
-                            $" Введите число 0 или 1.");
-                    }
-                }
-                catch (ArgumentException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
-
-            return person;
-        }
-
-        /// <summary>
-        /// Метод: вывод персоны на экран.
-        /// </summary>
-        /// <param name="personList">Элемент класса PersonList.</param>
-        private static void DisplayPersonConsole(PersonList personList)
-        {
-            Console.WriteLine(personList.GetInfo());
         }
     }
 }
