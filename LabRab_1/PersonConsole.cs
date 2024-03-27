@@ -1,5 +1,6 @@
 using LibraryPerson;
 using System;
+using System.Collections.Generic;
 
 namespace LabRab_1
 {
@@ -78,7 +79,7 @@ namespace LabRab_1
                     else
                     {
                         throw new ArgumentException("Ошибка!" +
-                            $" Введите число 0 или 1.");
+                            " Введите число 0 или 1.");
                     }
                 }
                 catch (ArgumentException ex)
@@ -87,7 +88,8 @@ namespace LabRab_1
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("ТЫ ДУРАК?");
+                    Console.WriteLine("Не верный формат!" +
+                        " Введите число 0 или 1.");
                 }
             }
 
