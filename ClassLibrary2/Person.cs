@@ -26,8 +26,8 @@ namespace LibraryPerson
 			get { return _surname; } 
 			set 
 			{
-				//TODO: проверка на допустимые символы
-				_surname = Check2SurName(ConvertRegister(CheckToInt(CheckString(value))));
+				//TODO +: проверка на допустимые символы
+				_surname = Check2SurName(ConvertRegister(CheckStringSurname(value)));
 			}
 		}
 
@@ -44,9 +44,9 @@ namespace LibraryPerson
 			get { return _name; }
 			set 
 			{
-                //TODO: проверка на допустимые символы
-                _name = Check2SurName(ConvertRegister(CheckToInt(CheckString(value))));
-                CheckLangSurName(value, _surname);
+                //TODO +: проверка на допустимые символы
+                _name = ConvertRegister(CheckStringName(value));
+				CheckLangSurName(value, _surname);
 			}
 		}
 
@@ -121,21 +121,52 @@ namespace LibraryPerson
 		/// <summary>
 		/// Метод: проверка на пустую строку.
 		/// </summary>
-		/// <param name="value">Имя или фамилия персоны.</param>
+		/// <param surname="value">Имя или фамилия персоны.</param>
 		/// <returns>Имя или фамилия.</returns>
 		/// <exception cref="ArgumentException">Исключение при
-		/// null или пустой строке.</exception>
-		public static string CheckString(string value) 
+		/// null, пустой строке и не допустимых знаках.</exception>
+		public static string CheckStringSurname(string value) 
 		{
+			Regex rg1 = new Regex(@"(^[а-яА-Яa-zA-Z\-]+$)");
+
 			if (string.IsNullOrEmpty(value)) 
 			{
 				throw new ArgumentException("Ошибка! Заполните параметр.");
+			}
+			if (!rg1.IsMatch(value))
+			{
+				throw new ArgumentException("Не верно! Используйте только буквы " +
+					"или буквы и знак -.");
 			}
 
 			return value;
 		}
 
-		//TODO: 
+		/// <summary>
+		/// Метод: проверка на пустую строку.
+		/// </summary>
+		/// <param name="value">Имя персоны.</param>
+		/// <returns>Имя или фамилия.</returns>
+		/// <exception cref="ArgumentException">Исключение при
+		/// null, пустой строке и не допустимых знаках.</exception>
+		public static string CheckStringName(string value)
+		{
+			Regex rg1 = new Regex(@"(^[а-яА-Яa-zA-Z]+$)");
+
+			if (string.IsNullOrEmpty(value))
+			{
+				throw new ArgumentException("Ошибка! Заполните параметр.");
+			}
+			if (!rg1.IsMatch(value))
+			{
+				throw new ArgumentException("Внимание! Имя состоит только из букв " +
+					"и не может быть составным.");
+			}
+
+			return value;
+		}
+
+		//TODO +: 
 		/// <summary>
 		/// Метод: преобразование регистров с учетом двойного 
 		/// имени (фамилии).
@@ -147,12 +178,12 @@ namespace LibraryPerson
 			Regex regex = new Regex(@"[-]");
 			if (regex.IsMatch(surName))
 			{
-				string[] arrValue = surName.Split('-');
-				string value1 = arrValue[0];
-				string value2 = arrValue[1];
-				value1 = char.ToUpper(value1[0]) + value1.Substring(1).ToLower();
-				value2 = char.ToUpper(value2[0]) + value2.Substring(1).ToLower();
-				surName = value1 + "-" + value2;
+				string[] partsurName = surName.Split('-');
+				string part1 = partsurName[0];
+				string part2 = partsurName[1];
+				part1 = char.ToUpper(part1[0]) + part1.Substring(1).ToLower();
+				part2 = char.ToUpper(part2[0]) + part2.Substring(1).ToLower();
+				surName = part1 + "-" + part2;
 			}
 			else 
 			{
@@ -160,25 +191,6 @@ namespace LibraryPerson
 			}
 
 			return surName;
-		}
-
-		/// <summary>
-		/// Метод: проверка цифр при вводе в консоль.
-		/// </summary>
-		/// <param name="value">Ввод с консоли</param>
-		/// <returns>Проверенная строка.</returns>
-		/// <exception cref="ArgumentException">Исключенние при найденной
-		/// ошибке.</exception>
-		public static string CheckToInt(string value)
-		{
-			Regex rgInt = new Regex(@"\d");
-
-			if (rgInt.IsMatch(value))
-			{
-				throw new ArgumentException("Ошибка! В слове содержится цифра.");
-			}
-
-			return value;
 		}
 
 		/// <summary>
@@ -230,21 +242,21 @@ namespace LibraryPerson
 		/// <summary>
 		/// Метод: проверка составного имени (фамилии) на один язык.
 		/// </summary>
-		/// <param name="surName">Имя или фамилия.</param>
+		/// <param name="surname">Фамилия.</param>
 		/// <returns>Возврат верно введенного значения.</returns>
 		/// <exception cref="ArgumentException">Возврат сообщения
 		/// об ошибке.</exception>
-		public static string Check2SurName(string surName) 
+		public static string Check2SurName(string surname) 
 		{
 			Regex rgxRus = new Regex(@"(^[а-яА-Я]+-?[а-яА-Я]+$)");
 			Regex rgxEng = new Regex(@"(^[a-zA-Z]+-?[a-zA-Z]+$)");
 
-            if (!rgxRus.IsMatch(surName) && !rgxEng.IsMatch(surName))
+            if (!rgxRus.IsMatch(surname) && !rgxEng.IsMatch(surname))
 			{
-				throw new ArgumentException("Ошибка! Составные части имени (фамилии)" +
+				throw new ArgumentException("Ошибка! Составные части фамилии" +
 					" должны быть написаны на одном языке.");
 			}
-			return surName;
+			return surname;
 		}
 	}
 }

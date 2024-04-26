@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace LibraryPerson
 {
-	//TODO: XML
+	//TODO+: XML
+	/// <summary>
+	/// Класс формирования случайной персоны.
+	/// </summary>
 	public class PersonGeneratorRandom
 	{
+		/// <summary>
+		/// Генератор случайных параметров.
+		/// </summary>
 		private static Random rnd = new Random();
 
 		/// <summary>
