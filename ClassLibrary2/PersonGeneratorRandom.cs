@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryPerson
 {
+	//TODO: XML
 	public class PersonGeneratorRandom
 	{
 		private static Random rnd = new Random();
@@ -17,7 +18,6 @@ namespace LibraryPerson
 		public static Person GetRandom()
 		{
 			
-			//TODO + : RSDN
 			string[] surnameFemaleRandomList =
 				{
 					"Клоус", "Петрова", "Зимина", "Морозова", 

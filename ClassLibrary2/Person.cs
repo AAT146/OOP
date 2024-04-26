@@ -26,6 +26,7 @@ namespace LibraryPerson
 			get { return _surname; } 
 			set 
 			{
+				//TODO: проверка на допустимые символы
 				_surname = Check2SurName(ConvertRegister(CheckToInt(CheckString(value))));
 			}
 		}
@@ -43,6 +44,7 @@ namespace LibraryPerson
 			get { return _name; }
 			set 
 			{
+                //TODO: проверка на допустимые символы
                 _name = Check2SurName(ConvertRegister(CheckToInt(CheckString(value))));
                 CheckLangSurName(value, _surname);
 			}
@@ -116,9 +118,6 @@ namespace LibraryPerson
 			return ($"Фамилия: {Surname}, Имя: {Name}, Возраст: {Age}, Пол: {Gender}.\n");
 		}
 
-		//TODO + : Вынести в отдельный класс генерацию случайной персоны
-		
-		//TODO + : RSDN
 		/// <summary>
 		/// Метод: проверка на пустую строку.
 		/// </summary>
@@ -128,7 +127,6 @@ namespace LibraryPerson
 		/// null или пустой строке.</exception>
 		public static string CheckString(string value) 
 		{
-			//TODO + : RSDN
 			if (string.IsNullOrEmpty(value)) 
 			{
 				throw new ArgumentException("Ошибка! Заполните параметр.");
@@ -137,7 +135,7 @@ namespace LibraryPerson
 			return value;
 		}
 
-		//TODO + : rename
+		//TODO: 
 		/// <summary>
 		/// Метод: преобразование регистров с учетом двойного 
 		/// имени (фамилии).
@@ -149,7 +147,6 @@ namespace LibraryPerson
 			Regex regex = new Regex(@"[-]");
 			if (regex.IsMatch(surName))
 			{
-				//TODO + : rename
 				string[] arrValue = surName.Split('-');
 				string value1 = arrValue[0];
 				string value2 = arrValue[1];
@@ -159,7 +156,6 @@ namespace LibraryPerson
 			}
 			else 
 			{
-				//TODO + : {}
 				surName = char.ToUpper(surName[0]) + surName.Substring(1).ToLower();
 			}
 
@@ -184,7 +180,6 @@ namespace LibraryPerson
 
 			return value;
 		}
-
 
 		/// <summary>
 		/// Метод: Проверка слов на язык.

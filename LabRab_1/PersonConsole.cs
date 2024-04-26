@@ -9,8 +9,6 @@ namespace LabRab_1
     /// </summary>
     public class PersonConsole
     {
-        // TODO + : extract
-
         /// <summary>
         /// Метод: чтение персоны с консоли.
         /// </summary>

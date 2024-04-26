@@ -54,7 +54,6 @@ namespace LibraryPerson
 		/// выходе индекса за границы списка.</exception>
 		public Person FindElementAtIndex(int index)
 		{
-			//TODO + : {}
 			if (index >= 0 && index < _listPerson.Count)
 			{
 				return _listPerson[index];
@@ -75,7 +74,6 @@ namespace LibraryPerson
 		/// отсутсвии данного индекса.</exception> 
 		public int ReturnIndexElement(Person person) 
 		{
-			//TODO + : {}
 			if (_listPerson.Contains(person))
 			{
 				return _listPerson.IndexOf(person);

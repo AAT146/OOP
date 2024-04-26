@@ -19,7 +19,6 @@ namespace LabRab_1
 
             // а. Создание программно два списка персон, в каждом
             // из которых по три человка.
-            // TODO + : RSDN
             PersonList personList1 = new PersonList();
             PersonList personList2 = new PersonList();
 
