@@ -26,7 +26,7 @@ namespace LibraryPerson
 			get { return _surname; } 
 			set 
 			{
-				_surname = Check2SurName(ConvertRegister(CheckString(value)));
+				_surname = Check2SurName(ConvertRegister(CheckToInt(CheckString(value))));
 			}
 		}
 
@@ -43,7 +43,7 @@ namespace LibraryPerson
 			get { return _name; }
 			set 
 			{
-                _name = Check2SurName(ConvertRegister(CheckString(value)));
+                _name = Check2SurName(ConvertRegister(CheckToInt(CheckString(value))));
                 CheckLangSurName(value, _surname);
 			}
 		}
@@ -117,7 +117,7 @@ namespace LibraryPerson
 		}
 
 		//TODO + : Вынести в отдельный класс генерацию случайной персоны
-
+		
 		//TODO + : RSDN
 		/// <summary>
 		/// Метод: проверка на пустую строку.
@@ -165,6 +165,26 @@ namespace LibraryPerson
 
 			return surName;
 		}
+
+		/// <summary>
+		/// Метод: проверка цифр при вводе в консоль.
+		/// </summary>
+		/// <param name="value">Ввод с консоли</param>
+		/// <returns>Проверенная строка.</returns>
+		/// <exception cref="ArgumentException">Исключенние при найденной
+		/// ошибке.</exception>
+		public static string CheckToInt(string value)
+		{
+			Regex rgInt = new Regex(@"\d");
+
+			if (rgInt.IsMatch(value))
+			{
+				throw new ArgumentException("Ошибка! В слове содержится цифра.");
+			}
+
+			return value;
+		}
+
 
 		/// <summary>
 		/// Метод: Проверка слов на язык.

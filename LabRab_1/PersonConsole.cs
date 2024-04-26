@@ -19,81 +19,68 @@ namespace LabRab_1
         {
             Person person = new Person();
 
-            while (true)
+
+            List<Action> actions = new List<Action>()
             {
-                try
+                () =>
                 {
                     Console.Write("Введите фамилию: ");
                     person.Surname = Console.ReadLine();
-                    break;
-                }
-                catch (ArgumentException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
-
-            while (true)
-            {
-                try
+                },
+                () =>
                 {
                     Console.Write("Введите имя: ");
                     person.Name = Console.ReadLine();
-                    break;
-                }
-                catch (ArgumentException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
-
-            while (true)
-            {
-                try
+                },
+                () =>
                 {
                     Console.Write("Введите возраст: ");
                     person.Age = Convert.ToInt32(Console.ReadLine());
-                    break;
-                }
-                catch (ArgumentException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Неверный формат." +
-                        " Введите целое число от 1 до 90.");
-                }
-            }
-
-            while (true)
-            {
-                try
+                },
+                () =>
                 {
                     Console.Write("Введите пол (женский - 0; мужской - 1): ");
                     person.Gender = (Gender)Convert.ToInt32(Console.ReadLine());
-                    if (person.Gender == Gender.Female || person.Gender == Gender.Male)
-                    {
-                        break;
-                    }
-                    else
+                    if (!(person.Gender == Gender.Female || person.Gender == Gender.Male))
                     {
                         throw new ArgumentException("Ошибка!" +
                             " Введите число 0 или 1.");
                     }
-                }
-                catch (ArgumentException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Не верный формат!" +
-                        " Введите число 0 или 1.");
-                }
+                },
+            };
+
+            foreach (Action action in actions)
+            {
+                ActionHandler(action);
             }
 
             return person;
+        }
+
+        /// <summary>
+        /// Метод: обработка исключений.
+        /// </summary>
+        /// <param name="action">Действие.</param>
+        public static void ActionHandler(Action action)
+        {
+            while (true)
+            {
+                try
+                {
+                    action.Invoke();
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    var exceptionType = ex.GetType();
+                    if (exceptionType == typeof(FormatException) ||
+                        exceptionType == typeof(ArgumentOutOfRangeException) ||
+                        exceptionType == typeof(ArgumentException))
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
         }
 
         /// <summary>
