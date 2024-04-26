@@ -17,7 +17,6 @@ namespace LabRab_1
         {
             Person person = new Person();
 
-
             List<Action> actions = new List<Action>()
             {
                 () =>

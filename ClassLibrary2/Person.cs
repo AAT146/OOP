@@ -26,7 +26,6 @@ namespace LibraryPerson
 			get { return _surname; } 
 			set 
 			{
-				//TODO +: проверка на допустимые символы
 				_surname = Check2SurName(ConvertRegister(CheckStringSurname(value)));
 			}
 		}
@@ -44,7 +43,6 @@ namespace LibraryPerson
 			get { return _name; }
 			set 
 			{
-                //TODO +: проверка на допустимые символы
                 _name = ConvertRegister(CheckStringName(value));
 				CheckLangSurName(value, _surname);
 			}
@@ -166,7 +164,7 @@ namespace LibraryPerson
 			return value;
 		}
 
-		//TODO +: 
+		//TODO: 
 		/// <summary>
 		/// Метод: преобразование регистров с учетом двойного 
 		/// имени (фамилии).
@@ -200,6 +198,7 @@ namespace LibraryPerson
 		/// <returns>Возврат используемого языка.</returns>
 		/// <exception cref="ArgumentException">Возврат сообщения
 		/// об ошибке.</exception>
+		/// //TODO: RSDN
 		public static Language CheckLang(string word)
 		{
 			Regex russian = new Regex(@"[а-яА-Я]");
@@ -246,6 +245,7 @@ namespace LibraryPerson
 		/// <returns>Возврат верно введенного значения.</returns>
 		/// <exception cref="ArgumentException">Возврат сообщения
 		/// об ошибке.</exception>
+		/// //TODO: rename
 		public static string Check2SurName(string surname) 
 		{
 			Regex rgxRus = new Regex(@"(^[а-яА-Я]+-?[а-яА-Я]+$)");
