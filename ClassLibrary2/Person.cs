@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace LibraryPerson
 {
@@ -26,7 +28,7 @@ namespace LibraryPerson
 			get { return _surname; } 
 			set 
 			{
-				_surname = Check2SurName(ConvertRegister(CheckStringSurname(value)));
+				_surname = ConvertRegister(CheckStringSurname(value));
 			}
 		}
 
@@ -44,7 +46,7 @@ namespace LibraryPerson
 			set 
 			{
                 _name = ConvertRegister(CheckStringName(value));
-				CheckLangSurName(value, _surname);
+				CheckLanguageLastFirstName(value, _surname);
 			}
 		}
 
@@ -125,16 +127,17 @@ namespace LibraryPerson
 		/// null, пустой строке и не допустимых знаках.</exception>
 		public static string CheckStringSurname(string value) 
 		{
-			Regex rg1 = new Regex(@"(^[а-яА-Яa-zA-Z\-]+$)");
+			Regex rg1 = new Regex(@"(^[а-яА-Я\-]+$)");
+			Regex rg2 = new Regex(@"(^[a-zA-Z\-]+$)");
 
 			if (string.IsNullOrEmpty(value)) 
 			{
 				throw new ArgumentException("Ошибка! Заполните параметр.");
 			}
-			if (!rg1.IsMatch(value))
+			if (!rg1.IsMatch(value) && !rg2.IsMatch(value))
 			{
 				throw new ArgumentException("Не верно! Используйте только буквы " +
-					"или буквы и знак -.");
+					"одного языка или буквы одного языка и знак -.");
 			}
 
 			return value;
@@ -149,46 +152,46 @@ namespace LibraryPerson
 		/// null, пустой строке и не допустимых знаках.</exception>
 		public static string CheckStringName(string value)
 		{
-			Regex rg1 = new Regex(@"(^[а-яА-Яa-zA-Z]+$)");
+			Regex rg1 = new Regex(@"(^[а-яА-Я]+$)");
+			Regex rg2 = new Regex(@"(^[a-zA-Z]+$)");
 
 			if (string.IsNullOrEmpty(value))
 			{
 				throw new ArgumentException("Ошибка! Заполните параметр.");
 			}
-			if (!rg1.IsMatch(value))
+			if (!rg1.IsMatch(value) && !rg2.IsMatch(value))
 			{
-				throw new ArgumentException("Внимание! Имя состоит только из букв " +
-					"и не может быть составным.");
+				throw new ArgumentException("Не верно! Используйте только буквы " +
+					"одного языка.");
 			}
 
 			return value;
 		}
 
-		//TODO: 
+		//TODO +: 
 		/// <summary>
-		/// Метод: преобразование регистров с учетом двойного 
-		/// имени (фамилии).
+		/// Метод: преобразование регистров с учетом двойной фамилии.
 		/// </summary>
-		/// <param name="surName">Имя или фамилия.</param>
-		/// <returns>Скоректированное имя (фамилия)</returns>
-		public static string ConvertRegister(string surName) 
+		/// <param name="value">Фамилия.</param>
+		/// <returns>Фамилия с правильными регистрами.</returns>
+		public static string ConvertRegister(string surname) 
 		{
 			Regex regex = new Regex(@"[-]");
-			if (regex.IsMatch(surName))
+			if (regex.IsMatch(surname))
 			{
-				string[] partsurName = surName.Split('-');
+				string[] partsurName = surname.Split('-');
 				string part1 = partsurName[0];
 				string part2 = partsurName[1];
 				part1 = char.ToUpper(part1[0]) + part1.Substring(1).ToLower();
 				part2 = char.ToUpper(part2[0]) + part2.Substring(1).ToLower();
-				surName = part1 + "-" + part2;
+				surname = part1 + "-" + part2;
 			}
 			else 
 			{
-				surName = char.ToUpper(surName[0]) + surName.Substring(1).ToLower();
+				surname = char.ToUpper(surname[0]) + surname.Substring(1).ToLower();
 			}
 
-			return surName;
+			return surname;
 		}
 
 		/// <summary>
@@ -199,7 +202,7 @@ namespace LibraryPerson
 		/// <exception cref="ArgumentException">Возврат сообщения
 		/// об ошибке.</exception>
 		/// //TODO: RSDN
-		public static Language CheckLang(string word)
+		public static Language CheckLanguage(string word)
 		{
 			Regex russian = new Regex(@"[а-яА-Я]");
 			Regex english = new Regex(@"[a-zA-Z]");
@@ -226,37 +229,16 @@ namespace LibraryPerson
 		/// <param name="name">Имя.</param>
 		/// <exception cref="ArgumentException">Возврат сообщения
 		/// о не совпадении языков.</exception>
-		public static void CheckLangSurName(string surname, string name)
+		public static void CheckLanguageLastFirstName(string surname, string name)
 		{
-			Language surnameLang = CheckLang(surname);
-			Language nameLang = CheckLang(name);
+			Language surnameLanguage = CheckLanguage(surname);
+			Language nameLanguage = CheckLanguage(name);
 
-			if (nameLang != surnameLang) 
+			if (nameLanguage != surnameLanguage) 
 			{
 				throw new ArgumentException("Ошибка! Язык имени и фамилии" +
 					" должен совпадать.");
 			}
-		}
-
-		/// <summary>
-		/// Метод: проверка составного имени (фамилии) на один язык.
-		/// </summary>
-		/// <param name="surname">Фамилия.</param>
-		/// <returns>Возврат верно введенного значения.</returns>
-		/// <exception cref="ArgumentException">Возврат сообщения
-		/// об ошибке.</exception>
-		/// //TODO: rename
-		public static string Check2SurName(string surname) 
-		{
-			Regex rgxRus = new Regex(@"(^[а-яА-Я]+-?[а-яА-Я]+$)");
-			Regex rgxEng = new Regex(@"(^[a-zA-Z]+-?[a-zA-Z]+$)");
-
-            if (!rgxRus.IsMatch(surname) && !rgxEng.IsMatch(surname))
-			{
-				throw new ArgumentException("Ошибка! Составные части фамилии" +
-					" должны быть написаны на одном языке.");
-			}
-			return surname;
 		}
 	}
 }
