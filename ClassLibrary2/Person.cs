@@ -168,7 +168,6 @@ namespace LibraryPerson
 			return value;
 		}
 
-		//TODO +: 
 		/// <summary>
 		/// Метод: преобразование регистров с учетом двойной фамилии.
 		/// </summary>
@@ -201,7 +200,6 @@ namespace LibraryPerson
 		/// <returns>Возврат используемого языка.</returns>
 		/// <exception cref="ArgumentException">Возврат сообщения
 		/// об ошибке.</exception>
-		/// //TODO: RSDN
 		public static Language CheckLanguage(string word)
 		{
 			Regex russian = new Regex(@"[а-яА-Я]");
