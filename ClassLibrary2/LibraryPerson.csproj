@@ -7,7 +7,7 @@
     <ProjectGuid>{BEEF829C-0740-4495-9600-4193658C22D5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibrary2</RootNamespace>
+    <RootNamespace>LibraryPerson</RootNamespace>
     <AssemblyName>LibraryPerson</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
