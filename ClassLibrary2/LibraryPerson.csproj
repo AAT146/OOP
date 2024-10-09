@@ -42,9 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adult.cs" />
+    <Compile Include="FamilyStatus.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="Language.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="PersonBase.cs" />
     <Compile Include="PersonGeneratorRandom.cs" />
     <Compile Include="PersonList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

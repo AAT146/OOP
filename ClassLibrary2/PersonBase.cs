@@ -13,7 +13,7 @@ namespace LibraryPerson
 	/// <summary>
 	/// Класс Персона.
 	/// </summary>
-	public class Person
+	public abstract class PersonBase
 	{
 		/// <summary>
 		/// Фамилия персоны.
@@ -57,13 +57,14 @@ namespace LibraryPerson
 
 		/// <summary>
 		/// Минимальный возраст персоны.
+		/// 
 		/// </summary>
-		public const int MinAge = 1;
+		public virtual int MinAge { get; } = 1;
 		
 		/// <summary>
 		/// Максимальный возраст персоны.
 		/// </summary>
-		public const int MaxAge = 90;
+		public virtual int MaxAge { get; } = 90;
 
 		/// <summary>
 		/// Свойство для считывания полня _age класса Persom.
@@ -91,7 +92,7 @@ namespace LibraryPerson
 		/// <summary>
 		/// Конструктор по умолчанию.
 		/// </summary>
-		public Person() : this("Фамилия", "Имя", MinAge, Gender.Female)
+		public PersonBase() : this("Фамилия", "Имя", 1, Gender.Female)
 		{ }
 
 		/// <summary>
@@ -101,7 +102,7 @@ namespace LibraryPerson
 		/// <param name="name">Имя персоны.</param>
 		/// <param name="age">Возраст персоны.</param>
 		/// <param name="gender">Пол персоны.</param>
-		public Person(string surname, string name, int age, Gender gender)
+		public PersonBase(string surname, string name, int age, Gender gender)
 		{
 			_surname = surname;
 			_name = name;
@@ -113,7 +114,7 @@ namespace LibraryPerson
 		/// Метод: возврат информации об объекте класса Person.
 		/// </summary>
 		/// <returns>Строка с данными полей.</returns>
-		public string GetInfo() 
+		public virtual string GetInfo() 
 		{
 			return ($"Фамилия: {Surname}, Имя: {Name}, Возраст: {Age}, Пол: {Gender}.\n");
 		}

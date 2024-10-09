@@ -15,13 +15,13 @@ namespace LibraryPerson
 		/// <summary>
 		/// Список, тип данных - Person.
 		/// </summary>
-		private List<Person> _listPerson = new List<Person>();
+		private List<PersonBase> _listPerson = new List<PersonBase	>();
 
 		/// <summary>
 		/// Метод: добавление элемента.
 		/// </summary>
 		/// <param name="person">"Элемент класса Person.</param>
-		public void Add(Person person)
+		public void Add(PersonBase person)
 		{
 			_listPerson.Add(person);
 		}
@@ -30,7 +30,7 @@ namespace LibraryPerson
 		/// Метод: удаление объекта класса Person из списка.
 		/// </summary>
 		/// <param name="person">Элемент класса Person.</param>
-		public void RemoveElement(Person person)
+		public void RemoveElement(PersonBase person)
 		{
 			_listPerson.Remove(person);
 		}
@@ -51,7 +51,7 @@ namespace LibraryPerson
 		/// <returns>Элемент.</returns>
 		/// <exception cref="IndexOutOfRangeException">Исключение при
 		/// выходе индекса за границы списка.</exception>
-		public Person FindElementAtIndex(int index)
+		public PersonBase FindElementAtIndex(int index)
 		{
 			if (index >= 0 && index < _listPerson.Count)
 			{
@@ -71,7 +71,7 @@ namespace LibraryPerson
 		/// <returns>Индекс.</returns>
 		/// <exception cref="IndexOutOfRangeException">Исключение при
 		/// отсутсвии данного индекса.</exception> 
-		public int ReturnIndexElement(Person person) 
+		public int ReturnIndexElement(PersonBase person) 
 		{
 			if (_listPerson.Contains(person))
 			{
@@ -107,7 +107,7 @@ namespace LibraryPerson
 		public string GetInfo()
 		{
 			string str = string.Empty;
-			foreach (Person person in _listPerson)
+			foreach (PersonBase person in _listPerson)
 			{
 				str += person.GetInfo();
 			}
