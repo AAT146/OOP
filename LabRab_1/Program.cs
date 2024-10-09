@@ -9,6 +9,11 @@ namespace LabRab_1
     internal class Program
     {
         /// <summary>
+		/// Генератор случайных параметров.
+		/// </summary>
+		private static Random _rnd = new Random();
+
+        /// <summary>
         /// Вход в программу.
         /// </summary>
         private static void Main()
@@ -17,74 +22,51 @@ namespace LabRab_1
                 "по нажатию любой клавиши клавиатуры.\n");
             Console.ReadKey();
 
-            // а. Создание программно два списка персон, в каждом
-            // из которых по три человка.
-            PersonList personList1 = new PersonList();
-            PersonList personList2 = new PersonList();
+            // 5а. Создание программно списка PersonList, в который
+            // добавляются рандомно 7 человек (взрослые/дети).
+            PersonList personList = new PersonList();
 
-            for (int i = 0; i < 3; i++)
+            Console.WriteLine("Случайный список взрослых и детей:\n");
+            Console.ReadKey();
+
+            //Random rnd = new Random();
+
+            for (int i = 0; i < 7; i++)
             {
-                personList1.Add(PersonGeneratorRandom.GetRandom());
-                personList2.Add(PersonGeneratorRandom.GetRandom());
+                if (_rnd.Next(2) == 0)
+                {
+                    personList.Add(PersonGeneratorRandom.GetRandomAdult());
+                }
+                else
+                {
+                    personList.Add(PersonGeneratorRandom.GetRandomChild());
+                }
             }
 
-            // b. Вывод содержимого кадого списка на экран с
-            // соответствующими подписящи списков.
-            // Каждый новый шаг выполняется по нажатию
-            // любой клавиши клавиатуры.
-            Console.WriteLine("Программно созданы два списка персон.\n");
-            Console.ReadKey();
-            Console.WriteLine($"Список №1:");
-            PersonConsole.DisplayPersonConsole(personList1);
-            Console.WriteLine($"Список №2:");
-            PersonConsole.DisplayPersonConsole(personList2);
+            // 5b. Вывод на экранописание всех людей списка.
+            PersonConsole.DisplayPersonConsole(personList);
             Console.ReadKey();
 
-            // с. Добавление нового человека в первый список.
-            Console.WriteLine("Добавление нового человека в список №1.\n");
-            Console.ReadKey();
-            personList1.Add(PersonConsole.ReadPersonConsole());
-            Console.WriteLine($"\nОбновленный список №1:\n");
-            Console.WriteLine($"Список №1:");
-            PersonConsole.DisplayPersonConsole(personList1);
-            Console.ReadKey();
+            // 5c. Четвертый человек. Работа метода.
+            var fourPerson = personList.FindElementAtIndex(3);
+            Console.WriteLine($"Тип 4-го человека в списке: {fourPerson.GetType()}\n");
 
-            // d. Копирование второго человека из первого списка
-            // в конец второго списка. Один и то же человек
-            // находится в обоих списках.
-            Console.WriteLine("Копирование 2-го человека из списка №1" +
-                " в конец списка №2.\n");
-            Console.ReadKey();
-            personList2.Add(personList1.FindElementAtIndex(1));
-            Console.WriteLine("Проверка! Один и тот же человек находится" +
-                " в обоих списках\n");
-            Console.WriteLine($"Список №1:");
-            PersonConsole.DisplayPersonConsole(personList1);
-            Console.WriteLine($"Список №2:");
-            PersonConsole.DisplayPersonConsole(personList2);
-            Console.ReadKey();
+            switch (fourPerson)
+            {
+                case Adult adult:
+                    Console.WriteLine($"Взрослый: {adult.Surname} {adult.Name}");
+                    Console.WriteLine(adult.MethodExampleAdult());
+                    break;
+                case Child child:
+                    Console.WriteLine($"Ребёнок: {child.Surname} {child.Name}");
+                    Console.WriteLine(child.MethodExampleChild());
+                    break;
+                default:
+                    Console.WriteLine("Пипец");
+                    break;
+            }
 
-            // e. Удаление второго человека из первого списка.
-            // Удаление человека из первого списка не приводит к
-            // уничтожению этого же человека во втором списке.
-            Console.WriteLine("Удаление 2-го человека из списка №1.\n");
-            Console.ReadKey();
-            personList1.RemoveAtIndex(1);
-            Console.WriteLine("Проверка! Удаление человека из списка №1" +
-                " не привело к удалению этого же человека из списка №2.\n");
-            Console.WriteLine($"Список №1:");
-            PersonConsole.DisplayPersonConsole(personList1);
-            Console.WriteLine($"Список №2:");
-            PersonConsole.DisplayPersonConsole(personList2);
-            Console.ReadKey();
-
-            // f. Очистка второго списка.
-            Console.WriteLine("Удаление всего списка №2.\n");
-            Console.ReadKey();
-            personList2.ClearList();
-            Console.WriteLine("Проверка! Список №2 пуст.\n");
-            Console.WriteLine($"Список №2:");
-            PersonConsole.DisplayPersonConsole(personList2);
+            Console.WriteLine("Завершение программы.");
             Console.ReadKey();
         }
     }

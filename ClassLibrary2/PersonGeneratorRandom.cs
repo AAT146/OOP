@@ -12,13 +12,16 @@ namespace LibraryPerson
 	public class PersonGeneratorRandom
 	{
 		/// <summary>
+		/// Генератор случайных параметров.
+		/// </summary>
+		private static Random rnd = new Random();
+
+		/// <summary>
 		/// Метод: установка данных полей базового класса PersonBase.
 		/// </summary>
 		/// <param name="person">Объект класса PersonBase.</param>
 		public static void SetPersonRandom(PersonBase person)
 		{
-			Random rnd = new Random();
-			
 			person.Age = rnd.Next(person.MinAge, person.MaxAge);
 
 			string[] surnameFemaleRandomList =
@@ -73,8 +76,6 @@ namespace LibraryPerson
 		/// <param name="adult">Объект класса Adult.</param>
 		public static void SetAdultRandom(Adult adult)
 		{
-			Random rnd = new Random();
-
 			string[] nameJob =
 				{
 					"СО ЕЭС", "СГК", "Россети", "Роснефть",
@@ -95,7 +96,6 @@ namespace LibraryPerson
 		/// <param name="person">Объект класса PersonBase.</param>
 		public static void SetGenderRandom(PersonBase person)
 		{
-			Random rnd = new Random();
 			person.Gender = (Gender)rnd.Next(2);
 		}
 
@@ -135,8 +135,6 @@ namespace LibraryPerson
 		/// <param name="adult">Объект класса Adult.</param>
 		public static void SetChildRandom(Child child, Adult adult)
 		{
-			Random rnd = new Random();
-
 			string[] namePlaceOsStudy =
 				{
 					"Лицей №7", "Гимнашия №1", "Школа №9", "Школа №16",
@@ -168,8 +166,7 @@ namespace LibraryPerson
 		/// </summary>
 		/// <param name="adult">Объект класса Adult.</param>
 		public static void SetPartners(Adult adult)
-		{
-			Random rnd = new Random();
+		{;
 			Adult partner = new Adult();
 
 			FamilyStatus status = (FamilyStatus)rnd.Next(3);

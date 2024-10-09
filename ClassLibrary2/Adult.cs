@@ -148,22 +148,14 @@ namespace LibraryPerson
 			get { return _partner; }
 			set
 			{
-				if (FamilyStatus == FamilyStatus.Married &&
-					value.FamilyStatus == FamilyStatus.Married)
+				if (Gender != value.Gender)
 				{
-					if (Gender != value.Gender)
-					{
-						_partner = value;
-					}
-					else
-					{
-						throw new ArgumentException("Ошибка!" 
-							+ "Партнеры должны быть разного пола!");
-					}
+					_partner = value;
 				}
 				else
 				{
-					throw new ArgumentException("Ошибка! Проверти семейное положение!");
+					throw new ArgumentException("Ошибка!"
+						+ "Партнеры должны быть разного пола!");
 				}
 			}
 		}
@@ -195,8 +187,13 @@ namespace LibraryPerson
 			}
 			return base.GetInfo() + 
 				$"Cерия паспорта: {PassportSeries}, № паспорта: {PassportNumber},\n" +
-				$"Партнер: {partner}, Место работы: {Job}\n";
+				$"Партнер: {partner}, Место работы: {Job}\n\n";
 
+		}
+
+		public string MethodExampleAdult()
+		{
+			return "От работы дохнут кони. Ну, а я - бессметрный пони!\n";
 		}
 	}
 }

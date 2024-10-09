@@ -124,7 +124,12 @@ namespace LibraryPerson
 			}
 
 			return base.GetInfo() + $"Отец: {father}, Мать: {mother}" + 
-				$"Место обучения: {PlaceOfStudy}\n";
+				$"Место обучения: {PlaceOfStudy}\n\n";
+		}
+
+		public string MethodExampleChild()
+		{
+			return "Напиши список дел, в которых я еще не валялся...\n";
 		}
 	}
 }

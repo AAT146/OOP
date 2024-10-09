@@ -1,6 +1,5 @@
 using LibraryPerson;
 using System;
-using System.Collections.Generic;
 
 namespace LabRab_1
 {
@@ -9,51 +8,6 @@ namespace LabRab_1
     /// </summary>
     public class PersonConsole
     {
-        /// <summary>
-        /// Метод: чтение персоны с консоли.
-        /// </summary>
-        /// <returns>Новая персона (объект класса Person).</returns>
-        public static Person ReadPersonConsole()
-        {
-            Person person = new Person();
-
-            List<Action> actions = new List<Action>()
-            {
-                () =>
-                {
-                    Console.Write("Введите фамилию: ");
-                    person.Surname = Console.ReadLine();
-                },
-                () =>
-                {
-                    Console.Write("Введите имя: ");
-                    person.Name = Console.ReadLine();
-                },
-                () =>
-                {
-                    Console.Write("Введите возраст: ");
-                    person.Age = Convert.ToInt32(Console.ReadLine());
-                },
-                () =>
-                {
-                    Console.Write("Введите пол (женский - 0; мужской - 1): ");
-                    person.Gender = (Gender)Convert.ToInt32(Console.ReadLine());
-                    if (!(person.Gender == Gender.Female || person.Gender == Gender.Male))
-                    {
-                        throw new ArgumentException("Ошибка!" +
-                            " Введите число 0 или 1.");
-                    }
-                },
-            };
-
-            foreach (Action action in actions)
-            {
-                ActionHandler(action);
-            }
-
-            return person;
-        }
-
         /// <summary>
         /// Метод: обработка исключений.
         /// </summary>
