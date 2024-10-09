@@ -14,11 +14,16 @@ namespace LibraryPerson
 		/// <summary>
 		/// Холост.
 		/// </summary>
-		Single,
+		SingleMale,
 
 		/// <summary>
-		/// Женат.
+		/// Состоящий в браке.
 		/// </summary>
 		Married,
+
+		/// <summary>
+		/// Не замужем.
+		/// </summary>
+		SingleFemale,
 	}
 }

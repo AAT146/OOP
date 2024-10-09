@@ -17,7 +17,7 @@ namespace LibraryPerson
 		/// <summary>
 		/// Номер паспорта.
 		/// </summary>
-		private string _passportNumber;
+		private int _passportNumber;
 
 		/// <summary>
 		/// Количество цифр номера паспорта.
@@ -25,14 +25,34 @@ namespace LibraryPerson
 		public const int DigitsPassportNumber = 4;
 
 		/// <summary>
+		/// Минимальное значение номера паспорта.
+		/// </summary>
+		public const int MinPassportNumber = 100000;
+
+		/// <summary>
+		/// Максимальное значение номера паспорта.
+		/// </summary>
+		public const int MaxPassportNumber = 999999;
+
+		/// <summary>
 		/// Серия паспорта.
 		/// </summary>
-		private string _passportSeries;
+		private int _passportSeries;
 
 		/// <summary>
 		/// Количество цифр серии паспорта.
 		/// </summary>
 		public const int DigitsPassportSeries = 6;
+
+		/// <summary>
+		/// Минимальное значение серии паспорта.
+		/// </summary>
+		public const int MinPassportSeries = 1000;
+
+		/// <summary>
+		/// Максимальное значение серии паспорта.
+		/// </summary>
+		public const int MaxPassportSeries = 9999;
 
 		/// <summary>
 		/// Партнер.
@@ -64,7 +84,7 @@ namespace LibraryPerson
 		/// <param name="parther">Супруг/супруга гражданина.</param>
 		/// <param name="nameJob">Наименование работы гражданина.</param>
 		public Adult(string surname, string name, int age, Gender gender, 
-			string passportNumber, string passportSeries, FamilyStatus familyStatus, 
+			int passportNumber, int passportSeries, FamilyStatus familyStatus, 
 			Adult parther, string nameJob) : base(surname, name, age, gender)
 		{
 			_passportNumber = passportNumber;
@@ -76,31 +96,19 @@ namespace LibraryPerson
 		/// <summary>
 		/// Конструктор по умолчанию.
 		/// </summary>
-		public Adult() : this("Фамилия", "Имя", 18, Gender.Female, 
-			"Серия", "Номер", FamilyStatus.Single, null, "Работа")
+		public Adult() : this("Фамилия", "Имя", 18, Gender.Female,
+			1000, 100000, FamilyStatus.SingleMale, null, "Работа")
 		{ }
-
-		/// <summary>
-		/// Метод: проверка номера/серии паспорта.
-		/// </summary>
-		/// <param name="passport">номер/серия паспорта.</param>
-		/// <returns>true: номер/серия состоит только из цифр
-		/// false: номер/серия содержит символы.</returns>
-		public bool CheckNumberSeriesPassport(string passport)
-		{
-			return Regex.IsMatch(passport, @"^\d+$");
-		}
 
 		/// <summary>
 		/// Свойство номера паспорта.
 		/// </summary>
-		public string PassportNumber 
+		public int PassportNumber 
 		{
 			get { return _passportNumber; } 
 			set 
 			{
-				if (CheckNumberSeriesPassport(value) == true
-					&& value.Length == DigitsPassportNumber)
+				if (value >= MinPassportNumber && value <= MaxPassportNumber)
 				{
 					_passportNumber = value;
 				}
@@ -115,13 +123,12 @@ namespace LibraryPerson
 		/// <summary>
 		/// Свойство номера паспорта.
 		/// </summary>
-		public string PassportSeries
+		public int PassportSeries
 		{
 			get { return _passportSeries; }
 			set
 			{
-				if (CheckNumberSeriesPassport(value) == true
-					&& value.Length == DigitsPassportSeries)
+				if (value >= MinPassportSeries && value <= MaxPassportSeries)
 				{
 					_passportSeries = value;
 				}

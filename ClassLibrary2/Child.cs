@@ -96,7 +96,7 @@ namespace LibraryPerson
 		/// <summary>
 		/// Свойсвто для места обучения.
 		/// </summary>
-		public string PlaceOfStady
+		public string PlaceOfStudy
 		{
 			get { return _placeOfStudy; }
 			set
@@ -124,7 +124,7 @@ namespace LibraryPerson
 			}
 
 			return base.GetInfo() + $"Отец: {father}, Мать: {mother}" + 
-				$"Место обучения: {PlaceOfStady}\n";
+				$"Место обучения: {PlaceOfStudy}\n";
 		}
 	}
 }
