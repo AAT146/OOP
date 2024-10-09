@@ -123,7 +123,7 @@ namespace LibraryPerson
 				father = Father.Surname + " " + Father.Name;
 			}
 
-			return base.GetInfo() + $"Отец: {father}, Мать: {mother}" + 
+			return base.GetInfo() + $"Отец: {father}, Мать: {mother} " + 
 				$"Место обучения: {PlaceOfStudy}\n\n";
 		}
 
