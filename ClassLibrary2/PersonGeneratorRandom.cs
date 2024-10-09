@@ -19,10 +19,9 @@ namespace LibraryPerson
 		/// <summary>
 		/// Метод: генерация случайного объекта класса Person.
 		/// </summary>
-		/// <param name="person"></param>
+		/// <param name="person">Объект класса PersonBase.</param>
 		public static void GetRandom(PersonBase person)
 		{
-			
 			string[] surnameFemaleRandomList =
 				{
 					"Клоус", "Петрова", "Зимина", "Морозова", 
@@ -66,7 +65,6 @@ namespace LibraryPerson
 				surname = surnameMaleRandomList[rnd.Next(surnameMaleRandomList.Length)];
 				name = nameMaleRandomList[rnd.Next(nameMaleRandomList.Length)];
 			}
-			return new PersonBase(surname, name, age, gender);
 		}
 	}
 }

@@ -77,7 +77,7 @@ namespace LibraryPerson
 		/// Конструктор по умолчанию.
 		/// </summary>
 		public Adult() : this("Фамилия", "Имя", 18, Gender.Female, 
-			"№____", "s______", FamilyStatus.Single, null, "Работа")
+			"Серия", "Номер", FamilyStatus.Single, null, "Работа")
 		{ }
 
 		/// <summary>
