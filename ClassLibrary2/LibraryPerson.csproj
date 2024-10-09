@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adult.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Person.cs" />
