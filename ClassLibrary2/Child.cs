@@ -127,6 +127,7 @@ namespace LibraryPerson
 				$"Место обучения: {PlaceOfStudy}\n\n";
 		}
 
+		//TODO: XML
 		public string MethodExampleChild()
 		{
 			return "Напиши список дел, в которых я еще не валялся...\n";

@@ -201,6 +201,7 @@ namespace LibraryPerson
 
 		}
 
+		//TODO: XML
 		public string MethodExampleAdult()
 		{
 			return "От работы дохнут кони. Ну, а я - бессметрный пони!\n";
