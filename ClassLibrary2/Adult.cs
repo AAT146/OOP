@@ -148,14 +148,24 @@ namespace LibraryPerson
 			get { return _partner; }
 			set
 			{
-				if (Gender != value.Gender)
+				if (FamilyStatus == FamilyStatus.Married &&
+					value.FamilyStatus == FamilyStatus.Married)
 				{
+					if (value.Gender == Gender)
+					{
+						throw new ArgumentException("Ошибка!"
+						+ "Партнеры должны быть разного пола!");
+					}
 					_partner = value;
+					if (value != null) 
+					{
+						value._partner = this;
+					}
 				}
 				else
 				{
 					throw new ArgumentException("Ошибка!"
-						+ "Партнеры должны быть разного пола!");
+						+ "Проверьте семейное положение партнеров!");
 				}
 			}
 		}
