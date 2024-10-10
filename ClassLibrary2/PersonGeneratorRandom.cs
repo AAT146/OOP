@@ -14,7 +14,7 @@ namespace LibraryPerson
 		/// <summary>
 		/// Генератор случайных параметров.
 		/// </summary>
-		private static Random rnd = new Random();
+		public static Random rnd = new Random();
 
 		/// <summary>
 		/// Метод: установка данных полей базового класса PersonBase.
@@ -96,6 +96,8 @@ namespace LibraryPerson
 		/// <param name="person">Объект класса PersonBase.</param>
 		public static void SetGenderRandom(PersonBase person)
 		{
+			Random rnd = new Random();
+
 			person.Gender = (Gender)rnd.Next(2);
 		}
 
@@ -166,8 +168,8 @@ namespace LibraryPerson
 		/// </summary>
 		/// <param name="adult">Объект класса Adult.</param>
 		public static void SetPartners(Adult adult)
-		{;
-			Adult partner = new Adult();
+		{
+			Random rnd = new Random();
 
 			FamilyStatus status = (FamilyStatus)rnd.Next(3);
 			if (status == FamilyStatus.Married)
@@ -175,15 +177,13 @@ namespace LibraryPerson
 				switch (adult.Gender)
 				{
 					case Gender.Male:
-						partner = GetRandomAdult(Gender.Female);
+						adult.Partner = GetRandomAdult(Gender.Female);
 						break;
 					case Gender.Female:
-						partner = GetRandomAdult(Gender.Male);
+						adult.Partner = GetRandomAdult(Gender.Male);
 						break;
 				}
 			}
-
-			adult.Partner = partner;
 		}
 
 		/// <summary>

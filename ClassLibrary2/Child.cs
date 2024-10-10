@@ -127,10 +127,14 @@ namespace LibraryPerson
 				$"Место обучения: {PlaceOfStudy}\n\n";
 		}
 
-		//TODO: XML
+		//TODO: +XML
+		/// <summary>
+		/// Свойство класса Child.
+		/// </summary>
+		/// <returns>Прокрастинация.</returns>
 		public string MethodExampleChild()
 		{
-			return "Напиши список дел, в которых я еще не валялся...\n";
+			return "Напишите список дел, в которых Конь еще не валялся...\n";
 		}
 	}
 }

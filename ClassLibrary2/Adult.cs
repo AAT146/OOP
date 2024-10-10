@@ -148,7 +148,7 @@ namespace LibraryPerson
 			get { return _partner; }
 			set
 			{
-				if (FamilyStatus == FamilyStatus.Married &&
+				if (this.FamilyStatus == FamilyStatus.Married &&
 					value.FamilyStatus == FamilyStatus.Married)
 				{
 					if (value.Gender == Gender)
@@ -197,11 +197,15 @@ namespace LibraryPerson
 			}
 			return base.GetInfo() + 
 				$"Cерия паспорта: {PassportSeries}, № паспорта: {PassportNumber},\n" +
-				$"Партнер: {partner}, Место работы: {Job}\n\n";
+				$"Статус: {FamilyStatus}, Партнер: {partner}, Место работы: {Job}\n\n";
 
 		}
 
-		//TODO: XML
+		//TODO: +XML
+		/// <summary>
+		/// Свойство класса Adult.
+		/// </summary>
+		/// <returns>Девиз по жизни.</returns>
 		public string MethodExampleAdult()
 		{
 			return "От работы дохнут кони. Ну, а я - бессметрный пони!\n";
