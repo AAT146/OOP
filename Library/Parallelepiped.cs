@@ -125,8 +125,8 @@ namespace Library
 		/// </summary>
 		public override double Volume()
 		{
-			return Length* Width *Height * Math.Sin(AngleLengthWidth * 
-				(Math.PI / 180)) * Math.Sin(AngleLengthHeight * (Math.PI / 180));
+			return (Length* Width *Height * Math.Sin(AngleLengthWidth * 
+				(Math.PI / 180)) * Math.Sin(AngleLengthHeight * (Math.PI / 180)));
 		}   
 	}
 }

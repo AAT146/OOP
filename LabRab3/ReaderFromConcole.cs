@@ -176,17 +176,14 @@ namespace LabRab3
 					catch (FormatException ex)
 					{
 						HandleFormatException(ex); 
-						break; 
 					}
 					catch (ArgumentException ex)
 					{
 						HandleArgumentException(ex); 
-						break; 
 					}
 					catch (Exception ex)
 					{
 						HandleGenericException(ex); 
-						break; 
 					}
 				}
 			}
