@@ -22,7 +22,7 @@ namespace LibraryPerson
 		/// <summary>
 		/// Количество цифр номера паспорта.
 		/// </summary>
-		public const int DigitsPassportNumber = 4;
+		public const int DigitsPassportNumber = 6;
 
 		/// <summary>
 		/// Минимальное значение номера паспорта.
@@ -42,7 +42,7 @@ namespace LibraryPerson
 		/// <summary>
 		/// Количество цифр серии паспорта.
 		/// </summary>
-		public const int DigitsPassportSeries = 6;
+		public const int DigitsPassportSeries = 4;
 
 		/// <summary>
 		/// Минимальное значение серии паспорта.
@@ -81,15 +81,17 @@ namespace LibraryPerson
 		/// <param name="gender">Пол гражданина.</param>
 		/// <param name="passportNumber">Номер паспорта гражданина.</param>
 		/// <param name="passportSeries">Серия паспорта гражданина.</param>
-		/// <param name="parther">Супруг/супруга гражданина.</param>
+		/// <param name="familyStatus">Семейный статус.</param>
+		/// <param name="partner">Супруг/супруга гражданина.</param>
 		/// <param name="nameJob">Наименование работы гражданина.</param>
 		public Adult(string surname, string name, int age, Gender gender, 
 			int passportNumber, int passportSeries, FamilyStatus familyStatus, 
-			Adult parther, string nameJob) : base(surname, name, age, gender)
+			Adult partner, string nameJob) : base(surname, name, age, gender)
 		{
 			_passportNumber = passportNumber;
 			_passportSeries = passportSeries;
-			_partner = parther;
+			FamilyStatus = familyStatus;
+			_partner = partner;
 			_nameJob = nameJob;
 		}
 
@@ -97,7 +99,7 @@ namespace LibraryPerson
 		/// Конструктор по умолчанию.
 		/// </summary>
 		public Adult() : this("Фамилия", "Имя", 18, Gender.Female,
-			1000, 100000, FamilyStatus.SingleMale, null, "Работа")
+			1000, 100000, FamilyStatus.Married, null, "Работа")
 		{ }
 
 		/// <summary>
@@ -148,24 +150,15 @@ namespace LibraryPerson
 			get { return _partner; }
 			set
 			{
-				if (this.FamilyStatus == FamilyStatus.Married &&
-					value.FamilyStatus == FamilyStatus.Married)
-				{
-					if (value.Gender == Gender)
-					{
-						throw new ArgumentException("Ошибка!"
-						+ "Партнеры должны быть разного пола!");
-					}
-					_partner = value;
-					if (value != null) 
-					{
-						value._partner = this;
-					}
-				}
-				else
+				if (value.Gender == Gender)
 				{
 					throw new ArgumentException("Ошибка!"
-						+ "Проверьте семейное положение партнеров!");
+					+ "Партнеры должны быть разного пола!");
+				}
+				_partner = value;
+				if (value != null)
+				{
+					value._partner = this;
 				}
 			}
 		}
@@ -178,11 +171,13 @@ namespace LibraryPerson
 			get { return _nameJob; }
 			set
 			{
-				_nameJob = value;
-
 				if (string.IsNullOrEmpty(value))
 				{
 					_nameJob = "Безработный";
+				}
+				else 
+				{
+					_nameJob = value;
 				}
 			}
 		}
@@ -190,8 +185,8 @@ namespace LibraryPerson
 		/// <inheritdoc/>
 		public override string GetInfo()
 		{
-			string partner = "";
-			if (FamilyStatus == FamilyStatus.Married)
+			string partner = string.Empty;
+			if (FamilyStatus == FamilyStatus.Married && Partner != null)
 			{
 				partner = Partner.Surname + " " + Partner.Name;
 			}
