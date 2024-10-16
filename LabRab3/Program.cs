@@ -36,7 +36,7 @@ namespace LabRab3
 					default:
 						{
 							Console.WriteLine("Ошибка! Введите цифру 1 или 2\n");
-							break;
+							continue;
 						}
 				}
 

@@ -23,7 +23,7 @@ namespace LabRab3
 			{
 				() =>
 				{
-					Console.Write("Введите радиус шара: ");
+					Console.Write("\tВведите радиус шара: ");
 					ball.Radius = Convert.ToDouble(Console.ReadLine());
 				},
 			};
@@ -43,13 +43,13 @@ namespace LabRab3
 			{
 				() =>
 				{
-					Console.Write("Введите площадь основания пирамиды: ");
+					Console.Write("\tВведите площадь основания пирамиды: ");
 					pyramid.AreaOfBase = Convert.ToDouble(Console.ReadLine());
 				},
 
 				() =>
 				{
-					Console.Write("Введите высоту пирамиды: ");
+					Console.Write("\tВведите высоту пирамиды: ");
 					pyramid.Height = Convert.ToDouble(Console.ReadLine());
 				},
 			};
@@ -69,31 +69,31 @@ namespace LabRab3
 			{
 				() =>
 				{
-					Console.Write("Введите длину параллелепипеда: ");
+					Console.Write("\tВведите длину параллелепипеда: ");
 					parallelepiped.Length = Convert.ToDouble(Console.ReadLine());
 				},
 
 				() =>
 				{
-					Console.Write("Введите ширину параллелепипеда: ");
+					Console.Write("\tВведите ширину параллелепипеда: ");
 					parallelepiped.Width = Convert.ToDouble(Console.ReadLine());
 				},
 
 				() =>
 				{
-					Console.Write("Введите высоту параллелепипеда: ");
+					Console.Write("\tВведите высоту параллелепипеда: ");
 					parallelepiped.Height = Convert.ToDouble(Console.ReadLine());
 				},
 
 				() =>
 				{
-					Console.Write("Введите угол между длиной и шириной параллелепипеда: ");
+					Console.Write("\tВведите угол между длиной и шириной параллелепипеда: ");
 					parallelepiped.AngleLengthWidth = Convert.ToDouble(Console.ReadLine());
 				},
 
 				() =>
 				{
-					Console.Write("Введите угол между длиной и высотой параллелепипеда: ");
+					Console.Write("\tВведите угол между длиной и высотой параллелепипеда: ");
 					parallelepiped.AngleLengthHeight = Convert.ToDouble(Console.ReadLine());
 				},
 			};
@@ -116,10 +116,10 @@ namespace LabRab3
 				() =>
 				{
 					Console.WriteLine(
-						"Выберите позицию:\n" +
-						"1 - Расчет объема шара\n" +
-						"2 - Расчет объема пирамиды\n" +
-						"3 - Расчет объема параллелепипеда\n");
+						"\n\tВыберите позицию:\n" +
+						"\t1 - Расчет объема шара\n" +
+						"\t2 - Расчет объема пирамиды\n" +
+						"\t3 - Расчет объема параллелепипеда\n");
 				},
 
 				() =>
@@ -129,21 +129,21 @@ namespace LabRab3
 					{
 						case '1':
 						{
-							Console.WriteLine("\t\nРасчет объема шара: ");
+							Console.WriteLine("\tРасчет объема шара: ");
 							volume = GetVolumeBall();
 							break;
 						}
 
 						case '2':
 						{
-							Console.WriteLine("\t\nРасчет объема пирамиды: ");
+							Console.WriteLine("\tРасчет объема пирамиды: ");
 							volume = GetVolumePyramid();
 							break;
 						}
 
 						case '3':
 						{
-							Console.WriteLine("\t\nРасчет объема параллелепипеда: ");
+							Console.WriteLine("\tРасчет объема параллелепипеда: ");
 							volume = GetVolumeParallelepiped();
 							break;
 						}
@@ -151,7 +151,7 @@ namespace LabRab3
 						default:
 						{
 							throw new ArgumentException(
-								"\nВыберите для какой фигуры нужно расчитать объем.");
+								"\n\tВыберите для какой фигуры нужно расчитать объем.");
 						}
 					}
 				},
@@ -164,32 +164,29 @@ namespace LabRab3
 
 		private static void ActionHandler(List<Action> actions)
 		{
-			// Перебираем все действия
 			foreach (var action in actions)
 			{
-				// Бесконечно пытаемся выполнить действие, пока не удастся
 				while (true)
 				{
 					try
 					{
-						// Выполняем действие
 						action.Invoke();
-						break; // Если успешно, выходим из цикла
+						break; 
 					}
 					catch (FormatException ex)
 					{
-						HandleFormatException(ex); // Обработка исключения формата
-						break; // После обработки ошибки выходим из цикла
+						HandleFormatException(ex); 
+						break; 
 					}
 					catch (ArgumentException ex)
 					{
-						HandleArgumentException(ex); // Обработка исключения аргумента
-						break; // После обработки ошибки выходим из цикла
+						HandleArgumentException(ex); 
+						break; 
 					}
 					catch (Exception ex)
 					{
-						HandleGenericException(ex); // Обработка других исключений
-						break; // После обработки ошибки выходим из цикла
+						HandleGenericException(ex); 
+						break; 
 					}
 				}
 			}
@@ -197,17 +194,17 @@ namespace LabRab3
 
 		private static void HandleFormatException(FormatException ex)
 		{
-			Console.WriteLine("Некорректный формат ввода: " + ex.Message);
+			Console.WriteLine("\tНекорректный формат ввода. " + ex.Message);
 		}
 
 		private static void HandleArgumentException(ArgumentException ex)
 		{
-			Console.WriteLine("Неверный аргумент: " + ex.Message);
+			Console.WriteLine("\tНеверный аргумент. " + ex.Message);
 		}
 
 		private static void HandleGenericException(Exception ex)
 		{
-			Console.WriteLine("Произошла ошибка: " + ex.Message);
+			Console.WriteLine("\tПроизошла ошибка. " + ex.Message);
 		}
 	}
 }
