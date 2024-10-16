@@ -20,16 +20,16 @@ namespace LabRab3
 			while (true) 
 			{
 				Console.WriteLine("Панель управления программой:\n" +
-					"Для начала работы нажмите 1\nДля выходя из программы нажмите 2";
+					"Для начала работы нажмите 1\nДля выходя из программы нажмите 2");
 				ConsoleKeyInfo number = Console.ReadKey(true);
 
-				switch (number.Key)
+				switch (number.KeyChar)
 				{
-					case (ConsoleKey)1:
+					case '1':
 						{
 							break;
 						}
-					case (ConsoleKey)2:
+					case '2':
 						{ 
 							return; 
 						}
@@ -40,7 +40,9 @@ namespace LabRab3
 						}
 				}
 
-
+				FigureBase volume = ReaderFromConcole.GetVolumeFigure();
+				Console.WriteLine($"Объем выбранной фигуры: " +
+					$"{Math.Round(volume.Volume(), 2)}\n");
 			}
 		}
 	}

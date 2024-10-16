@@ -58,6 +58,9 @@ namespace Library
 		/// <summary>
 		/// Расчет объма пирамиды.
 		/// </summary>
-		public override double Volume => (1 / 3) * AreaOfBase * Height;
+		public override double Volume()
+		{
+			return (1 / 3) * AreaOfBase * Height;
+		}
 	}
 }

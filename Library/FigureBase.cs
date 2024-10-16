@@ -14,7 +14,7 @@ namespace Library
 		/// <summary>
 		/// Метод расчета объема фигуры.
 		/// </summary>
-		public abstract double Volume { get; }
+		public abstract double Volume();
 
 		/// <summary>
 		/// Метод проверки заданного числа.

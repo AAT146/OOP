@@ -125,25 +125,25 @@ namespace LabRab3
 				() =>
 				{
 					ConsoleKeyInfo number = Console.ReadKey();
-					switch (number.Key)
+					switch (number.KeyChar)
 					{
-						case (ConsoleKey)1:
+						case '1':
 						{
-							Console.WriteLine("Расчет объема шара: ");
+							Console.WriteLine("\t\nРасчет объема шара: ");
 							volume = GetVolumeBall();
 							break;
 						}
 
-						case (ConsoleKey)2:
+						case '2':
 						{
-							Console.WriteLine("Расчет объема пирамиды: ");
+							Console.WriteLine("\t\nРасчет объема пирамиды: ");
 							volume = GetVolumePyramid();
 							break;
 						}
 
-						case (ConsoleKey)3:
+						case '3':
 						{
-							Console.WriteLine("Расчет объема параллелепипеда: ");
+							Console.WriteLine("\t\nРасчет объема параллелепипеда: ");
 							volume = GetVolumeParallelepiped();
 							break;
 						}
@@ -160,6 +160,54 @@ namespace LabRab3
 			ActionHandler(actions);
 
 			return volume;
+		}
+
+		private static void ActionHandler(List<Action> actions)
+		{
+			// Перебираем все действия
+			foreach (var action in actions)
+			{
+				// Бесконечно пытаемся выполнить действие, пока не удастся
+				while (true)
+				{
+					try
+					{
+						// Выполняем действие
+						action.Invoke();
+						break; // Если успешно, выходим из цикла
+					}
+					catch (FormatException ex)
+					{
+						HandleFormatException(ex); // Обработка исключения формата
+						break; // После обработки ошибки выходим из цикла
+					}
+					catch (ArgumentException ex)
+					{
+						HandleArgumentException(ex); // Обработка исключения аргумента
+						break; // После обработки ошибки выходим из цикла
+					}
+					catch (Exception ex)
+					{
+						HandleGenericException(ex); // Обработка других исключений
+						break; // После обработки ошибки выходим из цикла
+					}
+				}
+			}
+		}
+
+		private static void HandleFormatException(FormatException ex)
+		{
+			Console.WriteLine("Некорректный формат ввода: " + ex.Message);
+		}
+
+		private static void HandleArgumentException(ArgumentException ex)
+		{
+			Console.WriteLine("Неверный аргумент: " + ex.Message);
+		}
+
+		private static void HandleGenericException(Exception ex)
+		{
+			Console.WriteLine("Произошла ошибка: " + ex.Message);
 		}
 	}
 }
