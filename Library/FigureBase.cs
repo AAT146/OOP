@@ -27,7 +27,7 @@ namespace Library
 		{
 			if (number <= 0)
 			{
-				throw new ArgumentException("Ошибка! Число должно быть положительным.");
+				throw new ArgumentException("Число должно быть положительным.");
 			}
 			else
 			{

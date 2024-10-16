@@ -129,21 +129,21 @@ namespace LabRab3
 					{
 						case '1':
 						{
-							Console.WriteLine("\tРасчет объема шара: ");
+							Console.WriteLine("\tРасчет объема шара.");
 							volume = GetVolumeBall();
 							break;
 						}
 
 						case '2':
 						{
-							Console.WriteLine("\tРасчет объема пирамиды: ");
+							Console.WriteLine("\tРасчет объема пирамиды.");
 							volume = GetVolumePyramid();
 							break;
 						}
 
 						case '3':
 						{
-							Console.WriteLine("\tРасчет объема параллелепипеда: ");
+							Console.WriteLine("\tРасчет объема параллелепипеда.");
 							volume = GetVolumeParallelepiped();
 							break;
 						}

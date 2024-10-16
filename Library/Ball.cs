@@ -16,6 +16,8 @@ namespace Library
         /// </summary>
         private double _radius;
 
+        private const double Const = 4/3;
+
         /// <summary>
         /// Конструктор по умолчанию.
         /// </summary>
@@ -37,7 +39,11 @@ namespace Library
         public double Radius 
         {
             get { return _radius; }
-            set { _radius = value; }
+            set 
+            {
+                CheckNumber(value);
+				_radius = value; 
+            }
         }
 
 		/// <summary>
@@ -45,7 +51,7 @@ namespace Library
         /// </summary>
         public override double Volume()
         {
-			return (4 / 3) * Math.PI * Math.Pow(Radius, 3);
+			return Const * Math.PI * Math.Pow(Radius, 3);
 		}
 	}
 }

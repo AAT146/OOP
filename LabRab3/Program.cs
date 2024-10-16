@@ -41,7 +41,7 @@ namespace LabRab3
 				}
 
 				FigureBase volume = ReaderFromConcole.GetVolumeFigure();
-				Console.WriteLine($"Объем выбранной фигуры: " +
+				Console.WriteLine($"\tОбъем выбранной фигуры: " +
 					$"{Math.Round(volume.Volume(), 2)}\n");
 			}
 		}

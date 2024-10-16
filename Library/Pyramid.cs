@@ -28,9 +28,10 @@ namespace Library
 		{ }
 
 		/// <summary>
-		/// Конструктор класса Шар.
+		/// Конструктор класса Пирамида.
 		/// </summary>
-		/// <param name="radius">Радиус шара.</param>
+		/// <param name="areaOfBase"></param>
+		/// <param name="height"></param>
 		public Pyramid(double areaOfBase, double height)
 		{
 			_areaOfBase = areaOfBase;
@@ -43,7 +44,11 @@ namespace Library
 		public double AreaOfBase
 		{
 			get { return _areaOfBase; }
-			set { _areaOfBase = value; }
+			set 
+			{
+				CheckNumber(value);
+				_areaOfBase = value; 
+			}
 		}
 
 		/// <summary>
@@ -52,7 +57,11 @@ namespace Library
 		public double Height
 		{
 			get { return _height; }
-			set { _height = value; }
+			set 
+			{
+				CheckNumber(value);
+				_height = value; 
+			}
 		}
 
 		/// <summary>

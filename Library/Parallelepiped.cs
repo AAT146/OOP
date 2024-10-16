@@ -61,7 +61,11 @@ namespace Library
 		public double Length
 		{
 			get { return _length; }
-			set { _length = value; }
+			set 
+			{
+				CheckNumber(value);
+				_length = value; 
+			}
 		}
 
 		/// <summary>
@@ -70,7 +74,11 @@ namespace Library
 		public double Width
 		{
 			get { return _width; }
-			set { _width = value; }
+			set 
+			{
+				CheckNumber(value);
+				_width = value; 
+			}
 		}
 
 		/// <summary>
@@ -79,7 +87,11 @@ namespace Library
 		public double Height
 		{
 			get { return _height; }
-			set { _height = value; }
+			set 
+			{
+				CheckNumber(value);
+				_height = value; 
+			}
 		}
 
 		/// <summary>
@@ -88,7 +100,11 @@ namespace Library
 		public double AngleLengthWidth
 		{
 			get { return _angleLengthWidth; }
-			set { _angleLengthWidth = value; }
+			set 
+			{
+				CheckNumber(value);
+				_angleLengthWidth = value; 
+			}
 		}
 
 		/// <summary>
@@ -97,7 +113,11 @@ namespace Library
 		public double AngleLengthHeight
 		{
 			get { return _angleLengthHeight; }
-			set { _angleLengthHeight = value; }
+			set 
+			{
+				CheckNumber(value);
+				_angleLengthHeight = value; 
+			}
 		}
 
 		/// <summary>
