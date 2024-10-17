@@ -196,21 +196,29 @@ namespace LabRab3
 
 		//TODO +: XML
 		/// <summary>
-		/// 
+		/// Медот: исключение при неверном формате данных.
 		/// </summary>
-		/// <param name="ex"></param>
+		/// <param name="ex">Сообщение при исключении.</param>
 		private static void HandleFormatException(FormatException ex)
 		{
 			Console.WriteLine("\tНекорректный формат ввода. " + ex.Message);
 		}
 
-		//TODO: XML
+		//TODO +: XML
+		/// <summary>
+		/// Метод: исключение при неверном формате аргумента.
+		/// </summary>
+		/// <param name="ex">Сообщение при исключении.</param>
 		private static void HandleArgumentException(ArgumentException ex)
 		{
 			Console.WriteLine("\tНеверный аргумент. " + ex.Message);
 		}
 
-		//TODO: XML
+		//TODO +: XML
+		/// <summary>
+		/// Метод: исключение при других фозможных ошибках.
+		/// </summary>
+		/// <param name="ex">Сообщение при исключении.</param>
 		private static void HandleGenericException(Exception ex)
 		{
 			Console.WriteLine("\tПроизошла ошибка. " + ex.Message);
