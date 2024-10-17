@@ -162,6 +162,7 @@ namespace LabRab3
 			return volume;
 		}
 
+		//TODO: XML
 		private static void ActionHandler(List<Action> actions)
 		{
 			foreach (var action in actions)
@@ -189,16 +190,19 @@ namespace LabRab3
 			}
 		}
 
+		//TODO: XML
 		private static void HandleFormatException(FormatException ex)
 		{
 			Console.WriteLine("\tНекорректный формат ввода. " + ex.Message);
 		}
 
+		//TODO: XML
 		private static void HandleArgumentException(ArgumentException ex)
 		{
 			Console.WriteLine("\tНеверный аргумент. " + ex.Message);
 		}
 
+		//TODO: XML
 		private static void HandleGenericException(Exception ex)
 		{
 			Console.WriteLine("\tПроизошла ошибка. " + ex.Message);

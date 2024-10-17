@@ -25,6 +25,7 @@ namespace LabRab3
 
 				switch (number.KeyChar)
 				{
+					//TODO: RSDN
 					case '1':
 						{
 							break;
