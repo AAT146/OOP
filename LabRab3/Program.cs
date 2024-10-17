@@ -25,20 +25,20 @@ namespace LabRab3
 
 				switch (number.KeyChar)
 				{
-					//TODO: RSDN
+					//TODO +: RSDN
 					case '1':
-						{
-							break;
-						}
+					{
+						break;
+					}
 					case '2':
-						{ 
-							return; 
-						}
+					{ 
+						return; 
+					}
 					default:
-						{
-							Console.WriteLine("Ошибка! Введите цифру 1 или 2\n");
-							continue;
-						}
+					{
+						Console.WriteLine("Ошибка! Введите цифру 1 или 2\n");
+						continue;
+					}
 				}
 
 				FigureBase volume = ReaderFromConcole.GetVolumeFigure();

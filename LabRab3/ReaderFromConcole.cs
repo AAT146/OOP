@@ -162,7 +162,11 @@ namespace LabRab3
 			return volume;
 		}
 
-		//TODO: XML
+		//TODO +: XML
+		/// <summary>
+		/// Метод: обработчик действий.
+		/// </summary>
+		/// <param name="actions">Исключения.</param>
 		private static void ActionHandler(List<Action> actions)
 		{
 			foreach (var action in actions)
@@ -190,7 +194,11 @@ namespace LabRab3
 			}
 		}
 
-		//TODO: XML
+		//TODO +: XML
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="ex"></param>
 		private static void HandleFormatException(FormatException ex)
 		{
 			Console.WriteLine("\tНекорректный формат ввода. " + ex.Message);
