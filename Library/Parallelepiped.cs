@@ -102,7 +102,7 @@ namespace Library
 			get { return _angleLengthWidth; }
 			set 
 			{
-				CheckNumber(value);
+				CheckNumberAngle(value);
 				_angleLengthWidth = value; 
 			}
 		}
@@ -115,7 +115,7 @@ namespace Library
 			get { return _angleLengthHeight; }
 			set 
 			{
-				CheckNumber(value);
+				CheckNumberAngle(value);
 				_angleLengthHeight = value; 
 			}
 		}
