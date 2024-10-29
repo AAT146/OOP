@@ -49,7 +49,7 @@ namespace LibraryPerson
 		}
 
 		/// <summary>
-		/// Класс по умолчанию.
+		/// Конструктор по умолчанию.
 		/// </summary>
 		public Child() : this("Фамилия", "Имя", 17, Gender.Female,
 			null, null, "Место обучения")
@@ -75,7 +75,7 @@ namespace LibraryPerson
 		}
 
 		/// <summary>
-		/// Свойсвто для отца.
+		/// Свойство для отца.
 		/// </summary>
 		public Adult Father
 		{
@@ -101,10 +101,13 @@ namespace LibraryPerson
 			get { return _placeOfStudy; }
 			set
 			{
-				_placeOfStudy = value;
-				if (value == null || value == " ")
+				if (string.IsNullOrWhiteSpace(value))
 				{
 					_placeOfStudy = "Без места обучения.";
+				}
+				else
+				{
+					_placeOfStudy = value;
 				}
 			}
 		}
@@ -123,7 +126,7 @@ namespace LibraryPerson
 				father = Father.Surname + " " + Father.Name;
 			}
 
-			return base.GetInfo() + $"Отец: {father}, Мать: {mother} " + 
+			return base.GetInfo() + $"Отец: {father}, Мать: {mother}, " + 
 				$"Место обучения: {PlaceOfStudy}\n\n";
 		}
 

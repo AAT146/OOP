@@ -52,21 +52,90 @@ namespace LibraryPerson
 					"Всеволод", "Владимир"
 				};
 
+			switch (person.Gender)
+			{
+				case Gender.Male:
+					{
+						person.Name = nameMaleRandomList
+							[rnd.Next(0, nameMaleRandomList.Length)];
+						person.Surname = surnameMaleRandomList
+							[rnd.Next(0, surnameMaleRandomList.Length)];
+						break;
+					}
+				case Gender.Female:
+					{
+						person.Name = nameFemaleRandomList
+							[rnd.Next(nameFemaleRandomList.Length)];
+						person.Surname = surnameFemaleRandomList
+							[rnd.Next(surnameFemaleRandomList.Length)];
+						break;
+					}
+			}
+		}
+
+		/// <summary>
+		/// Метод: установка данных полей базового класса PersonBase.
+		/// </summary>
+		/// <param name="person">Объект класса PersonBase.</param>
+		public static void SetPersonRandom(PersonBase person, Gender gender)
+		{
+			person.Age = rnd.Next(person.MinAge, person.MaxAge);
+
+			string[] surnameFemaleRandomList =
+				{
+					"Клоус", "Петрова", "Зимина", "Морозова",
+					"Цох", "Шмидт", "Кельм", "Трубина",
+					"Воровай", "Зубарева"
+				};
+
+			string[] nameFemaleRandomList =
+				{
+					"Анастасия", "Виктория", "Екатерина",
+					"Елизавета", "Нина", "Евгения", "Виталина",
+					"Вера", "Надежна", "Любовь"
+				};
+
+			string[] surnameMaleRandomList =
+				{
+					"Израэльсон", "Кельм", "Сидоров",
+					"Зной", "Пелевин", "Данчук", "Попов",
+					"Ветров", "Зализный", "Пряников"
+				};
+
+			string[] nameMaleRandomList =
+				{
+					"Анатолий", "Максим", "Олег", "Евгений",
+					"Виктор", "Егор", "Роберт", "Игорь",
+					"Всеволод", "Владимир"
+				};
 
 			switch (person.Gender)
 			{
 				case Gender.Male:
+				{
 					person.Name = nameMaleRandomList
-						[rnd.Next(nameMaleRandomList.Length)];
+						[rnd.Next(0, nameMaleRandomList.Length)];
 					person.Surname = surnameMaleRandomList
-						[rnd.Next(surnameMaleRandomList.Length)];
+						[rnd.Next(0, surnameMaleRandomList.Length)];
 					break;
+				}
 				case Gender.Female:
+				{
 					person.Name = nameFemaleRandomList
-						[rnd.Next(nameMaleRandomList.Length)];
+						[rnd.Next(nameFemaleRandomList.Length)];
 					person.Surname = surnameFemaleRandomList
-						[rnd.Next(surnameMaleRandomList.Length)];
+						[rnd.Next(surnameFemaleRandomList.Length)];
 					break;
+				}
+			}
+
+			if (gender == Gender.Male)
+			{
+				person.Gender = Gender.Male;
+			}
+			else if (gender == Gender.Female)
+			{
+				person.Gender = Gender.Female;
 			}
 		}
 
@@ -84,10 +153,28 @@ namespace LibraryPerson
 				};
 
 			adult.Job = nameJob[rnd.Next(0, nameJob.Length)];
+
 			adult.PassportSeries = rnd.Next
 				(Adult.MinPassportSeries, Adult.MaxPassportSeries);
 			adult.PassportNumber = rnd.Next
 				(Adult.MinPassportNumber, Adult.MaxPassportNumber);
+
+			if (rnd.Next(2) == 0)
+			{
+				switch (adult.Gender)
+				{
+					case Gender.Male:
+						{
+							adult.Partner = GetRandomAdult(Gender.Female);
+							break;
+						}
+					case Gender.Female:
+						{
+							adult.Partner = GetRandomAdult(Gender.Male);
+							break;
+						}
+				}
+			}
 		}
 
 		/// <summary>
@@ -96,23 +183,18 @@ namespace LibraryPerson
 		/// <param name="person">Объект класса PersonBase.</param>
 		public static void SetGenderRandom(PersonBase person)
 		{
-			Random rnd = new Random();
-
 			person.Gender = (Gender)rnd.Next(2);
 		}
 
 		/// <summary>
-		/// Метод: получение объекта класса Adult.
+		/// Перегруженный метод: получение объекта класса Adult.
 		/// </summary>
-		/// <param name="gender">Пол.</param>
 		/// <returns>Объекта класса Adult</returns>
 		public static Adult GetRandomAdult()
 		{
 			Adult adult = new Adult();
-			SetGenderRandom(adult);
 			SetPersonRandom(adult);
 			SetAdultRandom(adult);
-			SetPartners(adult);
 			return adult;
 		}
 
@@ -124,8 +206,7 @@ namespace LibraryPerson
 		public static Adult GetRandomAdult(Gender gender)
 		{
 			Adult adult = new Adult();
-			adult.Gender = gender;
-			SetPersonRandom(adult);
+			SetPersonRandom(adult, gender);
 			SetAdultRandom(adult);
 			return adult;
 		}
@@ -147,42 +228,22 @@ namespace LibraryPerson
 			child.PlaceOfStudy = namePlaceOsStudy
 				[rnd.Next(0, namePlaceOsStudy.Length)];
 
-			switch (adult.FamilyStatus)
+			Adult father = GetRandomAdult(Gender.Male);
+			child.Father = father;
+
+			Adult mother = GetRandomAdult(Gender.Female);
+			child.Mother = mother;
+
+			mother.Surname = father.Surname;
+			mother.Surname += "а";
+
+			if (child.Gender == Gender.Male)
 			{
-				case FamilyStatus.SingleMale:
-					child.Father = GetRandomAdult(Gender.Male);
-					break;
-				case FamilyStatus.Married:
-					child.Father = GetRandomAdult(Gender.Male);
-					SetPartners(child.Father);
-					child.Mother = child.Father.Partner;
-					break;
-				case FamilyStatus.SingleFemale:
-					child.Mother = GetRandomAdult(Gender.Female);
-					break;
+				child.Surname = father.Surname;
 			}
-		}
-
-		/// <summary>
-		/// Метод: установка партнера.
-		/// </summary>
-		/// <param name="adult">Объект класса Adult.</param>
-		public static void SetPartners(Adult adult)
-		{
-			Random rnd = new Random();
-
-			FamilyStatus status = (FamilyStatus)rnd.Next(3);
-			if (status == FamilyStatus.Married)
+			else if (child.Gender == Gender.Female)
 			{
-				switch (adult.Gender)
-				{
-					case Gender.Male:
-						adult.Partner = GetRandomAdult(Gender.Female);
-						break;
-					case Gender.Female:
-						adult.Partner = GetRandomAdult(Gender.Male);
-						break;
-				}
+				child.Surname = mother.Surname;
 			}
 		}
 

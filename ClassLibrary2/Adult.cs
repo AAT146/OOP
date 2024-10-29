@@ -150,16 +150,16 @@ namespace LibraryPerson
 			get { return _partner; }
 			set
 			{
-				if (value.Gender == Gender)
+				if (value != null && value.Gender == Gender)
 				{
 					throw new ArgumentException("Ошибка!"
 					+ "Партнеры должны быть разного пола!");
 				}
-				_partner = value;
 				if (value != null)
 				{
 					value._partner = this;
 				}
+				_partner = value;
 			}
 		}
 
@@ -186,13 +186,24 @@ namespace LibraryPerson
 		public override string GetInfo()
 		{
 			string partner = string.Empty;
-			if (FamilyStatus == FamilyStatus.Married && Partner != null)
+
+			if (Gender == Gender.Male && Partner == null)
+			{
+				partner = "Не женат";
+			}
+
+			if (Gender == Gender.Female && Partner == null)
+			{
+				partner = "Не замужем";
+			}
+
+			if (Partner != null)
 			{
 				partner = Partner.Surname + " " + Partner.Name;
 			}
 			return base.GetInfo() + 
 				$"Cерия паспорта: {PassportSeries}, № паспорта: {PassportNumber},\n" +
-				$"Статус: {FamilyStatus}, Партнер: {partner}, Место работы: {Job}\n\n";
+				$"Партнер: {partner}, Место работы: {Job}\n\n";
 
 		}
 
