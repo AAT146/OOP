@@ -35,14 +35,14 @@ namespace LibraryPerson
 				{
 					"Анастасия", "Виктория", "Екатерина",
 					"Елизавета", "Нина", "Евгения", "Виталина",
-					"Вера", "Надежна", "Любовь"
+					"Вера", "Надежда", "Любовь"
 				};
 
 			string[] surnameMaleRandomList =
 				{
-					"Израэльсон", "Кельм", "Сидоров",
-					"Зной", "Пелевин", "Данчук", "Попов",
-					"Ветров", "Зализный", "Пряников"
+					"Сидоров", "Иванов", "Косыхов",
+					"Зномов", "Пелевов", "Данчуков", "Попов",
+					"Ветров", "Кедров", "Пряников"
 				};
 
 			string[] nameMaleRandomList =
@@ -92,14 +92,14 @@ namespace LibraryPerson
 				{
 					"Анастасия", "Виктория", "Екатерина",
 					"Елизавета", "Нина", "Евгения", "Виталина",
-					"Вера", "Надежна", "Любовь"
+					"Вера", "Надежда", "Любовь"
 				};
 
 			string[] surnameMaleRandomList =
 				{
-					"Израэльсон", "Кельм", "Сидоров",
-					"Зной", "Пелевин", "Данчук", "Попов",
-					"Ветров", "Зализный", "Пряников"
+					"Сидоров", "Иванов", "Косыхов",
+					"Зномов", "Пелевов", "Данчуков", "Попов",
+					"Ветров", "Кедров", "Пряников"
 				};
 
 			string[] nameMaleRandomList =
@@ -108,6 +108,15 @@ namespace LibraryPerson
 					"Виктор", "Егор", "Роберт", "Игорь",
 					"Всеволод", "Владимир"
 				};
+
+			if (gender == Gender.Male)
+			{
+				person.Gender = Gender.Male;
+			}
+			else if (gender == Gender.Female)
+			{
+				person.Gender = Gender.Female;
+			}
 
 			switch (person.Gender)
 			{
@@ -127,15 +136,6 @@ namespace LibraryPerson
 						[rnd.Next(surnameFemaleRandomList.Length)];
 					break;
 				}
-			}
-
-			if (gender == Gender.Male)
-			{
-				person.Gender = Gender.Male;
-			}
-			else if (gender == Gender.Female)
-			{
-				person.Gender = Gender.Female;
 			}
 		}
 

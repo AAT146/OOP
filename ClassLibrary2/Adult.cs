@@ -64,11 +64,6 @@ namespace LibraryPerson
 		/// </summary>
 		private string _nameJob;
 
-		/// <summary>
-		/// Свойство для считывания поля _status класса FamilyStatus.
-		/// </summary>
-		public FamilyStatus FamilyStatus { get; set; }
-
 		/// <inheritdoc/>
 		public override int MinAge { get; } = 18;
 
@@ -81,16 +76,14 @@ namespace LibraryPerson
 		/// <param name="gender">Пол гражданина.</param>
 		/// <param name="passportNumber">Номер паспорта гражданина.</param>
 		/// <param name="passportSeries">Серия паспорта гражданина.</param>
-		/// <param name="familyStatus">Семейный статус.</param>
 		/// <param name="partner">Супруг/супруга гражданина.</param>
 		/// <param name="nameJob">Наименование работы гражданина.</param>
 		public Adult(string surname, string name, int age, Gender gender, 
-			int passportNumber, int passportSeries, FamilyStatus familyStatus, 
-			Adult partner, string nameJob) : base(surname, name, age, gender)
+			int passportNumber, int passportSeries, Adult partner, string nameJob) 
+			: base(surname, name, age, gender)
 		{
 			_passportNumber = passportNumber;
 			_passportSeries = passportSeries;
-			FamilyStatus = familyStatus;
 			_partner = partner;
 			_nameJob = nameJob;
 		}
@@ -99,7 +92,7 @@ namespace LibraryPerson
 		/// Конструктор по умолчанию.
 		/// </summary>
 		public Adult() : this("Фамилия", "Имя", 18, Gender.Female,
-			1000, 100000, FamilyStatus.Married, null, "Работа")
+			1000, 100000, null, "Работа")
 		{ }
 
 		/// <summary>

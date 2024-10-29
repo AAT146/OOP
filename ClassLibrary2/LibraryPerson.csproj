@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="Adult.cs" />
     <Compile Include="Child.cs" />
-    <Compile Include="FamilyStatus.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="PersonBase.cs" />
