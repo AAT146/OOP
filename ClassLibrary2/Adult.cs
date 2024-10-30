@@ -20,11 +20,6 @@ namespace LibraryPerson
 		private int _passportNumber;
 
 		/// <summary>
-		/// Количество цифр номера паспорта.
-		/// </summary>
-		public const int DigitsPassportNumber = 6;
-
-		/// <summary>
 		/// Минимальное значение номера паспорта.
 		/// </summary>
 		public const int MinPassportNumber = 100000;
@@ -38,11 +33,6 @@ namespace LibraryPerson
 		/// Серия паспорта.
 		/// </summary>
 		private int _passportSeries;
-
-		/// <summary>
-		/// Количество цифр серии паспорта.
-		/// </summary>
-		public const int DigitsPassportSeries = 4;
 
 		/// <summary>
 		/// Минимальное значение серии паспорта.
@@ -107,11 +97,6 @@ namespace LibraryPerson
 				{
 					_passportNumber = value;
 				}
-				else
-				{
-					throw new ArgumentException("Неправильно задан № паспорта." +
-						$"Введите {DigitsPassportNumber} цифры.");
-				}
 			}
 		}
 
@@ -126,11 +111,6 @@ namespace LibraryPerson
 				if (value >= MinPassportSeries && value <= MaxPassportSeries)
 				{
 					_passportSeries = value;
-				}
-				else
-				{
-					throw new ArgumentException("Неправильно задана серия паспорта!" +
-						$"Введите {DigitsPassportSeries} цифр.");
 				}
 			}
 		}
