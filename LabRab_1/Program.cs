@@ -61,7 +61,7 @@ namespace LabRab_1
                     Console.WriteLine(child.MethodExampleChild());
                     break;
                 default:
-                    Console.WriteLine("Пипец");
+                    Console.WriteLine("Что-то пошло не так...");
                     break;
             }
 
