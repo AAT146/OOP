@@ -180,14 +180,10 @@ namespace LibraryPerson
 		{
 			string partner = string.Empty;
 
-			if (Gender == Gender.Male && Partner == null)
+			if (Gender == Gender.Male && Partner == null || 
+				Gender == Gender.Female && Partner == null)
 			{
-				partner = "Не женат";
-			}
-
-			if (Gender == Gender.Female && Partner == null)
-			{
-				partner = "Не замужем";
+				partner = "Отсутствует";
 			}
 
 			if (Partner != null)

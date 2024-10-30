@@ -193,6 +193,7 @@ namespace LibraryPerson
 		public static Adult GetRandomAdult()
 		{
 			Adult adult = new Adult();
+			SetGenderRandom(adult);
 			SetPersonRandom(adult);
 			SetAdultRandom(adult);
 			return adult;
@@ -215,8 +216,7 @@ namespace LibraryPerson
 		/// Метод: установка данных полей класса Child.
 		/// </summary>
 		/// <param name="child">Объект класса Child.</param>
-		/// <param name="adult">Объект класса Adult.</param>
-		public static void SetChildRandom(Child child, Adult adult)
+		public static void SetChildRandom(Child child)
 		{
 			string[] namePlaceOsStudy =
 				{
@@ -254,10 +254,9 @@ namespace LibraryPerson
 		public static Child GetRandomChild()
 		{
 			Child child = new Child();
-			Adult adult = new Adult();
 			SetGenderRandom(child);
 			SetPersonRandom(child);
-			SetChildRandom(child, adult);
+			SetChildRandom(child);
 			return child;
 		}
 	}
