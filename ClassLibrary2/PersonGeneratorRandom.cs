@@ -207,6 +207,7 @@ namespace LibraryPerson
 		public static Adult GetRandomAdult(Gender gender)
 		{
 			Adult adult = new Adult();
+			SetGenderRandom(adult); 
 			SetPersonRandom(adult, gender);
 			SetAdultRandom(adult);
 			return adult;
