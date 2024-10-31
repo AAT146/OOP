@@ -35,6 +35,7 @@ namespace Library
 			}
 		}
 
+		//TODO: XML
 		protected static double CheckNumberAngle(double number)
 		{
 			if (number <= 0 || number >= 180)

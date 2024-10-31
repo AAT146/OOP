@@ -162,7 +162,6 @@ namespace LabRab3
 			return volume;
 		}
 
-		//TODO +: XML
 		/// <summary>
 		/// Метод: обработчик действий.
 		/// </summary>
@@ -194,7 +193,6 @@ namespace LabRab3
 			}
 		}
 
-		//TODO +: XML
 		/// <summary>
 		/// Медот: исключение при неверном формате данных.
 		/// </summary>
@@ -204,7 +202,6 @@ namespace LabRab3
 			Console.WriteLine("\tНекорректный формат ввода. " + ex.Message);
 		}
 
-		//TODO +: XML
 		/// <summary>
 		/// Метод: исключение при неверном формате аргумента.
 		/// </summary>
@@ -214,7 +211,6 @@ namespace LabRab3
 			Console.WriteLine("\tНеверный аргумент. " + ex.Message);
 		}
 
-		//TODO +: XML
 		/// <summary>
 		/// Метод: исключение при других фозможных ошибках.
 		/// </summary>
