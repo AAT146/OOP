@@ -28,8 +28,6 @@ namespace LabRab_1
             Console.WriteLine("Случайный список взрослых и детей:\n");
             Console.ReadKey();
 
-            //Random rnd = new Random();
-
             for (int i = 0; i < 7; i++)
             {
                 if (_rnd.Next(2) == 0)

@@ -130,7 +130,6 @@ namespace LibraryPerson
 				$"Место обучения: {PlaceOfStudy}\n\n";
 		}
 
-		//TODO: +XML
 		/// <summary>
 		/// Свойство класса Child.
 		/// </summary>

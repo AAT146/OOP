@@ -176,7 +176,6 @@ namespace LibraryPerson
 
 		}
 
-		//TODO: +XML
 		/// <summary>
 		/// Свойство класса Adult.
 		/// </summary>
