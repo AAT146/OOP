@@ -39,7 +39,7 @@ namespace FigureWindowsForms
 			this.buttonRandomList = new System.Windows.Forms.Button();
 			this.buttonFilter = new System.Windows.Forms.Button();
 			this.buttonAdd = new System.Windows.Forms.Button();
-			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.toolStrip = new System.Windows.Forms.ToolStrip();
 			this.groupBoxCalculator.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			this.groupBoxButton.SuspendLayout();
@@ -104,7 +104,7 @@ namespace FigureWindowsForms
 			this.buttonDelete.Name = "buttonDelete";
 			this.buttonDelete.Size = new System.Drawing.Size(221, 31);
 			this.buttonDelete.TabIndex = 3;
-			this.buttonDelete.Text = "Удалить строку";
+			this.buttonDelete.Text = "Удалить фигуру";
 			this.buttonDelete.UseVisualStyleBackColor = true;
 			// 
 			// buttonRandomList
@@ -131,17 +131,17 @@ namespace FigureWindowsForms
 			this.buttonAdd.Name = "buttonAdd";
 			this.buttonAdd.Size = new System.Drawing.Size(221, 31);
 			this.buttonAdd.TabIndex = 0;
-			this.buttonAdd.Text = "Добавить строку";
+			this.buttonAdd.Text = "Добавить фигуру";
 			this.buttonAdd.UseVisualStyleBackColor = true;
 			// 
-			// toolStrip1
+			// toolStrip
 			// 
-			this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(800, 31);
-			this.toolStrip1.TabIndex = 2;
-			this.toolStrip1.Text = "toolStrip1";
+			this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.toolStrip.Location = new System.Drawing.Point(0, 0);
+			this.toolStrip.Name = "toolStrip";
+			this.toolStrip.Size = new System.Drawing.Size(800, 25);
+			this.toolStrip.TabIndex = 2;
+			this.toolStrip.Text = "toolStrip";
 			// 
 			// MainForm
 			// 
@@ -149,10 +149,14 @@ namespace FigureWindowsForms
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.Controls.Add(this.groupBoxCalculator);
-			this.Controls.Add(this.toolStrip1);
+			this.Controls.Add(this.toolStrip);
 			this.Controls.Add(this.groupBoxButton);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Margin = new System.Windows.Forms.Padding(2);
+			this.MaximizeBox = false;
 			this.Name = "MainForm";
-			this.Text = "MainForm";
+			this.Text = "Объем фигур";
+			this.Load += new System.EventHandler(this.LoadMainForm);
 			this.groupBoxCalculator.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			this.groupBoxButton.ResumeLayout(false);
@@ -170,7 +174,7 @@ namespace FigureWindowsForms
 		private Button buttonRandomList;
 		private Button buttonFilter;
 		private DataGridView dataGridView;
-		private ToolStrip toolStrip1;
+		private ToolStrip toolStrip;
 		private GroupBox groupBoxCalculator;
 	}
 }

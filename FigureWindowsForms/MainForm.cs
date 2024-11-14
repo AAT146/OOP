@@ -56,10 +56,45 @@ namespace FigureWindowsForms
 			StartPosition = FormStartPosition.CenterScreen;
 		}
 
-		public MainForm()
+		/// <summary>
+		/// Создание таблицы DataGrid.
+		/// </summary>
+		/// <param name="figure">Список фигур.</param>
+		/// <param name="dataGridView">Сетка.</param>
+		public static void CreateTable(BindingList<FigureBase> figure,
+			  DataGridView dataGridView)
 		{
-			InitializeComponent();
+			dataGridView.RowHeadersVisible = false;
+			var source = new BindingSource(figure, null);
+			dataGridView.DataSource = source;
+
+			dataGridView.DefaultCellStyle.Alignment =
+				DataGridViewContentAlignment.MiddleCenter;
+			dataGridView.AllowUserToResizeColumns = false;
+			dataGridView.ColumnHeadersDefaultCellStyle.Alignment =
+				DataGridViewContentAlignment.MiddleCenter;
+			dataGridView.AutoSizeRowsMode =
+				DataGridViewAutoSizeRowsMode.AllCells;
+			dataGridView.AutoSizeColumnsMode =
+				DataGridViewAutoSizeColumnsMode.Fill;
+			dataGridView.DefaultCellStyle.WrapMode =
+				DataGridViewTriState.True;
+			dataGridView.SelectionMode =
+				DataGridViewSelectionMode.FullRowSelect;
 		}
+
+		/// <summary>
+		/// Загрузка формы.
+		/// </summary>
+		/// <param name="sender">Данные.</param>
+		/// <param name="e">Данные о событие.</param>
+		private void LoadMainForm(object sender, EventArgs e)
+		{
+			_volumeFigureList = new BindingList<FigureBase>();
+			CreateTable(_volumeFigureList, dataGridView);
+		}
+
+		
 
 		private void groupBox1_Enter(object sender, EventArgs e)
 		{

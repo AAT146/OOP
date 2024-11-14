@@ -146,11 +146,8 @@ namespace Library
 		/// <summary>
 		/// Расчет объма параллелепипеда.
 		/// </summary>
-		public override double Volume()
-		{
-			return (Length * Width * Height 
+		public override double Volume => (Length * Width * Height 
 				* Math.Sin(AngleLengthWidth * (Math.PI / 180)) 
 				* Math.Sin(AngleLengthHeight * (Math.PI / 180)));
-		}   
 	}
 }

@@ -69,9 +69,6 @@ namespace Library
 		/// <summary>
 		/// Расчет объма шара.
 		/// </summary>
-		public override double Volume()
-        {
-			return (4 * Math.PI * Math.Pow(Radius, 3)) / 3;
-		}
+		public override double Volume => (4 * Math.PI * Math.Pow(Radius, 3)) / 3;
 	}
 }

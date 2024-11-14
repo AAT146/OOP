@@ -21,20 +21,20 @@ namespace Library
 		/// Тип фигуры.
 		/// </summary>
 		[DisplayName("Тип фигуры")]
-		public abstract string FigureType { get; }
+		public virtual string FigureType { get; }
 
 		/// <summary>
 		/// Параметры фигуры.
 		/// </summary>
 		[DisplayName("Заданные параметры")]
-		public abstract string Parameters { get; }
+		public virtual string Parameters { get; }
 
 		/// <summary>
 		/// Метод расчёта объема фигуры.
 		/// </summary>
 		/// <returns>Объем.</returns>
 		[DisplayName("Объем фигуры, м^3")]
-		public abstract double Volume();
+		public abstract double Volume { get; }
 
 		/// <summary>
 		/// Метод проверки заданного числа.
