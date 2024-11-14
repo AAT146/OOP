@@ -29,31 +29,31 @@
 		private void InitializeComponent()
 		{
 			this.labelRadius = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.textBoxRadius = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// labelRadius
 			// 
 			this.labelRadius.AutoSize = true;
-			this.labelRadius.Location = new System.Drawing.Point(13, 9);
+			this.labelRadius.Location = new System.Drawing.Point(11, 7);
 			this.labelRadius.Name = "labelRadius";
-			this.labelRadius.Size = new System.Drawing.Size(77, 16);
+			this.labelRadius.Size = new System.Drawing.Size(55, 16);
 			this.labelRadius.TabIndex = 0;
-			this.labelRadius.Text = "Радиус, см";
+			this.labelRadius.Text = "Радиус";
 			this.labelRadius.Click += new System.EventHandler(this.label1_Click);
 			// 
-			// textBox1
+			// textBoxRadius
 			// 
-			this.textBox1.Location = new System.Drawing.Point(160, 6);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(100, 22);
-			this.textBox1.TabIndex = 1;
+			this.textBoxRadius.Location = new System.Drawing.Point(160, 4);
+			this.textBoxRadius.Name = "textBoxRadius";
+			this.textBoxRadius.Size = new System.Drawing.Size(100, 22);
+			this.textBoxRadius.TabIndex = 1;
 			// 
 			// BallUserControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.textBoxRadius);
 			this.Controls.Add(this.labelRadius);
 			this.Name = "BallUserControl";
 			this.Size = new System.Drawing.Size(270, 150);
@@ -63,8 +63,7 @@
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Label labelRadius;
-		private System.Windows.Forms.TextBox textBox1;
+		internal System.Windows.Forms.Label labelRadius;
+		internal System.Windows.Forms.TextBox textBoxRadius;
 	}
 }

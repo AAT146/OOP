@@ -28,112 +28,113 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.textBox4 = new System.Windows.Forms.TextBox();
-			this.textBox5 = new System.Windows.Forms.TextBox();
+			this.labelLength = new System.Windows.Forms.Label();
+			this.labelWidth = new System.Windows.Forms.Label();
+			this.labelHeight = new System.Windows.Forms.Label();
+			this.labelAngleLengthWidth = new System.Windows.Forms.Label();
+			this.labelAngleLengthHeight = new System.Windows.Forms.Label();
+			this.textBoxLength = new System.Windows.Forms.TextBox();
+			this.textBoxWidth = new System.Windows.Forms.TextBox();
+			this.textBoxHeight = new System.Windows.Forms.TextBox();
+			this.textBoxAngleLengthWidth = new System.Windows.Forms.TextBox();
+			this.textBoxAngleLengthHeight = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
-			// label1
+			// labelLength
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(15, 14);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(44, 16);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "label1";
+			this.labelLength.AutoSize = true;
+			this.labelLength.Location = new System.Drawing.Point(11, 7);
+			this.labelLength.Name = "labelLength";
+			this.labelLength.Size = new System.Drawing.Size(68, 16);
+			this.labelLength.TabIndex = 0;
+			this.labelLength.Text = "Длина (Д)";
 			// 
-			// label2
+			// labelWidth
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(15, 44);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(44, 16);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "label2";
+			this.labelWidth.AutoSize = true;
+			this.labelWidth.Location = new System.Drawing.Point(11, 37);
+			this.labelWidth.Name = "labelWidth";
+			this.labelWidth.Size = new System.Drawing.Size(80, 16);
+			this.labelWidth.TabIndex = 1;
+			this.labelWidth.Text = "Ширина (Ш)";
 			// 
-			// label3
+			// labelHeight
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(15, 74);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(44, 16);
-			this.label3.TabIndex = 2;
-			this.label3.Text = "label3";
+			this.labelHeight.AutoSize = true;
+			this.labelHeight.Location = new System.Drawing.Point(11, 67);
+			this.labelHeight.Name = "labelHeight";
+			this.labelHeight.Size = new System.Drawing.Size(75, 16);
+			this.labelHeight.TabIndex = 2;
+			this.labelHeight.Text = "Высота (В)";
 			// 
-			// label4
+			// labelAngleLengthWidth
 			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(15, 90);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(44, 16);
-			this.label4.TabIndex = 3;
-			this.label4.Text = "label4";
+			this.labelAngleLengthWidth.AutoSize = true;
+			this.labelAngleLengthWidth.Location = new System.Drawing.Point(11, 97);
+			this.labelAngleLengthWidth.Name = "labelAngleLengthWidth";
+			this.labelAngleLengthWidth.Size = new System.Drawing.Size(113, 16);
+			this.labelAngleLengthWidth.TabIndex = 3;
+			this.labelAngleLengthWidth.Text = "Угол между Д^Ш";
+			this.labelAngleLengthWidth.Click += new System.EventHandler(this.label4_Click);
 			// 
-			// label5
+			// labelAngleLengthHeight
 			// 
-			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(24, 116);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(44, 16);
-			this.label5.TabIndex = 4;
-			this.label5.Text = "label5";
+			this.labelAngleLengthHeight.AutoSize = true;
+			this.labelAngleLengthHeight.Location = new System.Drawing.Point(11, 127);
+			this.labelAngleLengthHeight.Name = "labelAngleLengthHeight";
+			this.labelAngleLengthHeight.Size = new System.Drawing.Size(114, 16);
+			this.labelAngleLengthHeight.TabIndex = 4;
+			this.labelAngleLengthHeight.Text = "Угол между Д^В ";
 			// 
-			// textBox1
+			// textBoxLength
 			// 
-			this.textBox1.Location = new System.Drawing.Point(160, 4);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(100, 22);
-			this.textBox1.TabIndex = 5;
+			this.textBoxLength.Location = new System.Drawing.Point(160, 4);
+			this.textBoxLength.Name = "textBoxLength";
+			this.textBoxLength.Size = new System.Drawing.Size(100, 22);
+			this.textBoxLength.TabIndex = 5;
 			// 
-			// textBox2
+			// textBoxWidth
 			// 
-			this.textBox2.Location = new System.Drawing.Point(160, 34);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(100, 22);
-			this.textBox2.TabIndex = 6;
+			this.textBoxWidth.Location = new System.Drawing.Point(160, 34);
+			this.textBoxWidth.Name = "textBoxWidth";
+			this.textBoxWidth.Size = new System.Drawing.Size(100, 22);
+			this.textBoxWidth.TabIndex = 6;
 			// 
-			// textBox3
+			// textBoxHeight
 			// 
-			this.textBox3.Location = new System.Drawing.Point(160, 64);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(100, 22);
-			this.textBox3.TabIndex = 7;
+			this.textBoxHeight.Location = new System.Drawing.Point(160, 64);
+			this.textBoxHeight.Name = "textBoxHeight";
+			this.textBoxHeight.Size = new System.Drawing.Size(100, 22);
+			this.textBoxHeight.TabIndex = 7;
 			// 
-			// textBox4
+			// textBoxAngleLengthWidth
 			// 
-			this.textBox4.Location = new System.Drawing.Point(160, 94);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(100, 22);
-			this.textBox4.TabIndex = 8;
+			this.textBoxAngleLengthWidth.Location = new System.Drawing.Point(160, 94);
+			this.textBoxAngleLengthWidth.Name = "textBoxAngleLengthWidth";
+			this.textBoxAngleLengthWidth.Size = new System.Drawing.Size(100, 22);
+			this.textBoxAngleLengthWidth.TabIndex = 8;
 			// 
-			// textBox5
+			// textBoxAngleLengthHeight
 			// 
-			this.textBox5.Location = new System.Drawing.Point(160, 124);
-			this.textBox5.Name = "textBox5";
-			this.textBox5.Size = new System.Drawing.Size(100, 22);
-			this.textBox5.TabIndex = 9;
+			this.textBoxAngleLengthHeight.Location = new System.Drawing.Point(160, 124);
+			this.textBoxAngleLengthHeight.Name = "textBoxAngleLengthHeight";
+			this.textBoxAngleLengthHeight.Size = new System.Drawing.Size(100, 22);
+			this.textBoxAngleLengthHeight.TabIndex = 9;
 			// 
 			// ParallelepipedUserControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.textBox5);
-			this.Controls.Add(this.textBox4);
-			this.Controls.Add(this.textBox3);
-			this.Controls.Add(this.textBox2);
-			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.label5);
-			this.Controls.Add(this.label4);
-			this.Controls.Add(this.label3);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.textBoxAngleLengthHeight);
+			this.Controls.Add(this.textBoxAngleLengthWidth);
+			this.Controls.Add(this.textBoxHeight);
+			this.Controls.Add(this.textBoxWidth);
+			this.Controls.Add(this.textBoxLength);
+			this.Controls.Add(this.labelAngleLengthHeight);
+			this.Controls.Add(this.labelAngleLengthWidth);
+			this.Controls.Add(this.labelHeight);
+			this.Controls.Add(this.labelWidth);
+			this.Controls.Add(this.labelLength);
 			this.Name = "ParallelepipedUserControl";
 			this.Size = new System.Drawing.Size(270, 150);
 			this.ResumeLayout(false);
@@ -143,15 +144,15 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.TextBox textBox3;
-		private System.Windows.Forms.TextBox textBox4;
-		private System.Windows.Forms.TextBox textBox5;
+		private System.Windows.Forms.Label labelLength;
+		private System.Windows.Forms.Label labelWidth;
+		private System.Windows.Forms.Label labelHeight;
+		private System.Windows.Forms.Label labelAngleLengthWidth;
+		private System.Windows.Forms.Label labelAngleLengthHeight;
+		private System.Windows.Forms.TextBox textBoxLength;
+		private System.Windows.Forms.TextBox textBoxWidth;
+		private System.Windows.Forms.TextBox textBoxHeight;
+		private System.Windows.Forms.TextBox textBoxAngleLengthWidth;
+		private System.Windows.Forms.TextBox textBoxAngleLengthHeight;
 	}
 }

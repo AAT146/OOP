@@ -18,7 +18,7 @@ namespace FigureWindowsForms
 		public EventHandler FigureAdded;
 
 		/// <summary>
-		/// Конструктор AddSalary.
+		/// Конструктор AddFigure.
 		/// </summary>
 		public AddFigure()
 		{
@@ -27,9 +27,9 @@ namespace FigureWindowsForms
 			StartPosition = FormStartPosition.CenterScreen;
 			AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
-			figureBallUserControl._textBoxHourlyRate.Tag = typeof(double);
-			_salaryMonthlyUserControl._textBoxFixedSalary.Tag = typeof(double);
-			_salaryMonthlyUserControl._textBoxMonthlyWorkingDays.Tag = typeof(int);
+			ballUserControl.textBoxRadius.Tag = typeof(double);
+			parallelepipedUserControl.textBoxAreaOfBase.Tag = typeof(double);
+			parallelepipedUserControl.textBoxPyramidHeight.Tag = typeof(double);
 			_salaryMonthlyUserControl._textBoxActualWorkedDays.Tag = typeof(int);
 			_salaryTariffRateUserControl._textBoxTariffRate.Tag = typeof(double);
 			_salaryTariffRateUserControl._textBoxDays.Tag = typeof(int);
@@ -174,6 +174,16 @@ namespace FigureWindowsForms
 		}
 
 		private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void radioButton1_CheckedChanged(object sender, EventArgs e)
 		{
 
 		}
