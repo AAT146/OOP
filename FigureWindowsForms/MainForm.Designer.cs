@@ -39,6 +39,7 @@ namespace FigureWindowsForms
 			this.buttonResertFilter = new System.Windows.Forms.Button();
 			this.buttonDeleteList = new System.Windows.Forms.Button();
 			this.dataGridView = new System.Windows.Forms.DataGridView();
+			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.groupBoxCalculator.SuspendLayout();
 			this.groupBoxButton.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -135,11 +136,21 @@ namespace FigureWindowsForms
 			this.dataGridView.Size = new System.Drawing.Size(764, 283);
 			this.dataGridView.TabIndex = 0;
 			// 
+			// toolStrip1
+			// 
+			this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+			this.toolStrip1.Name = "toolStrip1";
+			this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+			this.toolStrip1.TabIndex = 2;
+			this.toolStrip1.Text = "toolStrip1";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.groupBoxButton);
 			this.Controls.Add(this.groupBoxCalculator);
 			this.Name = "MainForm";
@@ -148,6 +159,7 @@ namespace FigureWindowsForms
 			this.groupBoxButton.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -165,5 +177,6 @@ namespace FigureWindowsForms
 		private Button buttonRandomList;
 		private Button buttonFilter;
 		private DataGridView dataGridView;
+		private ToolStrip toolStrip1;
 	}
 }

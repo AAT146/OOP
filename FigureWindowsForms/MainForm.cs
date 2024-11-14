@@ -26,5 +26,10 @@ namespace FigureWindowsForms
 		{
 
 		}
+
+		private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

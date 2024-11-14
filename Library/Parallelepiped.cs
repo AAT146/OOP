@@ -82,7 +82,7 @@ namespace Library
 		}
 
 		/// <summary>
-		/// Свойсвто поля высоты параллелепипеда.
+		/// Свойство поля высоты параллелепипеда.
 		/// </summary>
 		public double Height
 		{
@@ -117,6 +117,29 @@ namespace Library
 			{
 				CheckNumberAngle(value);
 				_angleLengthHeight = value; 
+			}
+		}
+
+		/// <summary>
+		/// Тип фигуры.
+		/// </summary>
+		public override string FigureType
+		{
+			get
+			{
+				return $"Параллелепипед";
+			}
+		}
+
+		/// <summary>
+		/// Параметры.
+		/// </summary>
+		public override string Parameters
+		{
+			get
+			{
+				return $"Длина = {Length}; Ширина = {Width}; Высота = {Height}" +
+					$"Угол (Д^Ш) = {AngleLengthWidth}; Угол (Д^В) = {AngleLengthHeight}";
 			}
 		}
 

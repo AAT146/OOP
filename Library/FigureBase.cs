@@ -1,19 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Library
 {
 	/// <summary>
 	/// Абстрактный класс
 	/// </summary>
+	/// [XmlInclude(typeof(Circle))]
+	[XmlInclude(typeof(Ball))]
+	[XmlInclude(typeof(Parallelepiped))]
+	[XmlInclude(typeof(Pyramid))]
 	public abstract class FigureBase
 	{
 		/// <summary>
-		/// Метод расчета объема фигуры.
+		/// Тип фигуры.
 		/// </summary>
+		[DisplayName("Тип фигуры")]
+		public abstract string FigureType { get; }
+
+		/// <summary>
+		/// Параметры фигуры.
+		/// </summary>
+		[DisplayName("Заданные параметры")]
+		public abstract string Parameters { get; }
+
+		/// <summary>
+		/// Метод расчёта объема фигуры.
+		/// </summary>
+		/// <returns>Объем.</returns>
+		[DisplayName("Объем фигуры, м^3")]
 		public abstract double Volume();
 
 		/// <summary>
@@ -35,7 +55,13 @@ namespace Library
 			}
 		}
 
-		//TODO: XML
+		/// <summary>
+		/// Метод проверки заданного числа.
+		/// </summary>
+		/// <param name="number">Значение угла.</param>
+		/// <returns>Проверенное число.</returns>
+		/// <exception cref="ArgumentException">Исключение,
+		/// если заданное число не входит в диапазон.</exception>
 		protected static double CheckNumberAngle(double number)
 		{
 			if (number <= 0 || number >= 180)

@@ -65,6 +65,28 @@ namespace Library
 		}
 
 		/// <summary>
+		/// Тип фигуры.
+		/// </summary>
+		public override string FigureType
+		{
+			get
+			{
+				return $"Пирамида";
+			}
+		}
+
+		/// <summary>
+		/// Параметры.
+		/// </summary>
+		public override string Parameters
+		{
+			get
+			{
+				return $"Площадь основания = {AreaOfBase}; Высота = {Height}";
+			}
+		}
+
+		/// <summary>
 		/// Расчет объма пирамиды.
 		/// </summary>
 		public override double Volume()

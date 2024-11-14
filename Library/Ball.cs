@@ -45,9 +45,31 @@ namespace Library
         }
 
 		/// <summary>
-        /// Расчет объма шара.
-        /// </summary>
-        public override double Volume()
+		/// Тип фигуры.
+		/// </summary>
+		public override string FigureType
+		{
+			get
+			{
+				return $"Шар";
+			}
+		}
+
+		/// <summary>
+		/// Параметры.
+		/// </summary>
+		public override string Parameters
+		{
+			get
+			{
+				return $"Радиус = {Radius}";
+			}
+		}
+
+		/// <summary>
+		/// Расчет объма шара.
+		/// </summary>
+		public override double Volume()
         {
 			return (4 * Math.PI * Math.Pow(Radius, 3)) / 3;
 		}
