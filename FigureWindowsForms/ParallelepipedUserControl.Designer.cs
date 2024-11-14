@@ -149,10 +149,10 @@
 		private System.Windows.Forms.Label labelHeight;
 		private System.Windows.Forms.Label labelAngleLengthWidth;
 		private System.Windows.Forms.Label labelAngleLengthHeight;
-		private System.Windows.Forms.TextBox textBoxLength;
 		private System.Windows.Forms.TextBox textBoxWidth;
 		private System.Windows.Forms.TextBox textBoxHeight;
 		private System.Windows.Forms.TextBox textBoxAngleLengthWidth;
 		private System.Windows.Forms.TextBox textBoxAngleLengthHeight;
+		internal System.Windows.Forms.TextBox textBoxLength;
 	}
 }

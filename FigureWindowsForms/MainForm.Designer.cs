@@ -156,7 +156,6 @@ namespace FigureWindowsForms
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.Text = "Объем фигур";
-			this.Load += new System.EventHandler(this.LoadMainForm);
 			this.groupBoxCalculator.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			this.groupBoxButton.ResumeLayout(false);

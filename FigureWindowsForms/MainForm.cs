@@ -83,19 +83,6 @@ namespace FigureWindowsForms
 				DataGridViewSelectionMode.FullRowSelect;
 		}
 
-		/// <summary>
-		/// Загрузка формы.
-		/// </summary>
-		/// <param name="sender">Данные.</param>
-		/// <param name="e">Данные о событие.</param>
-		private void LoadMainForm(object sender, EventArgs e)
-		{
-			_volumeFigureList = new BindingList<FigureBase>();
-			CreateTable(_volumeFigureList, dataGridView);
-		}
-
-		
-
 		private void groupBox1_Enter(object sender, EventArgs e)
 		{
 
