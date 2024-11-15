@@ -12,6 +12,7 @@ using System.Xml.Serialization;
 
 namespace FigureWindowsForms
 {
+	//TODO: XML
 	public partial class MainForm : Form
 	{
 		/// <summary>

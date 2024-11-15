@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace FigureWindowsForms
 {
+	//TODO: добавить интерфейс для возможности обработки этих контролов по ссылке на интерфейс
 	public partial class BallUserControl : UserControl
 	{
 		public BallUserControl()
