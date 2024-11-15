@@ -117,10 +117,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LabRab3\LabRab4.csproj">
-      <Project>{b39f6859-8f76-4f06-ba1c-732e05d20a5f}</Project>
-      <Name>LabRab4</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Library\Library.csproj">
       <Project>{8e56f1f6-ee28-4f6f-b333-9c794a6fa5cb}</Project>
       <Name>Library</Name>
