@@ -48,11 +48,14 @@ namespace Library
 		/// <param name="length">Длина параллелепипеда.</param>
 		/// <param name="width">Ширина параллелепипеда.</param>
 		/// <param name="height">Высота параллелепипеда.</param>
-		public Parallelepiped(double length, double width, double height)
+		public Parallelepiped(double length, double width, double height,
+			double angleLengthWidth, double angleLengthHeight)
 		{
 			_length = length;
 			_width = width;
 			_height = height;
+			_angleLengthWidth = angleLengthWidth;
+			_angleLengthHeight = angleLengthHeight;
 		}
 
 		/// <summary>

@@ -1,4 +1,6 @@
-﻿namespace FigureWindowsForms
+﻿using System.Windows.Forms;
+
+namespace FigureWindowsForms
 {
 	partial class ParallelepipedUserControl
 	{
@@ -144,15 +146,15 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label labelLength;
-		private System.Windows.Forms.Label labelWidth;
-		private System.Windows.Forms.Label labelHeight;
-		private System.Windows.Forms.Label labelAngleLengthWidth;
-		private System.Windows.Forms.Label labelAngleLengthHeight;
-		private System.Windows.Forms.TextBox textBoxWidth;
-		private System.Windows.Forms.TextBox textBoxHeight;
-		private System.Windows.Forms.TextBox textBoxAngleLengthWidth;
-		private System.Windows.Forms.TextBox textBoxAngleLengthHeight;
-		internal System.Windows.Forms.TextBox textBoxLength;
+		internal Label labelLength;
+		internal Label labelWidth;
+		internal Label labelHeight;
+		internal Label labelAngleLengthWidth;
+		internal Label labelAngleLengthHeight;
+		internal TextBox textBoxWidth;
+		internal TextBox textBoxHeight;
+		internal TextBox textBoxAngleLengthWidth;
+		internal TextBox textBoxAngleLengthHeight;
+		internal TextBox textBoxLength;
 	}
 }

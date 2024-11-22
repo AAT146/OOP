@@ -79,6 +79,7 @@
     <Compile Include="PyramidUserControl.Designer.cs">
       <DependentUpon>PyramidUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="VolumeAddedEvent.cs" />
     <EmbeddedResource Include="AddFigure.resx">
       <DependentUpon>AddFigure.cs</DependentUpon>
     </EmbeddedResource>

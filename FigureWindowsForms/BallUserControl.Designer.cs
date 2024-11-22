@@ -64,6 +64,6 @@
 
 		#endregion
 		internal System.Windows.Forms.Label labelRadius;
-		public System.Windows.Forms.TextBox textBoxRadius;
+		internal System.Windows.Forms.TextBox textBoxRadius;
 	}
 }

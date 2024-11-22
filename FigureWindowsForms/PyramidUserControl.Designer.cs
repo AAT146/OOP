@@ -83,8 +83,8 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label labelAreaOfBase;
-		private System.Windows.Forms.Label labelPyramidHeight;
+		internal System.Windows.Forms.Label labelAreaOfBase;
+		internal System.Windows.Forms.Label labelPyramidHeight;
 		internal System.Windows.Forms.TextBox textBoxAreaOfBase;
 		internal System.Windows.Forms.TextBox textBoxPyramidHeight;
 	}
