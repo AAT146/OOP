@@ -35,8 +35,12 @@ namespace FigureWindowsForms
 			this.radioButtonParallelepiped = new System.Windows.Forms.RadioButton();
 			this.radioButtonBall = new System.Windows.Forms.RadioButton();
 			this.groupBoxParameters = new System.Windows.Forms.GroupBox();
+			this.pyramidUserControl = new FigureWindowsForms.PyramidUserControl();
+			this.parallelepipedUserControl = new FigureWindowsForms.ParallelepipedUserControl();
+			this.ballUserControl = new FigureWindowsForms.BallUserControl();
 			this.buttonVolume = new System.Windows.Forms.Button();
 			this.groupBoxListFigure.SuspendLayout();
+			this.groupBoxParameters.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// groupBoxListFigure
@@ -46,7 +50,7 @@ namespace FigureWindowsForms
 			this.groupBoxListFigure.Controls.Add(this.radioButtonBall);
 			this.groupBoxListFigure.Location = new System.Drawing.Point(14, 12);
 			this.groupBoxListFigure.Name = "groupBoxListFigure";
-			this.groupBoxListFigure.Size = new System.Drawing.Size(187, 154);
+			this.groupBoxListFigure.Size = new System.Drawing.Size(187, 184);
 			this.groupBoxListFigure.TabIndex = 0;
 			this.groupBoxListFigure.TabStop = false;
 			this.groupBoxListFigure.Text = "Список фигур";
@@ -55,7 +59,7 @@ namespace FigureWindowsForms
 			// radioButtonPyramida
 			// 
 			this.radioButtonPyramida.AutoSize = true;
-			this.radioButtonPyramida.Location = new System.Drawing.Point(17, 119);
+			this.radioButtonPyramida.Location = new System.Drawing.Point(17, 151);
 			this.radioButtonPyramida.Name = "radioButtonPyramida";
 			this.radioButtonPyramida.Size = new System.Drawing.Size(95, 20);
 			this.radioButtonPyramida.TabIndex = 0;
@@ -66,7 +70,7 @@ namespace FigureWindowsForms
 			// radioButtonParallelepiped
 			// 
 			this.radioButtonParallelepiped.AutoSize = true;
-			this.radioButtonParallelepiped.Location = new System.Drawing.Point(17, 75);
+			this.radioButtonParallelepiped.Location = new System.Drawing.Point(17, 89);
 			this.radioButtonParallelepiped.Name = "radioButtonParallelepiped";
 			this.radioButtonParallelepiped.Size = new System.Drawing.Size(142, 20);
 			this.radioButtonParallelepiped.TabIndex = 0;
@@ -87,17 +91,45 @@ namespace FigureWindowsForms
 			// 
 			// groupBoxParameters
 			// 
+			this.groupBoxParameters.Controls.Add(this.parallelepipedUserControl);
+			this.groupBoxParameters.Controls.Add(this.ballUserControl);
+			this.groupBoxParameters.Controls.Add(this.pyramidUserControl);
 			this.groupBoxParameters.Location = new System.Drawing.Point(218, 12);
 			this.groupBoxParameters.Name = "groupBoxParameters";
-			this.groupBoxParameters.Size = new System.Drawing.Size(281, 154);
+			this.groupBoxParameters.Size = new System.Drawing.Size(281, 184);
 			this.groupBoxParameters.TabIndex = 1;
 			this.groupBoxParameters.TabStop = false;
 			this.groupBoxParameters.Text = "Параметры, см";
 			this.groupBoxParameters.Enter += new System.EventHandler(this.groupBoxParameters_Enter);
 			// 
+			// pyramidUserControl
+			// 
+			this.pyramidUserControl.Location = new System.Drawing.Point(6, 21);
+			this.pyramidUserControl.Name = "pyramidUserControl";
+			this.pyramidUserControl.Size = new System.Drawing.Size(270, 150);
+			this.pyramidUserControl.TabIndex = 2;
+			this.pyramidUserControl.Visible = false;
+			// 
+			// parallelepipedUserControl
+			// 
+			this.parallelepipedUserControl.Location = new System.Drawing.Point(6, 21);
+			this.parallelepipedUserControl.Name = "parallelepipedUserControl";
+			this.parallelepipedUserControl.Size = new System.Drawing.Size(269, 153);
+			this.parallelepipedUserControl.TabIndex = 1;
+			this.parallelepipedUserControl.Visible = false;
+			this.parallelepipedUserControl.Load += new System.EventHandler(this.parallelepipedUserControl_Load);
+			// 
+			// ballUserControl
+			// 
+			this.ballUserControl.Location = new System.Drawing.Point(7, 23);
+			this.ballUserControl.Name = "ballUserControl";
+			this.ballUserControl.Size = new System.Drawing.Size(268, 150);
+			this.ballUserControl.TabIndex = 0;
+			this.ballUserControl.Visible = false;
+			// 
 			// buttonVolume
 			// 
-			this.buttonVolume.Location = new System.Drawing.Point(218, 172);
+			this.buttonVolume.Location = new System.Drawing.Point(218, 202);
 			this.buttonVolume.Name = "buttonVolume";
 			this.buttonVolume.Size = new System.Drawing.Size(281, 25);
 			this.buttonVolume.TabIndex = 2;
@@ -109,7 +141,7 @@ namespace FigureWindowsForms
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(511, 206);
+			this.ClientSize = new System.Drawing.Size(511, 239);
 			this.Controls.Add(this.buttonVolume);
 			this.Controls.Add(this.groupBoxParameters);
 			this.Controls.Add(this.groupBoxListFigure);
@@ -117,20 +149,21 @@ namespace FigureWindowsForms
 			this.Text = "Добавление фигуры";
 			this.groupBoxListFigure.ResumeLayout(false);
 			this.groupBoxListFigure.PerformLayout();
+			this.groupBoxParameters.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private GroupBox groupBoxListFigure;
-		private GroupBox groupBoxParameters;
-		private Button buttonVolume;
-		private BallUserControl ballUserControl;
-		private ParallelepipedUserControl parallelepipedUserControl;
-		private PyramidUserControl pyramidUserControl;
-		private RadioButton radioButtonPyramida;
-		private RadioButton radioButtonBall;
-		private RadioButton radioButtonParallelepiped;
+		internal GroupBox groupBoxListFigure;
+		internal GroupBox groupBoxParameters;
+		internal Button buttonVolume;
+		internal BallUserControl ballUserControl;
+		internal ParallelepipedUserControl parallelepipedUserControl;
+		internal PyramidUserControl pyramidUserControl;
+		internal RadioButton radioButtonPyramida;
+		internal RadioButton radioButtonBall;
+		internal RadioButton radioButtonParallelepiped;
 	}
 }

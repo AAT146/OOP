@@ -21,42 +21,42 @@ namespace FigureWindowsForms
 		public AddFigure()
 		{
 			InitializeComponent();
-			BackColor = Color.Azure;
+			BackColor = Color.Honeydew;
 			StartPosition = FormStartPosition.CenterScreen;
 			AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
-			ballUserControl.textBoxRadius.Tag = typeof(double);
-			parallelepipedUserControl.textBoxLength.Tag = typeof(double);
-			parallelepipedUserControl.textBoxWidth.Tag = typeof(double);
-			parallelepipedUserControl.textBoxHeight.Tag = typeof(double);
-			parallelepipedUserControl.textBoxAngleLengthWidth.Tag = typeof(double);
-			parallelepipedUserControl.textBoxAngleLengthHeight.Tag = typeof(double);
-			pyramidUserControl.textBoxAreaOfBase.Tag = typeof(double);
-			pyramidUserControl.textBoxPyramidHeight.Tag = typeof(double);
+			//ballUserControl.textBoxRadius.Tag = typeof(double);
+			//parallelepipedUserControl.textBoxLength.Tag = typeof(double);
+			//parallelepipedUserControl.textBoxWidth.Tag = typeof(double);
+			//parallelepipedUserControl.textBoxHeight.Tag = typeof(double);
+			//parallelepipedUserControl.textBoxAngleLengthWidth.Tag = typeof(double);
+			//parallelepipedUserControl.textBoxAngleLengthHeight.Tag = typeof(double);
+			//pyramidUserControl.textBoxAreaOfBase.Tag = typeof(double);
+			//pyramidUserControl.textBoxPyramidHeight.Tag = typeof(double);
 
-			ballUserControl.textBoxRadius.KeyPress += new
-				KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
+			//ballUserControl.textBoxRadius.KeyPress += new
+			//	KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
 
-			parallelepipedUserControl.textBoxLength.KeyPress += new
-				KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
+			//parallelepipedUserControl.textBoxLength.KeyPress += new
+			//	KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
 
-			parallelepipedUserControl.textBoxWidth.KeyPress += new
-				KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
+			//parallelepipedUserControl.textBoxWidth.KeyPress += new
+			//	KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
 
-			parallelepipedUserControl.textBoxHeight.KeyPress += new
-				KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
+			//parallelepipedUserControl.textBoxHeight.KeyPress += new
+			//	KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
 
-			parallelepipedUserControl.textBoxAngleLengthWidth.KeyPress += new
-				KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
+			//parallelepipedUserControl.textBoxAngleLengthWidth.KeyPress += new
+			//	KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
 
-			parallelepipedUserControl.textBoxAngleLengthHeight.KeyPress += new
-				KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
+			//parallelepipedUserControl.textBoxAngleLengthHeight.KeyPress += new
+			//	KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
 
-			pyramidUserControl.textBoxAreaOfBase.KeyPress += new
-				KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
+			//pyramidUserControl.textBoxAreaOfBase.KeyPress += new
+			//	KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
 
-			pyramidUserControl.textBoxPyramidHeight.KeyPress += new
-				KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
+			//pyramidUserControl.textBoxPyramidHeight.KeyPress += new
+			//	KeyPressEventHandler(CheckTextBox.TextBoxKeyPress);
 		}
 
 		/// <summary>
@@ -163,6 +163,11 @@ namespace FigureWindowsForms
 		}
 
 		private void groupBoxParameters_Enter(object sender, EventArgs e)
+		{
+
+		}
+
+		private void parallelepipedUserControl_Load(object sender, EventArgs e)
 		{
 
 		}

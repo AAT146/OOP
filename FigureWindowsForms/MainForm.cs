@@ -52,8 +52,8 @@ namespace FigureWindowsForms
 		public MainForm()
 		{
 			InitializeComponent();
-			BackColor = Color.AliceBlue;
-			dataGridView.BackgroundColor = Color.LightGray;
+			BackColor = Color.Honeydew;
+			dataGridView.BackgroundColor = Color.AliceBlue;
 			StartPosition = FormStartPosition.CenterScreen;
 		}
 
@@ -84,6 +84,17 @@ namespace FigureWindowsForms
 				DataGridViewSelectionMode.FullRowSelect;
 		}
 
+		/// <summary>
+		/// Загрузка формы.
+		/// </summary>
+		/// <param name="sender">Данные.</param>
+		/// <param name="e">Данные о событие.</param>
+		private void LoadMainForm(object sender, EventArgs e)
+		{
+			_volumeFigureList = new BindingList<FigureBase>();
+			CreateTable(_volumeFigureList, dataGridView);
+		}
+
 		private void groupBox1_Enter(object sender, EventArgs e)
 		{
 
@@ -99,17 +110,22 @@ namespace FigureWindowsForms
 
 		}
 
+		/// <summary>
+		/// Метод 
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void buttonAdd_Click(object sender, EventArgs e)
 		{
 			AddFigure addFigure = new AddFigure();
 			addFigure.FigureAdded += AddedFigure;
-			_isAddFormOpen = true;
-			UpdatingStatusButtons();
-			addFigure.FormClosed += (s, args) =>
-			{
-				_isAddFormOpen = false;
-				UpdatingStatusButtons();
-			};
+			//_isAddFormOpen = true;
+			//UpdatingStatusButtons();
+			//addFigure.FormClosed += (s, args) =>
+			//{
+			//	_isAddFormOpen = false;
+			//	UpdatingStatusButtons();
+			//};
 
 			addFigure.Show();
 		}
@@ -130,16 +146,43 @@ namespace FigureWindowsForms
 		}
 
 		/// <summary>
-		/// Обработчик добавления данных в лист.
+		/// Метод добавления данных в лист.
 		/// </summary>
 		/// <param name="sender">Данные.</param>
-		/// <param name="salaryBase">Объект класса SalaryBase.</param>
+		/// <param name="salaryBase">Объект класса FigureBase.</param>
 		private void AddedFigure(object sender, EventArgs salaryBase)
 		{
 			VolumeAddedEvent addedEventArgs =
 				salaryBase as VolumeAddedEvent;
 
 			_volumeFigureList.Add(addedEventArgs?.FigureBase);
+		}
+
+		/// <summary>
+		/// Метод очистки списка (кнопка Очистить список).
+		/// </summary>
+		/// <param name="sender">Данные.</param>
+		/// <param name="e">Данные о событие.</param>
+		private void buttonDelete_Click(object sender, EventArgs e)
+		{
+			dataGridView.ClearSelection();
+			foreach (DataGridViewRow row in dataGridView.Rows)
+			{
+				row.Selected = true;
+			}
+			foreach (DataGridViewRow row in
+					dataGridView.SelectedRows)
+			{
+				if (row.DataBoundItem is FigureBase salary)
+				{
+					_volumeFigureList.Remove(salary);
+					if (_filterVolumeFigureList != null
+						&& _filterVolumeFigureList.Count > 0)
+					{
+						_filterVolumeFigureList.Remove(salary);
+					}
+				}
+			}
 		}
 	}
 }
