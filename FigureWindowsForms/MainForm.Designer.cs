@@ -133,6 +133,7 @@ namespace FigureWindowsForms
 			this.buttonAdd.TabIndex = 0;
 			this.buttonAdd.Text = "Добавить фигуру";
 			this.buttonAdd.UseVisualStyleBackColor = true;
+			this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
 			// 
 			// toolStrip
 			// 
@@ -175,5 +176,9 @@ namespace FigureWindowsForms
 		private DataGridView dataGridView;
 		private ToolStrip toolStrip;
 		private GroupBox groupBoxCalculator;
+
+		private ToolStripDropDownButton toolStripDropDownButton;
+		private ToolStripMenuItem saveToolStripMenuItem;
+		private ToolStripMenuItem openToolStripMenuItem;
 	}
 }

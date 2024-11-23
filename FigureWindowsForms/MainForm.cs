@@ -98,5 +98,48 @@ namespace FigureWindowsForms
 		{
 
 		}
+
+		private void buttonAdd_Click(object sender, EventArgs e)
+		{
+			AddFigure addFigure = new AddFigure();
+			addFigure.FigureAdded += AddedFigure;
+			_isAddFormOpen = true;
+			UpdatingStatusButtons();
+			addFigure.FormClosed += (s, args) =>
+			{
+				_isAddFormOpen = false;
+				UpdatingStatusButtons();
+			};
+
+			addFigure.Show();
+		}
+
+		/// <summary>
+		/// Метод обновления состояний кнопок.
+		/// </summary>
+		private void UpdatingStatusButtons()
+		{
+			buttonAdd.Enabled = !_isFilterFormOpen &&
+				!_isFilter && !_isAddFormOpen;
+
+			buttonFilter.Enabled = !_isAddFormOpen &&
+				!_isFilterFormOpen;
+
+			toolStripDropDownButton.Enabled = !_isFilter;
+			buttonRandomList.Enabled = toolStripDropDownButton.Enabled;
+		}
+
+		/// <summary>
+		/// Обработчик добавления данных в лист.
+		/// </summary>
+		/// <param name="sender">Данные.</param>
+		/// <param name="salaryBase">Объект класса SalaryBase.</param>
+		private void AddedFigure(object sender, EventArgs salaryBase)
+		{
+			VolumeAddedEvent addedEventArgs =
+				salaryBase as VolumeAddedEvent;
+
+			_volumeFigureList.Add(addedEventArgs?.FigureBase);
+		}
 	}
 }
