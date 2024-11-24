@@ -125,6 +125,7 @@ namespace FigureWindowsForms
 			this.buttonFilter.TabIndex = 1;
 			this.buttonFilter.Text = "Фильтр";
 			this.buttonFilter.UseVisualStyleBackColor = true;
+			this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
 			// 
 			// buttonAdd
 			// 

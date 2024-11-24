@@ -60,6 +60,13 @@
       <DependentUpon>BallUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="CheckTextBox.cs" />
+    <Compile Include="FigureFilteredEvent.cs" />
+    <Compile Include="FilterFigure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilterFigure.Designer.cs">
+      <DependentUpon>FilterFigure.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BallUserControl.resx">
       <DependentUpon>BallUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilterFigure.resx">
+      <DependentUpon>FilterFigure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

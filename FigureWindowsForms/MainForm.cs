@@ -184,5 +184,26 @@ namespace FigureWindowsForms
 				}
 			}
 		}
+
+
+		/// <summary>
+		/// Метод фильтрации списка (кнопка Фильтр)
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonFilter_Click(object sender, EventArgs e)
+		{
+			//FilterSalary filterSalary = new FilterSalary(_salaryList);
+			//filterSalary.SalaryFiltered += FilteredSalary;
+			//_isFilterFormOpen = true;
+			//UpdatingStatusButtons();
+			//filterSalary.FormClosed += (s, args) =>
+			//{
+			//	_isFilterFormOpen = false;
+			//	UpdatingStatusButtons();
+			//};
+
+			//filterSalary.Show();
+		}
 	}
 }
