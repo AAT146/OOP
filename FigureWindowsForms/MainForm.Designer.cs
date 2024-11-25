@@ -57,7 +57,7 @@ namespace FigureWindowsForms
 			this.groupBoxCalculator.TabStop = false;
 			// 
 			// dataGridView
-			//
+			// 
 			this.dataGridView.AllowUserToOrderColumns = true;
 			this.dataGridView.AllowUserToResizeColumns = false;
 			this.dataGridView.AllowUserToResizeRows = false;
@@ -92,6 +92,7 @@ namespace FigureWindowsForms
 			this.buttonDeleteList.TabIndex = 5;
 			this.buttonDeleteList.Text = "Очистить список";
 			this.buttonDeleteList.UseVisualStyleBackColor = true;
+			this.buttonDeleteList.Click += new System.EventHandler(this.buttonDeleteList_Click);
 			// 
 			// buttonResertFilter
 			// 
@@ -120,6 +121,7 @@ namespace FigureWindowsForms
 			this.buttonRandomList.TabIndex = 2;
 			this.buttonRandomList.Text = "Случайный список";
 			this.buttonRandomList.UseVisualStyleBackColor = true;
+			this.buttonRandomList.Click += new System.EventHandler(this.buttonRandomList_Click);
 			// 
 			// buttonFilter
 			// 

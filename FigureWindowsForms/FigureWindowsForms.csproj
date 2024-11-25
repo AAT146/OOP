@@ -59,7 +59,6 @@
     <Compile Include="BallUserControl.Designer.cs">
       <DependentUpon>BallUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckTextBox.cs" />
     <Compile Include="FigureFilteredEvent.cs" />
     <Compile Include="FilterFigure.cs">
       <SubType>Form</SubType>

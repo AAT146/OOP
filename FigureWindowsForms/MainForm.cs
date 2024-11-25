@@ -96,15 +96,13 @@ namespace FigureWindowsForms
 		}
 
 		/// <summary>
-		/// Метод 
+		/// Метод для работы кнопки Добавить фигуру.
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
 		private void buttonAdd_Click(object sender, EventArgs e)
 		{
 			AddFigure addFigure = new AddFigure();
-			addFigure.FormClosed += (s, args) =>
-			{ _isAddFormOpen = false; };
 			addFigure.FigureAdded += AddedFigure;
 			addFigure.Show();
 		}
@@ -138,11 +136,64 @@ namespace FigureWindowsForms
 		}
 
 		/// <summary>
-		/// Метод очистки списка (кнопка Очистить список).
+		/// Метод для работы кнопки Удалить фигуру.
 		/// </summary>
 		/// <param name="sender">Данные.</param>
 		/// <param name="e">Данные о событие.</param>
 		private void buttonDelete_Click(object sender, EventArgs e)
+		{
+			if (dataGridView.SelectedCells.Count != 0)
+			{
+				foreach (DataGridViewRow row in
+					dataGridView.SelectedRows)
+				{
+					if (row.DataBoundItem is FigureBase figure)
+					{
+						_volumeFigureList.Remove(figure);
+						//if (_listSalaryFilter != null
+						//	&& _listSalaryFilter.Count > 0)
+						//{
+						//	_listSalaryFilter.Remove(figure);
+						//}
+					}
+				}
+			}
+		}
+
+
+		/// <summary>
+		/// Метод для работы кнопки Фильтр.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonFilter_Click(object sender, EventArgs e)
+		{
+			FilterFigure filterFigure = new FilterFigure(_volumeFigureList);
+			filterFigure.FigureFiltered += FilteredFigure;
+			filterFigure.Show();
+		}
+
+		/// <summary>
+		/// Обработчик фильтрации данных.
+		/// </summary>
+		/// <param name="sender">Данные.</param>
+		/// <param name="figureList">Список ифгур в таблице.</param>
+		private void FilteredFigure(object sender, EventArgs figureList)
+		{
+			FigureFilteredEvent filterEventArgs =
+				 figureList as FigureFilteredEvent;
+			_filterVolumeFigureList = filterEventArgs?.FilteredValueList;
+			_isFilter = true;
+			UpdatingStatusButtons();
+			CreateTable(_filterVolumeFigureList, dataGridView);
+		}
+
+		/// <summary>
+		/// Метод для работы кнопки Очистить список.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void buttonDeleteList_Click(object sender, EventArgs e)
 		{
 			dataGridView.ClearSelection();
 			foreach (DataGridViewRow row in dataGridView.Rows)
@@ -164,25 +215,14 @@ namespace FigureWindowsForms
 			}
 		}
 
-
 		/// <summary>
-		/// Метод фильтрации списка (кнопка Фильтр)
+		/// Добавление расчета по случайной фигуре.
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void buttonFilter_Click(object sender, EventArgs e)
+		/// <param name="sender">Данные.</param>
+		/// <param name="e">Данные о событие.</param>
+		private void buttonRandomList_Click(object sender, EventArgs e)
 		{
-			//FilterSalary filterSalary = new FilterSalary(_salaryList);
-			//filterSalary.SalaryFiltered += FilteredSalary;
-			//_isFilterFormOpen = true;
-			//UpdatingStatusButtons();
-			//filterSalary.FormClosed += (s, args) =>
-			//{
-			//	_isFilterFormOpen = false;
-			//	UpdatingStatusButtons();
-			//};
-
-			//filterSalary.Show();
+			_volumeFigureList.Add(RandomFigure.GetRandomFigure());
 		}
 	}
 }
