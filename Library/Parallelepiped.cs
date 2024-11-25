@@ -141,7 +141,7 @@ namespace Library
 		{
 			get
 			{
-				return $"Длина = {Length}; Ширина = {Width}; Высота = {Height}" +
+				return $"Длина = {Length}; Ширина = {Width}; Высота = {Height}\n" +
 					$"Угол (Д^Ш) = {AngleLengthWidth}; Угол (Д^В) = {AngleLengthHeight}";
 			}
 		}

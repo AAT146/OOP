@@ -33,7 +33,7 @@ namespace Library
 		/// Метод расчёта объема фигуры.
 		/// </summary>
 		/// <returns>Объем.</returns>
-		[DisplayName("Объем фигуры, м^3")]
+		[DisplayName("Объем фигуры, см^3")]
 		public abstract double Volume { get; }
 
 		/// <summary>

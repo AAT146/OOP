@@ -107,20 +107,20 @@ namespace FigureWindowsForms
 			addFigure.Show();
 		}
 
-		/// <summary>
-		/// Метод обновления состояний кнопок.
-		/// </summary>
-		private void UpdatingStatusButtons()
-		{
-			buttonAdd.Enabled = !_isFilterFormOpen &&
-				!_isFilter && !_isAddFormOpen;
-
-			buttonFilter.Enabled = !_isAddFormOpen &&
-				!_isFilterFormOpen;
-
-			toolStripDropDownButton.Enabled = !_isFilter;
-			buttonRandomList.Enabled = toolStripDropDownButton.Enabled;
-		}
+		///// <summary>
+		///// Метод обновления состояний кнопок.
+		///// </summary>
+		//private void UpdatingStatusButtons()
+		//{
+		//	buttonAdd.Enabled = !_isFilterFormOpen &&
+		//		!_isFilter && !_isAddFormOpen;
+		//
+		//	buttonFilter.Enabled = !_isAddFormOpen &&
+		//		!_isFilterFormOpen;
+		//
+		//	toolStripDropDownButton.Enabled = !_isFilter;
+		//	buttonRandomList.Enabled = toolStripDropDownButton.Enabled;
+		//}
 
 		/// <summary>
 		/// Метод добавления данных в лист.
@@ -184,7 +184,7 @@ namespace FigureWindowsForms
 				 figureList as FigureFilteredEvent;
 			_filterVolumeFigureList = filterEventArgs?.FilteredValueList;
 			_isFilter = true;
-			UpdatingStatusButtons();
+			//UpdatingStatusButtons();
 			CreateTable(_filterVolumeFigureList, dataGridView);
 		}
 
@@ -223,6 +223,17 @@ namespace FigureWindowsForms
 		private void buttonRandomList_Click(object sender, EventArgs e)
 		{
 			_volumeFigureList.Add(RandomFigure.GetRandomFigure());
+		}
+
+		/// <summary>
+		/// Метод для сброса наcтроек фильтра.
+		/// </summary>
+		/// <param name="sender">Данные.</param>
+		/// <param name="e">Данные о событие.</param>
+		private void buttonResertFilter_Click(object sender, EventArgs e)
+		{
+			CreateTable(_volumeFigureList, dataGridView);
+			_isFilter = false;
 		}
 	}
 }

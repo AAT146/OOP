@@ -102,6 +102,7 @@ namespace FigureWindowsForms
 			this.buttonResertFilter.TabIndex = 4;
 			this.buttonResertFilter.Text = "Сбросить фильтр";
 			this.buttonResertFilter.UseVisualStyleBackColor = true;
+			this.buttonResertFilter.Click += new System.EventHandler(this.buttonResertFilter_Click);
 			// 
 			// buttonDelete
 			// 

@@ -38,11 +38,13 @@ namespace FigureWindowsForms
 			_calculatedFigureList = figureList;
 			BackColor = Color.Honeydew;
 			StartPosition = FormStartPosition.CenterScreen;
+			textBoxValue.Enabled = false;
 			AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
 			radioButtonPyramid.CheckedChanged += ActivateElements;
 			radioButtonParallelepiped.CheckedChanged += ActivateElements;
 			radioButtonBall.CheckedChanged += ActivateElements;
+			radioButtonValue.CheckedChanged += ActivateElements;
 		}
 
 		/// <summary>
@@ -55,18 +57,10 @@ namespace FigureWindowsForms
 		{
 			bool activate = radioButtonPyramid.Checked
 				|| radioButtonParallelepiped.Checked
-				|| radioButtonBall.Checked;
+				|| radioButtonBall.Checked
+				|| radioButtonValue.Checked;
 
-			radioButtonValue.Enabled = activate;
-		}
-
-		/// <summary>
-		/// Деактивация элементов управления на форме.
-		/// </summary>
-		private void DeactivateElements()
-		{
-			radioButtonValue.Enabled = false;
-			textBoxValue.Enabled = false;
+			textBoxValue.Enabled = activate;
 		}
 
 		/// <summary>
@@ -115,7 +109,7 @@ namespace FigureWindowsForms
 		/// </summary>
 		/// <param name="sender">Данные.</param>
 		/// <param name="e">Данные о событие.</param>
-		private void Filter(object sender, EventArgs e)
+		private void buttonFound_Click(object sender, EventArgs e)
 		{
 			_filteredCalculatedFigureList = new BindingList<FigureBase>();
 
@@ -153,7 +147,7 @@ namespace FigureWindowsForms
 				}
 				else
 				{
-					MessageBox.Show("Введите заработную плату.", "Предупреждение",
+					MessageBox.Show("Введите значение объёма фигуры, см^3.", "Предупреждение",
 						MessageBoxButtons.OK, MessageBoxIcon.Warning);
 					return;
 				}

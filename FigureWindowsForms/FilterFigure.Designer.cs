@@ -34,8 +34,8 @@
 			this.radioButtonBall = new System.Windows.Forms.RadioButton();
 			this.buttonFound = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.radioButtonValue = new System.Windows.Forms.RadioButton();
 			this.textBoxValue = new System.Windows.Forms.TextBox();
+			this.radioButtonValue = new System.Windows.Forms.RadioButton();
 			this.groupBoxTypeFigure.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
@@ -87,12 +87,13 @@
 			// 
 			// buttonFound
 			// 
-			this.buttonFound.Location = new System.Drawing.Point(115, 170);
+			this.buttonFound.Location = new System.Drawing.Point(122, 171);
 			this.buttonFound.Name = "buttonFound";
 			this.buttonFound.Size = new System.Drawing.Size(213, 26);
 			this.buttonFound.TabIndex = 1;
 			this.buttonFound.Text = "Найти";
 			this.buttonFound.UseVisualStyleBackColor = true;
+			this.buttonFound.Click += new System.EventHandler(this.buttonFound_Click);
 			// 
 			// groupBox1
 			// 
@@ -105,6 +106,13 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Дополнительное условие";
 			// 
+			// textBoxValue
+			// 
+			this.textBoxValue.Location = new System.Drawing.Point(121, 32);
+			this.textBoxValue.Name = "textBoxValue";
+			this.textBoxValue.Size = new System.Drawing.Size(100, 22);
+			this.textBoxValue.TabIndex = 1;
+			// 
 			// radioButtonValue
 			// 
 			this.radioButtonValue.AutoSize = true;
@@ -115,13 +123,6 @@
 			this.radioButtonValue.TabStop = true;
 			this.radioButtonValue.Text = "Значение:";
 			this.radioButtonValue.UseVisualStyleBackColor = true;
-			// 
-			// textBoxValue
-			// 
-			this.textBoxValue.Location = new System.Drawing.Point(121, 32);
-			this.textBoxValue.Name = "textBoxValue";
-			this.textBoxValue.Size = new System.Drawing.Size(100, 22);
-			this.textBoxValue.TabIndex = 1;
 			// 
 			// FilterFigure
 			// 
