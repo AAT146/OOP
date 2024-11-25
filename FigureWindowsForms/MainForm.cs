@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,10 @@ using System.Xml.Serialization;
 
 namespace FigureWindowsForms
 {
-	//TODO: XML
+	//TODO+: XML
+	/// <summary>
+	/// Класс программы для расчета объема фигур.
+	/// </summary>
 	public partial class MainForm : Form
 	{
 		/// <summary>
@@ -100,27 +104,12 @@ namespace FigureWindowsForms
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void buttonAdd_Click(object sender, EventArgs e)
+		private void ButtonAddClick(object sender, EventArgs e)
 		{
-			AddFigure addFigure = new AddFigure();
+			AddForm addFigure = new AddForm();
 			addFigure.FigureAdded += AddedFigure;
 			addFigure.Show();
 		}
-
-		///// <summary>
-		///// Метод обновления состояний кнопок.
-		///// </summary>
-		//private void UpdatingStatusButtons()
-		//{
-		//	buttonAdd.Enabled = !_isFilterFormOpen &&
-		//		!_isFilter && !_isAddFormOpen;
-		//
-		//	buttonFilter.Enabled = !_isAddFormOpen &&
-		//		!_isFilterFormOpen;
-		//
-		//	toolStripDropDownButton.Enabled = !_isFilter;
-		//	buttonRandomList.Enabled = toolStripDropDownButton.Enabled;
-		//}
 
 		/// <summary>
 		/// Метод добавления данных в лист.
@@ -131,7 +120,6 @@ namespace FigureWindowsForms
 		{
 			VolumeAddedEvent addedEventArgs =
 				salaryBase as VolumeAddedEvent;
-
 			_volumeFigureList.Add(addedEventArgs?.FigureBase);
 		}
 
@@ -140,7 +128,7 @@ namespace FigureWindowsForms
 		/// </summary>
 		/// <param name="sender">Данные.</param>
 		/// <param name="e">Данные о событие.</param>
-		private void buttonDelete_Click(object sender, EventArgs e)
+		private void ButtonDeleteClick(object sender, EventArgs e)
 		{
 			if (dataGridView.SelectedCells.Count != 0)
 			{
@@ -150,25 +138,19 @@ namespace FigureWindowsForms
 					if (row.DataBoundItem is FigureBase figure)
 					{
 						_volumeFigureList.Remove(figure);
-						//if (_listSalaryFilter != null
-						//	&& _listSalaryFilter.Count > 0)
-						//{
-						//	_listSalaryFilter.Remove(figure);
-						//}
 					}
 				}
 			}
 		}
 
-
 		/// <summary>
 		/// Метод для работы кнопки Фильтр.
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void buttonFilter_Click(object sender, EventArgs e)
+		/// <param name="sender">Данные.</param>
+		/// <param name="e">Данные о событие.</param>
+		private void ButtonFilterClick(object sender, EventArgs e)
 		{
-			FilterFigure filterFigure = new FilterFigure(_volumeFigureList);
+			FilterForm filterFigure = new FilterForm(_volumeFigureList);
 			filterFigure.FigureFiltered += FilteredFigure;
 			filterFigure.Show();
 		}
@@ -177,41 +159,26 @@ namespace FigureWindowsForms
 		/// Обработчик фильтрации данных.
 		/// </summary>
 		/// <param name="sender">Данные.</param>
-		/// <param name="figureList">Список ифгур в таблице.</param>
+		/// <param name="figureList">Список фифгур в таблице.</param>
 		private void FilteredFigure(object sender, EventArgs figureList)
 		{
 			FigureFilteredEvent filterEventArgs =
 				 figureList as FigureFilteredEvent;
 			_filterVolumeFigureList = filterEventArgs?.FilteredValueList;
-			_isFilter = true;
-			//UpdatingStatusButtons();
 			CreateTable(_filterVolumeFigureList, dataGridView);
 		}
 
 		/// <summary>
 		/// Метод для работы кнопки Очистить список.
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void buttonDeleteList_Click(object sender, EventArgs e)
+		/// <param name="sender">Данные.</param>
+		/// <param name="e">Данные о событие.</param>
+		private void ButtonDeleteListClick(object sender, EventArgs e)
 		{
 			dataGridView.ClearSelection();
 			foreach (DataGridViewRow row in dataGridView.Rows)
 			{
 				row.Selected = true;
-			}
-			foreach (DataGridViewRow row in
-					dataGridView.SelectedRows)
-			{
-				if (row.DataBoundItem is FigureBase salary)
-				{
-					_volumeFigureList.Remove(salary);
-					if (_filterVolumeFigureList != null
-						&& _filterVolumeFigureList.Count > 0)
-					{
-						_filterVolumeFigureList.Remove(salary);
-					}
-				}
 			}
 		}
 
@@ -220,7 +187,7 @@ namespace FigureWindowsForms
 		/// </summary>
 		/// <param name="sender">Данные.</param>
 		/// <param name="e">Данные о событие.</param>
-		private void buttonRandomList_Click(object sender, EventArgs e)
+		private void ButtonRandomListClick(object sender, EventArgs e)
 		{
 			_volumeFigureList.Add(RandomFigure.GetRandomFigure());
 		}
@@ -230,10 +197,81 @@ namespace FigureWindowsForms
 		/// </summary>
 		/// <param name="sender">Данные.</param>
 		/// <param name="e">Данные о событие.</param>
-		private void buttonResertFilter_Click(object sender, EventArgs e)
+		private void ButtonResertFilterClick(object sender, EventArgs e)
 		{
 			CreateTable(_volumeFigureList, dataGridView);
 			_isFilter = false;
+		}
+
+		/// <summary>
+		/// Метод для сохранения результатов в сторонний файл.
+		/// </summary>
+		/// <param name="sender">Данные.</param>
+		/// <param name="e">Данные о событие.</param>
+		private void SaveToolStripMenuItem1(object sender, EventArgs e)
+		{
+			if (_volumeFigureList.Count == 0)
+			{
+				MessageBox.Show("Отсутствуют данные для сохранения.",
+					"Данные не сохранены",
+					MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return;
+			}
+
+			var saveFileDialog = new SaveFileDialog
+			{
+				Filter = "Файлы (*.vf)|*.vf|Все файлы (*.*)|*.*"
+			};
+
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				var path = saveFileDialog.FileName.ToString();
+				using (FileStream file = File.Create(path))
+				{
+					_serializer.Serialize(file, _volumeFigureList);
+				}
+				MessageBox.Show("Файл успешно сохранён.",
+					"Сохранение завершено",
+					MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+		}
+
+		/// <summary>
+		/// Метод для загрузки файла в рабочую область.
+		/// </summary>
+		/// <param name="sender">Данные.</param>
+		/// <param name="e">Данные о событие.</param>
+		private void OpenToolStripMenuItem2(object sender, EventArgs e)
+		{
+			var openFileDialog = new OpenFileDialog
+			{
+				Filter = "Файлы (*.vf)|*.vf|Все файлы (*.*)|*.*"
+			};
+
+			if (openFileDialog.ShowDialog() != DialogResult.OK) return;
+
+			var path = openFileDialog.FileName.ToString();
+			try
+			{
+				using (var file = new StreamReader(path))
+				{
+					_volumeFigureList = (BindingList<FigureBase>)
+					_serializer.Deserialize(file);
+				}
+
+				dataGridView.DataSource = _volumeFigureList;
+				dataGridView.CurrentCell = null;
+				MessageBox.Show("Файл успешно загружен.",
+					"Загрузка завершена",
+					MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Не удалось загрузить файл.\n" +
+					"Файл повреждён или не соответствует формату.",
+					$"Ошибка:  {ex.Message}",
+					MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 	}
 }

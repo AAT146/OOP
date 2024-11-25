@@ -30,6 +30,7 @@ namespace FigureWindowsForms
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.groupBoxCalculator = new System.Windows.Forms.GroupBox();
 			this.dataGridView = new System.Windows.Forms.DataGridView();
 			this.groupBoxButton = new System.Windows.Forms.GroupBox();
@@ -40,9 +41,13 @@ namespace FigureWindowsForms
 			this.buttonFilter = new System.Windows.Forms.Button();
 			this.buttonAdd = new System.Windows.Forms.Button();
 			this.toolStrip = new System.Windows.Forms.ToolStrip();
+			this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
 			this.groupBoxCalculator.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			this.groupBoxButton.SuspendLayout();
+			this.toolStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// groupBoxCalculator
@@ -92,7 +97,7 @@ namespace FigureWindowsForms
 			this.buttonDeleteList.TabIndex = 5;
 			this.buttonDeleteList.Text = "Очистить список";
 			this.buttonDeleteList.UseVisualStyleBackColor = true;
-			this.buttonDeleteList.Click += new System.EventHandler(this.buttonDeleteList_Click);
+			this.buttonDeleteList.Click += new System.EventHandler(this.ButtonDeleteListClick);
 			// 
 			// buttonResertFilter
 			// 
@@ -102,7 +107,7 @@ namespace FigureWindowsForms
 			this.buttonResertFilter.TabIndex = 4;
 			this.buttonResertFilter.Text = "Сбросить фильтр";
 			this.buttonResertFilter.UseVisualStyleBackColor = true;
-			this.buttonResertFilter.Click += new System.EventHandler(this.buttonResertFilter_Click);
+			this.buttonResertFilter.Click += new System.EventHandler(this.ButtonResertFilterClick);
 			// 
 			// buttonDelete
 			// 
@@ -112,7 +117,7 @@ namespace FigureWindowsForms
 			this.buttonDelete.TabIndex = 3;
 			this.buttonDelete.Text = "Удалить фигуру";
 			this.buttonDelete.UseVisualStyleBackColor = true;
-			this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+			this.buttonDelete.Click += new System.EventHandler(this.ButtonDeleteClick);
 			// 
 			// buttonRandomList
 			// 
@@ -122,7 +127,7 @@ namespace FigureWindowsForms
 			this.buttonRandomList.TabIndex = 2;
 			this.buttonRandomList.Text = "Случайный список";
 			this.buttonRandomList.UseVisualStyleBackColor = true;
-			this.buttonRandomList.Click += new System.EventHandler(this.buttonRandomList_Click);
+			this.buttonRandomList.Click += new System.EventHandler(this.ButtonRandomListClick);
 			// 
 			// buttonFilter
 			// 
@@ -132,7 +137,7 @@ namespace FigureWindowsForms
 			this.buttonFilter.TabIndex = 1;
 			this.buttonFilter.Text = "Фильтр";
 			this.buttonFilter.UseVisualStyleBackColor = true;
-			this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
+			this.buttonFilter.Click += new System.EventHandler(this.ButtonFilterClick);
 			// 
 			// buttonAdd
 			// 
@@ -142,16 +147,44 @@ namespace FigureWindowsForms
 			this.buttonAdd.TabIndex = 0;
 			this.buttonAdd.Text = "Добавить фигуру";
 			this.buttonAdd.UseVisualStyleBackColor = true;
-			this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+			this.buttonAdd.Click += new System.EventHandler(this.ButtonAddClick);
 			// 
 			// toolStrip
 			// 
 			this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
 			this.toolStrip.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip.Name = "toolStrip";
-			this.toolStrip.Size = new System.Drawing.Size(800, 25);
+			this.toolStrip.Size = new System.Drawing.Size(800, 27);
 			this.toolStrip.TabIndex = 2;
 			this.toolStrip.Text = "toolStrip";
+			// 
+			// toolStripDropDownButton1
+			// 
+			this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+			this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+			this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+			this.toolStripDropDownButton1.Size = new System.Drawing.Size(59, 24);
+			this.toolStripDropDownButton1.Text = "Файл";
+			// 
+			// toolStripMenuItem1
+			// 
+			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+			this.toolStripMenuItem1.Text = "Сохранить";
+			this.toolStripMenuItem1.Click += new System.EventHandler(this.SaveToolStripMenuItem1);
+			// 
+			// toolStripMenuItem2
+			// 
+			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+			this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+			this.toolStripMenuItem2.Text = "Загрузить";
+			this.toolStripMenuItem2.Click += new System.EventHandler(this.OpenToolStripMenuItem2);
 			// 
 			// MainForm
 			// 
@@ -170,6 +203,8 @@ namespace FigureWindowsForms
 			this.groupBoxCalculator.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			this.groupBoxButton.ResumeLayout(false);
+			this.toolStrip.ResumeLayout(false);
+			this.toolStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -188,8 +223,8 @@ namespace FigureWindowsForms
 		private ToolStrip toolStrip;
 		private GroupBox groupBoxCalculator;
 
-		private ToolStripDropDownButton toolStripDropDownButton;
-		private ToolStripMenuItem saveToolStripMenuItem;
-		private ToolStripMenuItem openToolStripMenuItem;
+		private ToolStripMenuItem toolStripMenuItem1;
+		private ToolStripMenuItem toolStripMenuItem2;
+		private ToolStripDropDownButton toolStripDropDownButton1;
 	}
 }

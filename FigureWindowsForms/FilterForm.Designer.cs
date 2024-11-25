@@ -1,6 +1,6 @@
 ﻿namespace FigureWindowsForms
 {
-	partial class FilterFigure
+	partial class FilterForm
 	{
 		/// <summary>
 		/// Required designer variable.

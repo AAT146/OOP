@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddFigure.cs">
+    <Compile Include="AddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFigure.Designer.cs">
-      <DependentUpon>AddFigure.cs</DependentUpon>
+    <Compile Include="AddForm.Designer.cs">
+      <DependentUpon>AddForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BallUserControl.cs">
       <SubType>UserControl</SubType>
@@ -60,11 +60,11 @@
       <DependentUpon>BallUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="FigureFilteredEvent.cs" />
-    <Compile Include="FilterFigure.cs">
+    <Compile Include="FilterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FilterFigure.Designer.cs">
-      <DependentUpon>FilterFigure.cs</DependentUpon>
+    <Compile Include="FilterForm.Designer.cs">
+      <DependentUpon>FilterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -87,14 +87,14 @@
       <DependentUpon>PyramidUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="VolumeAddedEvent.cs" />
-    <EmbeddedResource Include="AddFigure.resx">
-      <DependentUpon>AddFigure.cs</DependentUpon>
+    <EmbeddedResource Include="AddForm.resx">
+      <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BallUserControl.resx">
       <DependentUpon>BallUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FilterFigure.resx">
-      <DependentUpon>FilterFigure.cs</DependentUpon>
+    <EmbeddedResource Include="FilterForm.resx">
+      <DependentUpon>FilterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -2,7 +2,7 @@
 
 namespace FigureWindowsForms
 {
-	partial class AddFigure
+	partial class AddForm
 	{
 		/// <summary>
 		/// Required designer variable.

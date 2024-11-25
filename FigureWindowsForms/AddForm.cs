@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace FigureWindowsForms
 {
-	public partial class AddFigure : Form
+	public partial class AddForm : Form
 	{
 		/// <summary>
 		/// Поле для обработки события добавления.
 		/// </summary>
 		public EventHandler FigureAdded;
 
-		public AddFigure()
+		public AddForm()
 		{
 			InitializeComponent();
 			BackColor = Color.Honeydew;

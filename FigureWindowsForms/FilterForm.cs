@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace FigureWindowsForms
 {
-	public partial class FilterFigure : Form
+	public partial class FilterForm : Form
 	{
 		/// <summary>
 		/// Исходный список расчитанных фигур.
@@ -32,7 +32,7 @@ namespace FigureWindowsForms
 		/// Конструктор FilterFigure.
 		/// </summary>
 		/// <param name="figureList">Список объемов фигур для фильтрации.</param>
-		public FilterFigure(BindingList<FigureBase> figureList)
+		public FilterForm(BindingList<FigureBase> figureList)
 		{
 			InitializeComponent();
 			_calculatedFigureList = figureList;
