@@ -36,16 +36,6 @@ namespace FigureWindowsForms
 			new XmlSerializer(typeof(BindingList<FigureBase>));
 
 		/// <summary>
-		/// Поле для хранения состояния формы добавления.
-		/// </summary>
-		private bool _isAddFormOpen = false;
-
-		/// <summary>
-		/// Поле для хранения состояния формы фильтра.
-		/// </summary>
-		private bool _isFilterFormOpen = false;
-
-		/// <summary>
 		/// Поле для хранения состояния фильтрации.
 		/// </summary>
 		private bool _isFilter = false;

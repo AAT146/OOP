@@ -51,7 +51,7 @@ namespace Library
 		{
 			get
 			{
-				return $"Шар";
+				return "Шар";
 			}
 		}
 

@@ -130,7 +130,7 @@ namespace Library
 		{
 			get
 			{
-				return $"Параллелепипед";
+				return "Параллелепипед";
 			}
 		}
 

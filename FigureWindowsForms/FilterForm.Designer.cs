@@ -87,7 +87,7 @@
 			// 
 			// buttonFound
 			// 
-			this.buttonFound.Location = new System.Drawing.Point(122, 171);
+			this.buttonFound.Location = new System.Drawing.Point(122, 170);
 			this.buttonFound.Name = "buttonFound";
 			this.buttonFound.Size = new System.Drawing.Size(213, 26);
 			this.buttonFound.TabIndex = 1;
@@ -101,14 +101,14 @@
 			this.groupBox1.Controls.Add(this.radioButtonValue);
 			this.groupBox1.Location = new System.Drawing.Point(213, 14);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(241, 149);
+			this.groupBox1.Size = new System.Drawing.Size(241, 147);
 			this.groupBox1.TabIndex = 2;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Дополнительное условие";
 			// 
 			// textBoxValue
 			// 
-			this.textBoxValue.Location = new System.Drawing.Point(121, 32);
+			this.textBoxValue.Location = new System.Drawing.Point(19, 67);
 			this.textBoxValue.Name = "textBoxValue";
 			this.textBoxValue.Size = new System.Drawing.Size(100, 22);
 			this.textBoxValue.TabIndex = 1;
@@ -118,13 +118,13 @@
 			this.radioButtonValue.AutoSize = true;
 			this.radioButtonValue.Location = new System.Drawing.Point(19, 32);
 			this.radioButtonValue.Name = "radioButtonValue";
-			this.radioButtonValue.Size = new System.Drawing.Size(96, 20);
+			this.radioButtonValue.Size = new System.Drawing.Size(194, 20);
 			this.radioButtonValue.TabIndex = 0;
 			this.radioButtonValue.TabStop = true;
-			this.radioButtonValue.Text = "Значение:";
+			this.radioButtonValue.Text = "Значение объма фигуры:";
 			this.radioButtonValue.UseVisualStyleBackColor = true;
 			// 
-			// FilterFigure
+			// FilterForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,8 +132,8 @@
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.buttonFound);
 			this.Controls.Add(this.groupBoxTypeFigure);
-			this.Name = "FilterFigure";
-			this.Text = "FilterFigure";
+			this.Name = "FilterForm";
+			this.Text = "Фильтр";
 			this.groupBoxTypeFigure.ResumeLayout(false);
 			this.groupBoxTypeFigure.PerformLayout();
 			this.groupBox1.ResumeLayout(false);

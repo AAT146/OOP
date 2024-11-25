@@ -54,7 +54,6 @@ namespace FigureWindowsForms
 			this.groupBoxListFigure.TabIndex = 0;
 			this.groupBoxListFigure.TabStop = false;
 			this.groupBoxListFigure.Text = "Список фигур";
-			this.groupBoxListFigure.Enter += new System.EventHandler(this.groupBoxListFigure_Enter);
 			// 
 			// radioButtonPyramida
 			// 
@@ -65,7 +64,7 @@ namespace FigureWindowsForms
 			this.radioButtonPyramida.TabIndex = 0;
 			this.radioButtonPyramida.Text = "Пирамида";
 			this.radioButtonPyramida.UseVisualStyleBackColor = true;
-			this.radioButtonPyramida.CheckedChanged += new System.EventHandler(this.radioButtonPyramida_CheckedChanged);
+			this.radioButtonPyramida.CheckedChanged += new System.EventHandler(this.RadioButtonPyramidaCheckedChanged);
 			// 
 			// radioButtonParallelepiped
 			// 
@@ -76,7 +75,7 @@ namespace FigureWindowsForms
 			this.radioButtonParallelepiped.TabIndex = 0;
 			this.radioButtonParallelepiped.Text = "Параллелепипед";
 			this.radioButtonParallelepiped.UseVisualStyleBackColor = true;
-			this.radioButtonParallelepiped.CheckedChanged += new System.EventHandler(this.radioButtonParallelepiped_CheckedChanged);
+			this.radioButtonParallelepiped.CheckedChanged += new System.EventHandler(this.RadioButtonParallelepipedCheckedChanged);
 			// 
 			// radioButtonBall
 			// 
@@ -87,7 +86,7 @@ namespace FigureWindowsForms
 			this.radioButtonBall.TabIndex = 0;
 			this.radioButtonBall.Text = "Шар";
 			this.radioButtonBall.UseVisualStyleBackColor = true;
-			this.radioButtonBall.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+			this.radioButtonBall.CheckedChanged += new System.EventHandler(this.RadioButtonCheckedChanged);
 			// 
 			// groupBoxParameters
 			// 
@@ -100,7 +99,6 @@ namespace FigureWindowsForms
 			this.groupBoxParameters.TabIndex = 1;
 			this.groupBoxParameters.TabStop = false;
 			this.groupBoxParameters.Text = "Параметры, см";
-			this.groupBoxParameters.Enter += new System.EventHandler(this.groupBoxParameters_Enter);
 			// 
 			// pyramidUserControl
 			// 
@@ -117,7 +115,6 @@ namespace FigureWindowsForms
 			this.parallelepipedUserControl.Size = new System.Drawing.Size(269, 153);
 			this.parallelepipedUserControl.TabIndex = 1;
 			this.parallelepipedUserControl.Visible = false;
-			this.parallelepipedUserControl.Load += new System.EventHandler(this.parallelepipedUserControl_Load);
 			// 
 			// ballUserControl
 			// 

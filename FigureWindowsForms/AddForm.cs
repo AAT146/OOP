@@ -24,6 +24,30 @@ namespace FigureWindowsForms
 			BackColor = Color.Honeydew;
 			StartPosition = FormStartPosition.CenterScreen;
 			AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
+			ballUserControl.textBoxRadius.KeyPress += new
+				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
+
+			parallelepipedUserControl.textBoxLength.KeyPress += new
+				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
+
+			parallelepipedUserControl.textBoxWidth.KeyPress += new
+				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
+
+			parallelepipedUserControl.textBoxHeight.KeyPress += new
+				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
+
+			parallelepipedUserControl.textBoxAngleLengthWidth.KeyPress += new
+				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
+
+			parallelepipedUserControl.textBoxAngleLengthHeight.KeyPress += new
+				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
+
+			pyramidUserControl.textBoxAreaOfBase.KeyPress += new
+				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
+
+			pyramidUserControl.textBoxPyramidHeight.KeyPress += new
+				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 		}
 
 		/// <summary>
@@ -93,7 +117,7 @@ namespace FigureWindowsForms
 		/// </summary>
 		/// <param name="sender">Данные.</param>
 		/// <param name="e">Данные о событие.</param>
-		private void radioButton1_CheckedChanged(object sender, EventArgs e)
+		private void RadioButtonCheckedChanged(object sender, EventArgs e)
 		{
 			ballUserControl.Visible = true;
 			parallelepipedUserControl.Visible = false;
@@ -105,7 +129,7 @@ namespace FigureWindowsForms
 		/// </summary>
 		/// <param name="sender">Данные.</param>
 		/// <param name="e">Данные о событие.</param>
-		private void radioButtonParallelepiped_CheckedChanged(object sender, EventArgs e)
+		private void RadioButtonParallelepipedCheckedChanged(object sender, EventArgs e)
 		{
 			ballUserControl.Visible = false;
 			parallelepipedUserControl.Visible = true;
@@ -117,26 +141,11 @@ namespace FigureWindowsForms
 		/// </summary>
 		/// <param name="sender">Данные.</param>
 		/// <param name="e">Данные о событие.</param>
-		private void radioButtonPyramida_CheckedChanged(object sender, EventArgs e)
+		private void RadioButtonPyramidaCheckedChanged(object sender, EventArgs e)
 		{
 			ballUserControl.Visible = false;
 			parallelepipedUserControl.Visible = false;
 			pyramidUserControl.Visible = true;
-		}
-
-		private void groupBoxListFigure_Enter(object sender, EventArgs e)
-		{
-
-		}
-
-		private void groupBoxParameters_Enter(object sender, EventArgs e)
-		{
-
-		}
-
-		private void parallelepipedUserControl_Load(object sender, EventArgs e)
-		{
-
 		}
 	}
 }

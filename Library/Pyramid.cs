@@ -71,7 +71,7 @@ namespace Library
 		{
 			get
 			{
-				return $"Пирамида";
+				return "Пирамида";
 			}
 		}
 
