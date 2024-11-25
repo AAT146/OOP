@@ -95,21 +95,6 @@ namespace FigureWindowsForms
 			CreateTable(_volumeFigureList, dataGridView);
 		}
 
-		private void groupBox1_Enter(object sender, EventArgs e)
-		{
-
-		}
-
-		private void groupBox2_Enter(object sender, EventArgs e)
-		{
-
-		}
-
-		private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
-		{
-
-		}
-
 		/// <summary>
 		/// Метод 
 		/// </summary>
@@ -118,15 +103,9 @@ namespace FigureWindowsForms
 		private void buttonAdd_Click(object sender, EventArgs e)
 		{
 			AddFigure addFigure = new AddFigure();
+			addFigure.FormClosed += (s, args) =>
+			{ _isAddFormOpen = false; };
 			addFigure.FigureAdded += AddedFigure;
-			//_isAddFormOpen = true;
-			//UpdatingStatusButtons();
-			//addFigure.FormClosed += (s, args) =>
-			//{
-			//	_isAddFormOpen = false;
-			//	UpdatingStatusButtons();
-			//};
-
 			addFigure.Show();
 		}
 

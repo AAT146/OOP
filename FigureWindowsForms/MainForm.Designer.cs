@@ -49,16 +49,21 @@ namespace FigureWindowsForms
 			// 
 			this.groupBoxCalculator.Controls.Add(this.dataGridView);
 			this.groupBoxCalculator.Location = new System.Drawing.Point(12, 30);
+			this.groupBoxCalculator.Margin = new System.Windows.Forms.Padding(2);
 			this.groupBoxCalculator.Name = "groupBoxCalculator";
+			this.groupBoxCalculator.Padding = new System.Windows.Forms.Padding(2);
 			this.groupBoxCalculator.Size = new System.Drawing.Size(776, 305);
 			this.groupBoxCalculator.TabIndex = 0;
 			this.groupBoxCalculator.TabStop = false;
-			this.groupBoxCalculator.Enter += new System.EventHandler(this.groupBox1_Enter);
 			// 
 			// dataGridView
-			// 
+			//
+			this.dataGridView.AllowUserToOrderColumns = true;
+			this.dataGridView.AllowUserToResizeColumns = false;
+			this.dataGridView.AllowUserToResizeRows = false;
 			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView.Location = new System.Drawing.Point(6, 14);
+			this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
 			this.dataGridView.Name = "dataGridView";
 			this.dataGridView.RowHeadersWidth = 51;
 			this.dataGridView.RowTemplate.Height = 24;
@@ -78,7 +83,6 @@ namespace FigureWindowsForms
 			this.groupBoxButton.Size = new System.Drawing.Size(776, 97);
 			this.groupBoxButton.TabIndex = 1;
 			this.groupBoxButton.TabStop = false;
-			this.groupBoxButton.Enter += new System.EventHandler(this.groupBox2_Enter);
 			// 
 			// buttonDeleteList
 			// 
@@ -159,6 +163,7 @@ namespace FigureWindowsForms
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.Text = "Объем фигур";
+			this.Load += new System.EventHandler(this.LoadMainForm);
 			this.groupBoxCalculator.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			this.groupBoxButton.ResumeLayout(false);
@@ -168,6 +173,7 @@ namespace FigureWindowsForms
 		}
 
 		#endregion
+
 		private GroupBox groupBoxButton;
 		private Button buttonAdd;
 		private Button buttonDeleteList;

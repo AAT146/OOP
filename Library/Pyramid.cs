@@ -89,6 +89,6 @@ namespace Library
 		/// <summary>
 		/// Расчет объма пирамиды.
 		/// </summary>
-		public override double Volume => (AreaOfBase * Height) / 3;
+		public override double Volume => Math.Round((AreaOfBase * Height) / 3, 2);
 	}
 }
