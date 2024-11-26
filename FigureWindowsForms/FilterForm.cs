@@ -104,6 +104,7 @@ namespace FigureWindowsForms
 			return filteredList;
 		}
 
+		//TODO: RSDN
 		/// <summary>
 		/// Фильтрация списка.
 		/// </summary>

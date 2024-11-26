@@ -13,7 +13,6 @@ using System.Xml.Serialization;
 
 namespace FigureWindowsForms
 {
-	//TODO+: XML
 	/// <summary>
 	/// Класс программы для расчета объема фигур.
 	/// </summary>
