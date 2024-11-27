@@ -30,11 +30,11 @@ namespace FigureWindowsForms
 			{
 				return new Parallelepiped()
 				{
-					Length = Convert.ToDouble(textBoxLength.Text),
-					Width = Convert.ToDouble(textBoxWidth.Text),
-					Height = Convert.ToDouble(textBoxHeight.Text),
-					AngleLengthWidth = Convert.ToDouble(textBoxAngleLengthWidth.Text),
-					AngleLengthHeight = Convert.ToDouble(textBoxAngleLengthHeight.Text),
+					Length = Convert.ToDouble(_textBoxLength.Text),
+					Width = Convert.ToDouble(_textBoxWidth.Text),
+					Height = Convert.ToDouble(_textBoxHeight.Text),
+					AngleLengthWidth = Convert.ToDouble(_textBoxAngleLengthWidth.Text),
+					AngleLengthHeight = Convert.ToDouble(_textBoxAngleLengthHeight.Text),
 				};
 			}
 		}

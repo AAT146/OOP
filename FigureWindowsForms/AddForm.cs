@@ -30,28 +30,28 @@ namespace FigureWindowsForms
 			StartPosition = FormStartPosition.CenterScreen;
 			AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
-			_ballUserControl.textBoxRadius.KeyPress += new
+			_ballUserControl._textBoxRadius.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			_parallelepipedUserControl.textBoxLength.KeyPress += new
+			_parallelepipedUserControl._textBoxLength.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			_parallelepipedUserControl.textBoxWidth.KeyPress += new
+			_parallelepipedUserControl._textBoxWidth.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			_parallelepipedUserControl.textBoxHeight.KeyPress += new
+			_parallelepipedUserControl._textBoxHeight.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			_parallelepipedUserControl.textBoxAngleLengthWidth.KeyPress += new
+			_parallelepipedUserControl._textBoxAngleLengthWidth.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			_parallelepipedUserControl.textBoxAngleLengthHeight.KeyPress += new
+			_parallelepipedUserControl._textBoxAngleLengthHeight.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			_pyramidUserControl.textBoxAreaOfBase.KeyPress += new
+			_pyramidUserControl._textBoxAreaOfBase.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			_pyramidUserControl.textBoxPyramidHeight.KeyPress += new
+			_pyramidUserControl._textBoxPyramidHeight.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
 			_figureAddUserControls = new List<InterfaceAddFigure>()
@@ -85,13 +85,13 @@ namespace FigureWindowsForms
 			}
 			catch (ArgumentException exeption)
 			{
-				MessageBox.Show($"{exeption.Message}", "Предупреждение",
-					MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				MessageBox.Show($"{exeption.Message}", "Ошибка ввода",
+					MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 			}
 			catch
 			{
 				MessageBox.Show("Введите данные.", "Предупреждение",
-					MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 			}
 		}
 

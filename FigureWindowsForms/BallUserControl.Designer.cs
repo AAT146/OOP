@@ -28,32 +28,33 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.labelRadius = new System.Windows.Forms.Label();
-			this.textBoxRadius = new System.Windows.Forms.TextBox();
+			this._labelRadius = new System.Windows.Forms.Label();
+			this._textBoxRadius = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// labelRadius
 			// 
-			this.labelRadius.AutoSize = true;
-			this.labelRadius.Location = new System.Drawing.Point(11, 7);
-			this.labelRadius.Name = "labelRadius";
-			this.labelRadius.Size = new System.Drawing.Size(55, 16);
-			this.labelRadius.TabIndex = 0;
-			this.labelRadius.Text = "Радиус";
+			this._labelRadius.AutoSize = true;
+			this._labelRadius.Location = new System.Drawing.Point(11, 7);
+			this._labelRadius.Name = "labelRadius";
+			this._labelRadius.Size = new System.Drawing.Size(55, 16);
+			this._labelRadius.TabIndex = 0;
+			this._labelRadius.Text = "Радиус";
 			// 
 			// textBoxRadius
 			// 
-			this.textBoxRadius.Location = new System.Drawing.Point(160, 4);
-			this.textBoxRadius.Name = "textBoxRadius";
-			this.textBoxRadius.Size = new System.Drawing.Size(100, 22);
-			this.textBoxRadius.TabIndex = 1;
+			this._textBoxRadius.Location = new System.Drawing.Point(160, 4);
+			this._textBoxRadius.Name = "textBoxRadius";
+			this._textBoxRadius.Size = new System.Drawing.Size(100, 22);
+			this._textBoxRadius.TabIndex = 1;
+			this._textBoxRadius.MaxLength = 7;
 			// 
 			// BallUserControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.textBoxRadius);
-			this.Controls.Add(this.labelRadius);
+			this.Controls.Add(this._textBoxRadius);
+			this.Controls.Add(this._labelRadius);
 			this.Name = "BallUserControl";
 			this.Size = new System.Drawing.Size(270, 150);
 			this.ResumeLayout(false);
@@ -62,7 +63,7 @@
 		}
 
 		#endregion
-		internal System.Windows.Forms.Label labelRadius;
-		internal System.Windows.Forms.TextBox textBoxRadius;
+		internal System.Windows.Forms.Label _labelRadius;
+		internal System.Windows.Forms.TextBox _textBoxRadius;
 	}
 }

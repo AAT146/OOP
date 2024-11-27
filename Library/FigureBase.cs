@@ -47,7 +47,7 @@ namespace Library
 		{
 			if (number <= 0)
 			{
-				throw new ArgumentException("Аргумент должен быть положительным.");
+				throw new ArgumentException("Величина должна быть больше 0.");
 			}
 			else
 			{
@@ -66,7 +66,8 @@ namespace Library
 		{
 			if (number <= 0 || number >= 180)
 			{
-				throw new ArgumentException("Аргумент должет быть больше 0, но меньше 180.");
+				throw new ArgumentException("Величины углов должны быть\n"+ 
+					"больше 0, но меньше 180.");
 			}
 			else
 			{

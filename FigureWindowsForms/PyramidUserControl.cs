@@ -25,8 +25,8 @@ namespace FigureWindowsForms
 			{
 				return new Pyramid()
 				{
-					AreaOfBase = Convert.ToDouble(textBoxAreaOfBase.Text),
-					Height = Convert.ToDouble(textBoxAreaOfBase.Text),
+					AreaOfBase = Convert.ToDouble(_textBoxAreaOfBase.Text),
+					Height = Convert.ToDouble(_textBoxAreaOfBase.Text),
 				};
 			}
 		}

@@ -25,7 +25,7 @@ namespace FigureWindowsForms
 			{
 				return new Ball()
 				{
-					Radius = Convert.ToDouble(textBoxRadius.Text),
+					Radius = Convert.ToDouble(_textBoxRadius.Text),
 				};
 			}
 		}
