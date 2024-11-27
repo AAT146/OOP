@@ -21,12 +21,14 @@ namespace FigureWindowsForms
 		/// <summary>
 		/// Список объемов фигур.
 		/// </summary>
-		private BindingList<FigureBase> _volumeFigureList = new BindingList<FigureBase>();
+		private BindingList<FigureBase> _volumeFigureList = 
+			new BindingList<FigureBase>();
 
 		/// <summary>
 		/// Список отфильтрованных объемов фигур.
 		/// </summary>
-		private BindingList<FigureBase> _filterVolumeFigureList = new BindingList<FigureBase>();
+		private BindingList<FigureBase> _filterVolumeFigureList = 
+			new BindingList<FigureBase>();
 
 		/// <summary>
 		/// Для файлов.
@@ -40,6 +42,21 @@ namespace FigureWindowsForms
 		private bool _isFilter = false;
 
 		/// <summary>
+		/// Поле для хранения состояния формы добавления.
+		/// </summary>
+		private bool _isAddFormOpen = false;
+
+		/// <summary>
+		/// Поле для хранения состояния формы фильтра.
+		/// </summary>
+		private bool _isFilterFormOpen = false;
+
+		/// <summary>
+		/// Поле для хранения состояния кнопки Сбросить фильтр.
+		/// </summary>
+		private bool _isDeleteListOpen = false;
+
+		/// <summary>
 		/// Конструктор MainForm.
 		/// </summary>
 		public MainForm()
@@ -48,6 +65,7 @@ namespace FigureWindowsForms
 			BackColor = Color.Honeydew;
 			_dataGridView.BackgroundColor = Color.AliceBlue;
 			StartPosition = FormStartPosition.CenterScreen;
+			StatusButtons();
 		}
 
 		/// <summary>
@@ -97,6 +115,13 @@ namespace FigureWindowsForms
 		{
 			AddForm addFigure = new AddForm();
 			addFigure.FigureAdded += AddedFigure;
+			_isAddFormOpen = true;
+			StatusButtons();
+			addFigure.FormClosed += (s, args) =>
+			{
+				_isAddFormOpen = false;
+				StatusButtons();
+			};
 			addFigure.Show();
 		}
 
@@ -146,6 +171,13 @@ namespace FigureWindowsForms
 		{
 			FilterForm filterFigure = new FilterForm(_volumeFigureList);
 			filterFigure.FigureFiltered += FilteredFigure;
+			_isFilterFormOpen = true;
+			StatusButtons();
+			filterFigure.FormClosed += (s, args) =>
+			{
+				_isFilterFormOpen = false;
+				StatusButtons();
+			};
 			filterFigure.Show();
 		}
 
@@ -159,6 +191,8 @@ namespace FigureWindowsForms
 			FigureFilteredEvent filterEventArgs =
 				 figureList as FigureFilteredEvent;
 			_filterVolumeFigureList = filterEventArgs?.FilteredValueList;
+			_isFilter = true;
+			StatusButtons();
 			CreateTable(_filterVolumeFigureList, _dataGridView);
 		}
 
@@ -183,13 +217,13 @@ namespace FigureWindowsForms
 			foreach (DataGridViewRow row in
 					_dataGridView.SelectedRows)
 			{
-				if (row.DataBoundItem is FigureBase salary)
+				if (row.DataBoundItem is FigureBase figure)
 				{
-					_volumeFigureList.Remove(salary);
+					_volumeFigureList.Remove(figure);
 					if (_filterVolumeFigureList != null
 						&& _filterVolumeFigureList.Count > 0)
 					{
-						_filterVolumeFigureList.Remove(salary);
+						_filterVolumeFigureList.Remove(figure);
 					}
 				}
 			}
@@ -214,6 +248,7 @@ namespace FigureWindowsForms
 		{
 			CreateTable(_volumeFigureList, _dataGridView);
 			_isFilter = false;
+			StatusButtons();
 		}
 
 		/// <summary>
@@ -227,7 +262,7 @@ namespace FigureWindowsForms
 			{
 				MessageBox.Show("Отсутствуют данные для сохранения.",
 					"Данные не сохранены",
-					MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 				return;
 			}
 
@@ -245,7 +280,7 @@ namespace FigureWindowsForms
 				}
 				MessageBox.Show("Файл успешно сохранён.",
 					"Сохранение завершено",
-					MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 			}
 		}
 
@@ -285,6 +320,27 @@ namespace FigureWindowsForms
 					$"Ошибка:  {ex.Message}",
 					MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+		}
+
+		/// <summary>
+		/// Метод обновления состояний кнопок.
+		/// </summary>
+		private void StatusButtons()
+		{
+			_buttonAdd.Enabled = !_isFilterFormOpen &&
+				!_isFilter && !_isAddFormOpen;
+
+			_buttonFilter.Enabled = !_isAddFormOpen &&
+				!_isFilterFormOpen;
+
+			_toolStripDropDownButton1.Enabled = !_isFilter;
+
+			_buttonRandomList.Enabled = !_isFilterFormOpen && 
+				_toolStripDropDownButton1.Enabled;
+
+			_buttonDeleteList.Enabled = !_isFilter && !_isFilterFormOpen;
+
+			_buttonDelete.Enabled = !_isFilter && !_isFilterFormOpen;
 		}
 	}
 }
