@@ -68,6 +68,7 @@
     <Compile Include="FilterForm.Designer.cs">
       <DependentUpon>FilterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceAddFigure.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -130,9 +130,9 @@ namespace FigureWindowsForms
 			this._buttonVolume.Name = "buttonVolume";
 			this._buttonVolume.Size = new System.Drawing.Size(281, 25);
 			this._buttonVolume.TabIndex = 2;
-			this._buttonVolume.Text = "Добавить объём фигуры";
+			this._buttonVolume.Text = "Рассчитать объём фигуры";
 			this._buttonVolume.UseVisualStyleBackColor = true;
-			this._buttonVolume.Click += new System.EventHandler(this.button1_Click);
+			this._buttonVolume.Click += new System.EventHandler(this.ButtonClick);
 			// 
 			// AddFigure
 			// 

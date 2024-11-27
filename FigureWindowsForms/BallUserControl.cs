@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,17 +11,23 @@ using System.Windows.Forms;
 
 namespace FigureWindowsForms
 {
-	//TODO: добавить интерфейс для возможности обработки этих контролов по ссылке на интерфейс
-	public partial class BallUserControl : UserControl
+	//TODO+: добавить интерфейс для возможности обработки этих контролов по ссылке на интерфейс
+	public partial class BallUserControl : UserControl, InterfaceAddFigure
 	{
 		public BallUserControl()
 		{
 			InitializeComponent();
 		}
 
-		private void label1_Click(object sender, EventArgs e)
+		public FigureBase FigureInterface
 		{
-
+			get
+			{
+				return new Ball()
+				{
+					Radius = Convert.ToDouble(textBoxRadius.Text),
+				};
+			}
 		}
 	}
 }

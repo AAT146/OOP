@@ -40,7 +40,6 @@
 			this.labelRadius.Size = new System.Drawing.Size(55, 16);
 			this.labelRadius.TabIndex = 0;
 			this.labelRadius.Text = "Радиус";
-			this.labelRadius.Click += new System.EventHandler(this.label1_Click);
 			// 
 			// textBoxRadius
 			// 

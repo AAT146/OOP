@@ -13,7 +13,7 @@ namespace FigureWindowsForms
 	internal class VolumeAddedEvent : EventArgs
 	{
 		/// <summary>
-		/// Свойство для получения добавленной ЗП.
+		/// Свойство для получения фигуры.
 		/// </summary>
 		public FigureBase FigureBase { get; }
 

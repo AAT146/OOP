@@ -18,6 +18,11 @@ namespace FigureWindowsForms
 		/// </summary>
 		public EventHandler FigureAdded;
 
+		/// <summary>
+		/// Список UserControls.
+		/// </summary>
+		private List<InterfaceAddFigure> _figureAddUserControls;
+
 		public AddForm()
 		{
 			InitializeComponent();
@@ -48,6 +53,13 @@ namespace FigureWindowsForms
 
 			_pyramidUserControl.textBoxPyramidHeight.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
+
+			_figureAddUserControls = new List<InterfaceAddFigure>()
+			{
+				_ballUserControl,
+				_parallelepipedUserControl,
+				_pyramidUserControl,
+			};
 		}
 
 		/// <summary>
@@ -55,52 +67,23 @@ namespace FigureWindowsForms
 		/// </summary>
 		/// <param name="sender">Данные.</param>
 		/// <param name="e">Данные о событие.</param>
-		private void button1_Click(object sender, EventArgs e)
+		private void ButtonClick(object sender, EventArgs e)
 		{
 			try
 			{
 				FigureBase figureBase = null;
-
-				if (_ballUserControl.Visible)
+				
+				foreach (var userControl in _figureAddUserControls)
 				{
-					figureBase = new Ball()
+					if (((UserControl)userControl).Visible)
 					{
-						Radius = Convert.ToDouble(
-							_ballUserControl.textBoxRadius.Text),
-					};
-				}
-
-				if (_parallelepipedUserControl.Visible)
-				{
-					figureBase = new Parallelepiped()
-					{
-						Length = Convert.ToDouble(
-							_parallelepipedUserControl.textBoxLength.Text),
-						Width = Convert.ToDouble(
-							_parallelepipedUserControl.textBoxWidth.Text),
-						Height = Convert.ToDouble(
-							_parallelepipedUserControl.textBoxHeight.Text),
-						AngleLengthWidth = Convert.ToDouble(
-							_parallelepipedUserControl.textBoxAngleLengthWidth.Text),
-						AngleLengthHeight = Convert.ToDouble(
-							_parallelepipedUserControl.textBoxAngleLengthHeight.Text),
-					};
-				}
-
-				if (_pyramidUserControl.Visible)
-				{
-					figureBase = new Pyramid()
-					{
-						AreaOfBase = Convert.ToDouble(
-							_pyramidUserControl.textBoxAreaOfBase.Text),
-						Height = Convert.ToInt32(
-							_pyramidUserControl.textBoxPyramidHeight.Text),
-					};
+						figureBase = userControl.FigureInterface;
+					}
 				}
 
 				FigureAdded?.Invoke(this, new VolumeAddedEvent(figureBase));
 			}
-			catch (ArgumentOutOfRangeException exeption)
+			catch (ArgumentException exeption)
 			{
 				MessageBox.Show($"{exeption.Message}", "Предупреждение",
 					MessageBoxButtons.OK, MessageBoxIcon.Warning);

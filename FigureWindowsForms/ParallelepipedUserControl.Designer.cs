@@ -77,7 +77,6 @@ namespace FigureWindowsForms
 			this.labelAngleLengthWidth.Size = new System.Drawing.Size(113, 16);
 			this.labelAngleLengthWidth.TabIndex = 3;
 			this.labelAngleLengthWidth.Text = "Угол между Д^Ш";
-			this.labelAngleLengthWidth.Click += new System.EventHandler(this.label4_Click);
 			// 
 			// labelAngleLengthHeight
 			// 
