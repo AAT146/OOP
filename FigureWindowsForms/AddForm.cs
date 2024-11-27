@@ -119,7 +119,7 @@ namespace FigureWindowsForms
 		/// <param name="e">Данные о событие.</param>
 		private void RadioButtonCheckedChanged(object sender, EventArgs e)
 		{
-			//TODO: RSDN
+			//TODO+: RSDN
 			_ballUserControl.Visible = true;
 			_parallelepipedUserControl.Visible = false;
 			_pyramidUserControl.Visible = false;
