@@ -39,12 +39,16 @@ namespace FigureWindowsForms
 			BackColor = Color.Honeydew;
 			StartPosition = FormStartPosition.CenterScreen;
 			_textBoxValue.Enabled = false;
-			AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
-			_radioButtonPyramid.CheckedChanged += ActivateElements;
-			_radioButtonParallelepiped.CheckedChanged += ActivateElements;
-			_radioButtonBall.CheckedChanged += ActivateElements;
-			_radioButtonValue.CheckedChanged += ActivateElements;
+			_textBoxValue.KeyPress += new KeyPressEventHandler(
+				CheckTextBox.TextBoxCheck);
+
+			DeactivateElements();
+
+			_checkBoxPyramid.CheckedChanged += UpdateFilterState;
+			_checkBoxParallelepiped.CheckedChanged += UpdateFilterState;
+			_checkBoxBall.CheckedChanged += UpdateFilterState;
+			_checkBoxVolume.CheckedChanged += ToggleTextBox;
 		}
 
 		/// <summary>
@@ -53,14 +57,33 @@ namespace FigureWindowsForms
 		/// </summary>
 		/// <param name="sender">Данные.</param>
 		/// <param name="e">Данные о событие.</param>
-		private void ActivateElements(object sender, EventArgs e)
+		private void UpdateFilterState(object sender, EventArgs e)
 		{
-			bool activate = _radioButtonPyramid.Checked
-				|| _radioButtonParallelepiped.Checked
-				|| _radioButtonBall.Checked
-				|| _radioButtonValue.Checked;
+			// Проверяем, выбран ли хотя бы один CheckBox
+			bool anyChecked = _checkBoxPyramid.Checked
+							  || _checkBoxParallelepiped.Checked
+							  || _checkBoxBall.Checked;
 
-			_textBoxValue.Enabled = activate;
+			_checkBoxVolume.Enabled = anyChecked; // Активируем поле для ввода, если выбрана хотя бы одна фигура
+		}
+
+		/// <summary>
+		/// Деактивация всех элементов управления на форме.
+		/// </summary>
+		private void DeactivateElements()
+		{
+			_checkBoxVolume.Enabled = false;
+			_textBoxValue.Enabled = false;
+		}
+
+		/// <summary>
+		/// Включение/выключение TextBox для ввода значения.
+		/// </summary>
+		/// <param name="sender">Данные.</param>
+		/// <param name="e">Данные о событие.</param>
+		private void ToggleTextBox(object sender, EventArgs e)
+		{
+			_textBoxValue.Enabled = _checkBoxVolume.Checked;
 		}
 
 		/// <summary>
@@ -109,35 +132,35 @@ namespace FigureWindowsForms
 		/// </summary>
 		/// <param name="sender">Данные.</param>
 		/// <param name="e">Данные о событие.</param>
-		private void buttonFound_Click(object sender, EventArgs e)
+		private void ButtonFoundClick(object sender, EventArgs e)
 		{
 			_filteredCalculatedFigureList = new BindingList<FigureBase>();
 
 			BindingList<FigureBase> tempFilteredList =
 				new BindingList<FigureBase>();
 
-			if (_radioButtonBall.Checked)
+			if (_checkBoxBall.Checked)
 			{
 				FilterByType(_calculatedFigureList,
 					tempFilteredList,
 					typeof(Ball));
 			}
 
-			if (_radioButtonParallelepiped.Checked)
+			if (_checkBoxParallelepiped.Checked)
 			{
 				FilterByType(_calculatedFigureList,
 					tempFilteredList,
 					typeof(Parallelepiped));
 			}
 
-			if (_radioButtonPyramid.Checked)
+			if (_checkBoxPyramid.Checked)
 			{
 				FilterByType(_calculatedFigureList,
 					tempFilteredList,
 					typeof(Pyramid));
 			}
 
-			if (_radioButtonValue.Checked)
+			if (_checkBoxVolume.Checked)
 			{
 				if (!string.IsNullOrEmpty(_textBoxValue.Text))
 				{

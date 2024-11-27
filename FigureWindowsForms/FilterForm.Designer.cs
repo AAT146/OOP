@@ -29,100 +29,96 @@
 		private void InitializeComponent()
 		{
 			this._groupBoxTypeFigure = new System.Windows.Forms.GroupBox();
-			this._radioButtonPyramid = new System.Windows.Forms.RadioButton();
-			this._radioButtonParallelepiped = new System.Windows.Forms.RadioButton();
-			this._radioButtonBall = new System.Windows.Forms.RadioButton();
 			this._buttonFound = new System.Windows.Forms.Button();
 			this._groupBox1 = new System.Windows.Forms.GroupBox();
 			this._textBoxValue = new System.Windows.Forms.TextBox();
-			this._radioButtonValue = new System.Windows.Forms.RadioButton();
+			this._checkBoxBall = new System.Windows.Forms.CheckBox();
+			this._checkBoxParallelepiped = new System.Windows.Forms.CheckBox();
+			this._checkBoxPyramid = new System.Windows.Forms.CheckBox();
+			this._checkBoxVolume = new System.Windows.Forms.CheckBox();
 			this._groupBoxTypeFigure.SuspendLayout();
 			this._groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// groupBoxTypeFigure
+			// _groupBoxTypeFigure
 			// 
-			this._groupBoxTypeFigure.Controls.Add(this._radioButtonPyramid);
-			this._groupBoxTypeFigure.Controls.Add(this._radioButtonParallelepiped);
-			this._groupBoxTypeFigure.Controls.Add(this._radioButtonBall);
+			this._groupBoxTypeFigure.Controls.Add(this._checkBoxPyramid);
+			this._groupBoxTypeFigure.Controls.Add(this._checkBoxParallelepiped);
+			this._groupBoxTypeFigure.Controls.Add(this._checkBoxBall);
 			this._groupBoxTypeFigure.Location = new System.Drawing.Point(12, 12);
-			this._groupBoxTypeFigure.Name = "groupBoxTypeFigure";
+			this._groupBoxTypeFigure.Name = "_groupBoxTypeFigure";
 			this._groupBoxTypeFigure.Size = new System.Drawing.Size(185, 149);
 			this._groupBoxTypeFigure.TabIndex = 0;
 			this._groupBoxTypeFigure.TabStop = false;
 			this._groupBoxTypeFigure.Text = "Основное условие";
 			// 
-			// radioButtonPyramid
-			// 
-			this._radioButtonPyramid.AutoSize = true;
-			this._radioButtonPyramid.Location = new System.Drawing.Point(19, 112);
-			this._radioButtonPyramid.Name = "radioButtonPyramid";
-			this._radioButtonPyramid.Size = new System.Drawing.Size(95, 20);
-			this._radioButtonPyramid.TabIndex = 2;
-			this._radioButtonPyramid.TabStop = true;
-			this._radioButtonPyramid.Text = "Пирамида";
-			this._radioButtonPyramid.UseVisualStyleBackColor = true;
-			// 
-			// radioButtonParallelepiped
-			// 
-			this._radioButtonParallelepiped.AutoSize = true;
-			this._radioButtonParallelepiped.Location = new System.Drawing.Point(19, 71);
-			this._radioButtonParallelepiped.Name = "radioButtonParallelepiped";
-			this._radioButtonParallelepiped.Size = new System.Drawing.Size(142, 20);
-			this._radioButtonParallelepiped.TabIndex = 1;
-			this._radioButtonParallelepiped.TabStop = true;
-			this._radioButtonParallelepiped.Text = "Параллелепипед";
-			this._radioButtonParallelepiped.UseVisualStyleBackColor = true;
-			// 
-			// radioButtonBall
-			// 
-			this._radioButtonBall.AutoSize = true;
-			this._radioButtonBall.Location = new System.Drawing.Point(19, 32);
-			this._radioButtonBall.Name = "radioButtonBall";
-			this._radioButtonBall.Size = new System.Drawing.Size(55, 20);
-			this._radioButtonBall.TabIndex = 0;
-			this._radioButtonBall.TabStop = true;
-			this._radioButtonBall.Text = "Шар";
-			this._radioButtonBall.UseVisualStyleBackColor = true;
-			// 
-			// buttonFound
+			// _buttonFound
 			// 
 			this._buttonFound.Location = new System.Drawing.Point(122, 170);
-			this._buttonFound.Name = "buttonFound";
+			this._buttonFound.Name = "_buttonFound";
 			this._buttonFound.Size = new System.Drawing.Size(213, 26);
 			this._buttonFound.TabIndex = 1;
 			this._buttonFound.Text = "Найти";
 			this._buttonFound.UseVisualStyleBackColor = true;
-			this._buttonFound.Click += new System.EventHandler(this.buttonFound_Click);
+			this._buttonFound.Click += new System.EventHandler(this.ButtonFoundClick);
 			// 
-			// groupBox1
+			// _groupBox1
 			// 
+			this._groupBox1.Controls.Add(this._checkBoxVolume);
 			this._groupBox1.Controls.Add(this._textBoxValue);
-			this._groupBox1.Controls.Add(this._radioButtonValue);
 			this._groupBox1.Location = new System.Drawing.Point(213, 14);
-			this._groupBox1.Name = "groupBox1";
+			this._groupBox1.Name = "_groupBox1";
 			this._groupBox1.Size = new System.Drawing.Size(241, 147);
 			this._groupBox1.TabIndex = 2;
 			this._groupBox1.TabStop = false;
 			this._groupBox1.Text = "Дополнительное условие";
 			// 
-			// textBoxValue
+			// _textBoxValue
 			// 
-			this._textBoxValue.Location = new System.Drawing.Point(19, 67);
-			this._textBoxValue.Name = "textBoxValue";
+			this._textBoxValue.Location = new System.Drawing.Point(19, 65);
+			this._textBoxValue.Name = "_textBoxValue";
 			this._textBoxValue.Size = new System.Drawing.Size(100, 22);
 			this._textBoxValue.TabIndex = 1;
 			// 
-			// radioButtonValue
+			// _checkBoxBall
 			// 
-			this._radioButtonValue.AutoSize = true;
-			this._radioButtonValue.Location = new System.Drawing.Point(19, 32);
-			this._radioButtonValue.Name = "radioButtonValue";
-			this._radioButtonValue.Size = new System.Drawing.Size(194, 20);
-			this._radioButtonValue.TabIndex = 0;
-			this._radioButtonValue.TabStop = true;
-			this._radioButtonValue.Text = "Значение объма фигуры:";
-			this._radioButtonValue.UseVisualStyleBackColor = true;
+			this._checkBoxBall.AutoSize = true;
+			this._checkBoxBall.Location = new System.Drawing.Point(20, 30);
+			this._checkBoxBall.Name = "_checkBoxBall";
+			this._checkBoxBall.Size = new System.Drawing.Size(56, 20);
+			this._checkBoxBall.TabIndex = 0;
+			this._checkBoxBall.Text = "Шар";
+			this._checkBoxBall.UseVisualStyleBackColor = true;
+			// 
+			// _checkBoxParallelepiped
+			// 
+			this._checkBoxParallelepiped.AutoSize = true;
+			this._checkBoxParallelepiped.Location = new System.Drawing.Point(20, 69);
+			this._checkBoxParallelepiped.Name = "_checkBoxParallelepiped";
+			this._checkBoxParallelepiped.Size = new System.Drawing.Size(143, 20);
+			this._checkBoxParallelepiped.TabIndex = 1;
+			this._checkBoxParallelepiped.Text = "Параллелепипед";
+			this._checkBoxParallelepiped.UseVisualStyleBackColor = true;
+			// 
+			// _checkBoxPyramid
+			// 
+			this._checkBoxPyramid.AutoSize = true;
+			this._checkBoxPyramid.Location = new System.Drawing.Point(20, 110);
+			this._checkBoxPyramid.Name = "_checkBoxPyramid";
+			this._checkBoxPyramid.Size = new System.Drawing.Size(96, 20);
+			this._checkBoxPyramid.TabIndex = 2;
+			this._checkBoxPyramid.Text = "Пирамида";
+			this._checkBoxPyramid.UseVisualStyleBackColor = true;
+			// 
+			// _checkBoxVolume
+			// 
+			this._checkBoxVolume.AutoSize = true;
+			this._checkBoxVolume.Location = new System.Drawing.Point(19, 28);
+			this._checkBoxVolume.Name = "_checkBoxVolume";
+			this._checkBoxVolume.Size = new System.Drawing.Size(196, 20);
+			this._checkBoxVolume.TabIndex = 2;
+			this._checkBoxVolume.Text = "Задать величину объема";
+			this._checkBoxVolume.UseVisualStyleBackColor = true;
 			// 
 			// FilterForm
 			// 
@@ -145,12 +141,12 @@
 		#endregion
 
 		internal System.Windows.Forms.GroupBox _groupBoxTypeFigure;
-		private System.Windows.Forms.RadioButton _radioButtonPyramid;
-		private System.Windows.Forms.RadioButton _radioButtonParallelepiped;
-		private System.Windows.Forms.RadioButton _radioButtonBall;
 		private System.Windows.Forms.Button _buttonFound;
 		internal System.Windows.Forms.GroupBox _groupBox1;
-		private System.Windows.Forms.RadioButton _radioButtonValue;
 		private System.Windows.Forms.TextBox _textBoxValue;
+		private System.Windows.Forms.CheckBox _checkBoxPyramid;
+		private System.Windows.Forms.CheckBox _checkBoxParallelepiped;
+		private System.Windows.Forms.CheckBox _checkBoxBall;
+		private System.Windows.Forms.CheckBox _checkBoxVolume;
 	}
 }
