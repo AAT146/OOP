@@ -34,7 +34,7 @@ namespace FigureWindowsForms
 
 			if (e.KeyChar == '0')
 			{
-				if (textBox.Text == "0" && textBox.SelectionStart == textBox.Text.Length)
+				if (textBox.Text == "0," && textBox.SelectionStart == textBox.Text.Length)
 				{
 					e.Handled = true;
 				}

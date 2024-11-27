@@ -337,10 +337,6 @@ namespace FigureWindowsForms
 
 			_buttonRandomList.Enabled = !_isFilterFormOpen && 
 				_toolStripDropDownButton1.Enabled;
-
-			_buttonDeleteList.Enabled = !_isFilter && !_isFilterFormOpen;
-
-			_buttonDelete.Enabled = !_isFilter && !_isFilterFormOpen;
 		}
 	}
 }

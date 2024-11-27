@@ -23,6 +23,9 @@ namespace FigureWindowsForms
 		/// </summary>
 		private List<InterfaceAddFigure> _figureAddUserControls;
 
+		/// <summary>
+		/// 
+		/// </summary>
 		public AddForm()
 		{
 			InitializeComponent();

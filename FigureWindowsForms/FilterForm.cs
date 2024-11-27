@@ -62,9 +62,8 @@ namespace FigureWindowsForms
 			// Проверяем, выбран ли хотя бы один CheckBox
 			bool anyChecked = _checkBoxPyramid.Checked
 							  || _checkBoxParallelepiped.Checked
-							  || _checkBoxBall.Checked;
-
-			_checkBoxVolume.Enabled = anyChecked; // Активируем поле для ввода, если выбрана хотя бы одна фигура
+							  || _checkBoxBall.Checked
+							  || _checkBoxVolume.Checked;
 		}
 
 		/// <summary>
@@ -72,7 +71,7 @@ namespace FigureWindowsForms
 		/// </summary>
 		private void DeactivateElements()
 		{
-			_checkBoxVolume.Enabled = false;
+			_checkBoxVolume.Enabled = true;
 			_textBoxValue.Enabled = false;
 		}
 
