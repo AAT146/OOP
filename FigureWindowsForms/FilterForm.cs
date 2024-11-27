@@ -61,9 +61,9 @@ namespace FigureWindowsForms
 		{
 			// Проверяем, выбран ли хотя бы один CheckBox
 			bool anyChecked = _checkBoxPyramid.Checked
-							  || _checkBoxParallelepiped.Checked
-							  || _checkBoxBall.Checked
-							  || _checkBoxVolume.Checked;
+				|| _checkBoxParallelepiped.Checked
+				|| _checkBoxBall.Checked
+				|| _checkBoxVolume.Checked;
 		}
 
 		/// <summary>
