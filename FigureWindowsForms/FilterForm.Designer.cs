@@ -28,129 +28,129 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.groupBoxTypeFigure = new System.Windows.Forms.GroupBox();
-			this.radioButtonPyramid = new System.Windows.Forms.RadioButton();
-			this.radioButtonParallelepiped = new System.Windows.Forms.RadioButton();
-			this.radioButtonBall = new System.Windows.Forms.RadioButton();
-			this.buttonFound = new System.Windows.Forms.Button();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.textBoxValue = new System.Windows.Forms.TextBox();
-			this.radioButtonValue = new System.Windows.Forms.RadioButton();
-			this.groupBoxTypeFigure.SuspendLayout();
-			this.groupBox1.SuspendLayout();
+			this._groupBoxTypeFigure = new System.Windows.Forms.GroupBox();
+			this._radioButtonPyramid = new System.Windows.Forms.RadioButton();
+			this._radioButtonParallelepiped = new System.Windows.Forms.RadioButton();
+			this._radioButtonBall = new System.Windows.Forms.RadioButton();
+			this._buttonFound = new System.Windows.Forms.Button();
+			this._groupBox1 = new System.Windows.Forms.GroupBox();
+			this._textBoxValue = new System.Windows.Forms.TextBox();
+			this._radioButtonValue = new System.Windows.Forms.RadioButton();
+			this._groupBoxTypeFigure.SuspendLayout();
+			this._groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// groupBoxTypeFigure
 			// 
-			this.groupBoxTypeFigure.Controls.Add(this.radioButtonPyramid);
-			this.groupBoxTypeFigure.Controls.Add(this.radioButtonParallelepiped);
-			this.groupBoxTypeFigure.Controls.Add(this.radioButtonBall);
-			this.groupBoxTypeFigure.Location = new System.Drawing.Point(12, 12);
-			this.groupBoxTypeFigure.Name = "groupBoxTypeFigure";
-			this.groupBoxTypeFigure.Size = new System.Drawing.Size(185, 149);
-			this.groupBoxTypeFigure.TabIndex = 0;
-			this.groupBoxTypeFigure.TabStop = false;
-			this.groupBoxTypeFigure.Text = "Основное условие";
+			this._groupBoxTypeFigure.Controls.Add(this._radioButtonPyramid);
+			this._groupBoxTypeFigure.Controls.Add(this._radioButtonParallelepiped);
+			this._groupBoxTypeFigure.Controls.Add(this._radioButtonBall);
+			this._groupBoxTypeFigure.Location = new System.Drawing.Point(12, 12);
+			this._groupBoxTypeFigure.Name = "groupBoxTypeFigure";
+			this._groupBoxTypeFigure.Size = new System.Drawing.Size(185, 149);
+			this._groupBoxTypeFigure.TabIndex = 0;
+			this._groupBoxTypeFigure.TabStop = false;
+			this._groupBoxTypeFigure.Text = "Основное условие";
 			// 
 			// radioButtonPyramid
 			// 
-			this.radioButtonPyramid.AutoSize = true;
-			this.radioButtonPyramid.Location = new System.Drawing.Point(19, 112);
-			this.radioButtonPyramid.Name = "radioButtonPyramid";
-			this.radioButtonPyramid.Size = new System.Drawing.Size(95, 20);
-			this.radioButtonPyramid.TabIndex = 2;
-			this.radioButtonPyramid.TabStop = true;
-			this.radioButtonPyramid.Text = "Пирамида";
-			this.radioButtonPyramid.UseVisualStyleBackColor = true;
+			this._radioButtonPyramid.AutoSize = true;
+			this._radioButtonPyramid.Location = new System.Drawing.Point(19, 112);
+			this._radioButtonPyramid.Name = "radioButtonPyramid";
+			this._radioButtonPyramid.Size = new System.Drawing.Size(95, 20);
+			this._radioButtonPyramid.TabIndex = 2;
+			this._radioButtonPyramid.TabStop = true;
+			this._radioButtonPyramid.Text = "Пирамида";
+			this._radioButtonPyramid.UseVisualStyleBackColor = true;
 			// 
 			// radioButtonParallelepiped
 			// 
-			this.radioButtonParallelepiped.AutoSize = true;
-			this.radioButtonParallelepiped.Location = new System.Drawing.Point(19, 71);
-			this.radioButtonParallelepiped.Name = "radioButtonParallelepiped";
-			this.radioButtonParallelepiped.Size = new System.Drawing.Size(142, 20);
-			this.radioButtonParallelepiped.TabIndex = 1;
-			this.radioButtonParallelepiped.TabStop = true;
-			this.radioButtonParallelepiped.Text = "Параллелепипед";
-			this.radioButtonParallelepiped.UseVisualStyleBackColor = true;
+			this._radioButtonParallelepiped.AutoSize = true;
+			this._radioButtonParallelepiped.Location = new System.Drawing.Point(19, 71);
+			this._radioButtonParallelepiped.Name = "radioButtonParallelepiped";
+			this._radioButtonParallelepiped.Size = new System.Drawing.Size(142, 20);
+			this._radioButtonParallelepiped.TabIndex = 1;
+			this._radioButtonParallelepiped.TabStop = true;
+			this._radioButtonParallelepiped.Text = "Параллелепипед";
+			this._radioButtonParallelepiped.UseVisualStyleBackColor = true;
 			// 
 			// radioButtonBall
 			// 
-			this.radioButtonBall.AutoSize = true;
-			this.radioButtonBall.Location = new System.Drawing.Point(19, 32);
-			this.radioButtonBall.Name = "radioButtonBall";
-			this.radioButtonBall.Size = new System.Drawing.Size(55, 20);
-			this.radioButtonBall.TabIndex = 0;
-			this.radioButtonBall.TabStop = true;
-			this.radioButtonBall.Text = "Шар";
-			this.radioButtonBall.UseVisualStyleBackColor = true;
+			this._radioButtonBall.AutoSize = true;
+			this._radioButtonBall.Location = new System.Drawing.Point(19, 32);
+			this._radioButtonBall.Name = "radioButtonBall";
+			this._radioButtonBall.Size = new System.Drawing.Size(55, 20);
+			this._radioButtonBall.TabIndex = 0;
+			this._radioButtonBall.TabStop = true;
+			this._radioButtonBall.Text = "Шар";
+			this._radioButtonBall.UseVisualStyleBackColor = true;
 			// 
 			// buttonFound
 			// 
-			this.buttonFound.Location = new System.Drawing.Point(122, 170);
-			this.buttonFound.Name = "buttonFound";
-			this.buttonFound.Size = new System.Drawing.Size(213, 26);
-			this.buttonFound.TabIndex = 1;
-			this.buttonFound.Text = "Найти";
-			this.buttonFound.UseVisualStyleBackColor = true;
-			this.buttonFound.Click += new System.EventHandler(this.buttonFound_Click);
+			this._buttonFound.Location = new System.Drawing.Point(122, 170);
+			this._buttonFound.Name = "buttonFound";
+			this._buttonFound.Size = new System.Drawing.Size(213, 26);
+			this._buttonFound.TabIndex = 1;
+			this._buttonFound.Text = "Найти";
+			this._buttonFound.UseVisualStyleBackColor = true;
+			this._buttonFound.Click += new System.EventHandler(this.buttonFound_Click);
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.textBoxValue);
-			this.groupBox1.Controls.Add(this.radioButtonValue);
-			this.groupBox1.Location = new System.Drawing.Point(213, 14);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(241, 147);
-			this.groupBox1.TabIndex = 2;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Дополнительное условие";
+			this._groupBox1.Controls.Add(this._textBoxValue);
+			this._groupBox1.Controls.Add(this._radioButtonValue);
+			this._groupBox1.Location = new System.Drawing.Point(213, 14);
+			this._groupBox1.Name = "groupBox1";
+			this._groupBox1.Size = new System.Drawing.Size(241, 147);
+			this._groupBox1.TabIndex = 2;
+			this._groupBox1.TabStop = false;
+			this._groupBox1.Text = "Дополнительное условие";
 			// 
 			// textBoxValue
 			// 
-			this.textBoxValue.Location = new System.Drawing.Point(19, 67);
-			this.textBoxValue.Name = "textBoxValue";
-			this.textBoxValue.Size = new System.Drawing.Size(100, 22);
-			this.textBoxValue.TabIndex = 1;
+			this._textBoxValue.Location = new System.Drawing.Point(19, 67);
+			this._textBoxValue.Name = "textBoxValue";
+			this._textBoxValue.Size = new System.Drawing.Size(100, 22);
+			this._textBoxValue.TabIndex = 1;
 			// 
 			// radioButtonValue
 			// 
-			this.radioButtonValue.AutoSize = true;
-			this.radioButtonValue.Location = new System.Drawing.Point(19, 32);
-			this.radioButtonValue.Name = "radioButtonValue";
-			this.radioButtonValue.Size = new System.Drawing.Size(194, 20);
-			this.radioButtonValue.TabIndex = 0;
-			this.radioButtonValue.TabStop = true;
-			this.radioButtonValue.Text = "Значение объма фигуры:";
-			this.radioButtonValue.UseVisualStyleBackColor = true;
+			this._radioButtonValue.AutoSize = true;
+			this._radioButtonValue.Location = new System.Drawing.Point(19, 32);
+			this._radioButtonValue.Name = "radioButtonValue";
+			this._radioButtonValue.Size = new System.Drawing.Size(194, 20);
+			this._radioButtonValue.TabIndex = 0;
+			this._radioButtonValue.TabStop = true;
+			this._radioButtonValue.Text = "Значение объма фигуры:";
+			this._radioButtonValue.UseVisualStyleBackColor = true;
 			// 
 			// FilterForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(466, 205);
-			this.Controls.Add(this.groupBox1);
-			this.Controls.Add(this.buttonFound);
-			this.Controls.Add(this.groupBoxTypeFigure);
+			this.Controls.Add(this._groupBox1);
+			this.Controls.Add(this._buttonFound);
+			this.Controls.Add(this._groupBoxTypeFigure);
 			this.Name = "FilterForm";
 			this.Text = "Фильтр";
-			this.groupBoxTypeFigure.ResumeLayout(false);
-			this.groupBoxTypeFigure.PerformLayout();
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
+			this._groupBoxTypeFigure.ResumeLayout(false);
+			this._groupBoxTypeFigure.PerformLayout();
+			this._groupBox1.ResumeLayout(false);
+			this._groupBox1.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		internal System.Windows.Forms.GroupBox groupBoxTypeFigure;
-		private System.Windows.Forms.RadioButton radioButtonPyramid;
-		private System.Windows.Forms.RadioButton radioButtonParallelepiped;
-		private System.Windows.Forms.RadioButton radioButtonBall;
-		private System.Windows.Forms.Button buttonFound;
-		internal System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.RadioButton radioButtonValue;
-		private System.Windows.Forms.TextBox textBoxValue;
+		internal System.Windows.Forms.GroupBox _groupBoxTypeFigure;
+		private System.Windows.Forms.RadioButton _radioButtonPyramid;
+		private System.Windows.Forms.RadioButton _radioButtonParallelepiped;
+		private System.Windows.Forms.RadioButton _radioButtonBall;
+		private System.Windows.Forms.Button _buttonFound;
+		internal System.Windows.Forms.GroupBox _groupBox1;
+		private System.Windows.Forms.RadioButton _radioButtonValue;
+		private System.Windows.Forms.TextBox _textBoxValue;
 	}
 }

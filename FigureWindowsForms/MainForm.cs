@@ -46,7 +46,7 @@ namespace FigureWindowsForms
 		{
 			InitializeComponent();
 			BackColor = Color.Honeydew;
-			dataGridView.BackgroundColor = Color.AliceBlue;
+			_dataGridView.BackgroundColor = Color.AliceBlue;
 			StartPosition = FormStartPosition.CenterScreen;
 		}
 
@@ -85,7 +85,7 @@ namespace FigureWindowsForms
 		private void LoadMainForm(object sender, EventArgs e)
 		{
 			_volumeFigureList = new BindingList<FigureBase>();
-			CreateTable(_volumeFigureList, dataGridView);
+			CreateTable(_volumeFigureList, _dataGridView);
 		}
 
 		/// <summary>
@@ -119,10 +119,10 @@ namespace FigureWindowsForms
 		/// <param name="e">Данные о событие.</param>
 		private void ButtonDeleteClick(object sender, EventArgs e)
 		{
-			if (dataGridView.SelectedCells.Count != 0)
+			if (_dataGridView.SelectedCells.Count != 0)
 			{
 				foreach (DataGridViewRow row in
-					dataGridView.SelectedRows)
+					_dataGridView.SelectedRows)
 				{
 					if (row.DataBoundItem is FigureBase figure)
 					{
@@ -159,7 +159,7 @@ namespace FigureWindowsForms
 			FigureFilteredEvent filterEventArgs =
 				 figureList as FigureFilteredEvent;
 			_filterVolumeFigureList = filterEventArgs?.FilteredValueList;
-			CreateTable(_filterVolumeFigureList, dataGridView);
+			CreateTable(_filterVolumeFigureList, _dataGridView);
 		}
 
 		/// <summary>
@@ -169,19 +169,19 @@ namespace FigureWindowsForms
 		/// <param name="e">Данные о событие.</param>
 		private void ButtonDeleteListClick(object sender, EventArgs e)
 		{
-			dataGridView.ClearSelection();
-			foreach (DataGridViewRow row in dataGridView.Rows)
+			_dataGridView.ClearSelection();
+			foreach (DataGridViewRow row in _dataGridView.Rows)
 			{
 				row.Selected = true;
 			}
 
-			dataGridView.ClearSelection();
-			foreach (DataGridViewRow row in dataGridView.Rows)
+			_dataGridView.ClearSelection();
+			foreach (DataGridViewRow row in _dataGridView.Rows)
 			{
 				row.Selected = true;
 			}
 			foreach (DataGridViewRow row in
-					dataGridView.SelectedRows)
+					_dataGridView.SelectedRows)
 			{
 				if (row.DataBoundItem is FigureBase salary)
 				{
@@ -212,7 +212,7 @@ namespace FigureWindowsForms
 		/// <param name="e">Данные о событие.</param>
 		private void ButtonResertFilterClick(object sender, EventArgs e)
 		{
-			CreateTable(_volumeFigureList, dataGridView);
+			CreateTable(_volumeFigureList, _dataGridView);
 			_isFilter = false;
 		}
 
@@ -272,8 +272,8 @@ namespace FigureWindowsForms
 					_serializer.Deserialize(file);
 				}
 
-				dataGridView.DataSource = _volumeFigureList;
-				dataGridView.CurrentCell = null;
+				_dataGridView.DataSource = _volumeFigureList;
+				_dataGridView.CurrentCell = null;
 				MessageBox.Show("Файл успешно загружен.",
 					"Загрузка завершена",
 					MessageBoxButtons.OK, MessageBoxIcon.Information);

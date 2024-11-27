@@ -21,28 +21,17 @@ namespace FigureWindowsForms
 		{
 			TextBox textBox = (TextBox)sender;
 
-			Type dataType = textBox.Tag as Type;
-
-			if (dataType == typeof(int))
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)
+				&& e.KeyChar != ',')
 			{
-				if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-				{
-					e.Handled = true;
-				}
+				e.Handled = true;
 			}
-			else if (dataType == typeof(double))
-			{
-				if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)
-					&& e.KeyChar != ',')
-				{
-					e.Handled = true;
-				}
 
-				if (e.KeyChar == ',' && textBox.Text.Contains(","))
-				{
-					e.Handled = true;
-				}
+			if (e.KeyChar == ',' && textBox.Text.Contains(","))
+			{
+				e.Handled = true;
 			}
+
 			if (e.KeyChar == '0' && string.IsNullOrEmpty(textBox.Text.Trim('0')))
 			{
 				e.Handled = true;

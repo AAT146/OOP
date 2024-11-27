@@ -38,13 +38,13 @@ namespace FigureWindowsForms
 			_calculatedFigureList = figureList;
 			BackColor = Color.Honeydew;
 			StartPosition = FormStartPosition.CenterScreen;
-			textBoxValue.Enabled = false;
+			_textBoxValue.Enabled = false;
 			AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
-			radioButtonPyramid.CheckedChanged += ActivateElements;
-			radioButtonParallelepiped.CheckedChanged += ActivateElements;
-			radioButtonBall.CheckedChanged += ActivateElements;
-			radioButtonValue.CheckedChanged += ActivateElements;
+			_radioButtonPyramid.CheckedChanged += ActivateElements;
+			_radioButtonParallelepiped.CheckedChanged += ActivateElements;
+			_radioButtonBall.CheckedChanged += ActivateElements;
+			_radioButtonValue.CheckedChanged += ActivateElements;
 		}
 
 		/// <summary>
@@ -55,12 +55,12 @@ namespace FigureWindowsForms
 		/// <param name="e">Данные о событие.</param>
 		private void ActivateElements(object sender, EventArgs e)
 		{
-			bool activate = radioButtonPyramid.Checked
-				|| radioButtonParallelepiped.Checked
-				|| radioButtonBall.Checked
-				|| radioButtonValue.Checked;
+			bool activate = _radioButtonPyramid.Checked
+				|| _radioButtonParallelepiped.Checked
+				|| _radioButtonBall.Checked
+				|| _radioButtonValue.Checked;
 
-			textBoxValue.Enabled = activate;
+			_textBoxValue.Enabled = activate;
 		}
 
 		/// <summary>
@@ -104,7 +104,6 @@ namespace FigureWindowsForms
 			return filteredList;
 		}
 
-		//TODO: RSDN
 		/// <summary>
 		/// Фильтрация списка.
 		/// </summary>
@@ -117,34 +116,34 @@ namespace FigureWindowsForms
 			BindingList<FigureBase> tempFilteredList =
 				new BindingList<FigureBase>();
 
-			if (radioButtonBall.Checked)
+			if (_radioButtonBall.Checked)
 			{
 				FilterByType(_calculatedFigureList,
 					tempFilteredList,
 					typeof(Ball));
 			}
 
-			if (radioButtonParallelepiped.Checked)
+			if (_radioButtonParallelepiped.Checked)
 			{
 				FilterByType(_calculatedFigureList,
 					tempFilteredList,
 					typeof(Parallelepiped));
 			}
 
-			if (radioButtonPyramid.Checked)
+			if (_radioButtonPyramid.Checked)
 			{
 				FilterByType(_calculatedFigureList,
 					tempFilteredList,
 					typeof(Pyramid));
 			}
 
-			if (radioButtonValue.Checked)
+			if (_radioButtonValue.Checked)
 			{
-				if (!string.IsNullOrEmpty(textBoxValue.Text))
+				if (!string.IsNullOrEmpty(_textBoxValue.Text))
 				{
 					tempFilteredList =
 						FilterByValue(tempFilteredList,
-						Convert.ToDouble(textBoxValue.Text));
+						Convert.ToDouble(_textBoxValue.Text));
 				}
 				else
 				{

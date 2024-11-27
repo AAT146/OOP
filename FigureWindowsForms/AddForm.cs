@@ -25,28 +25,28 @@ namespace FigureWindowsForms
 			StartPosition = FormStartPosition.CenterScreen;
 			AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
-			ballUserControl.textBoxRadius.KeyPress += new
+			_ballUserControl.textBoxRadius.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			parallelepipedUserControl.textBoxLength.KeyPress += new
+			_parallelepipedUserControl.textBoxLength.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			parallelepipedUserControl.textBoxWidth.KeyPress += new
+			_parallelepipedUserControl.textBoxWidth.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			parallelepipedUserControl.textBoxHeight.KeyPress += new
+			_parallelepipedUserControl.textBoxHeight.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			parallelepipedUserControl.textBoxAngleLengthWidth.KeyPress += new
+			_parallelepipedUserControl.textBoxAngleLengthWidth.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			parallelepipedUserControl.textBoxAngleLengthHeight.KeyPress += new
+			_parallelepipedUserControl.textBoxAngleLengthHeight.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			pyramidUserControl.textBoxAreaOfBase.KeyPress += new
+			_pyramidUserControl.textBoxAreaOfBase.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			pyramidUserControl.textBoxPyramidHeight.KeyPress += new
+			_pyramidUserControl.textBoxPyramidHeight.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 		}
 
@@ -61,40 +61,40 @@ namespace FigureWindowsForms
 			{
 				FigureBase figureBase = null;
 
-				if (ballUserControl.Visible)
+				if (_ballUserControl.Visible)
 				{
 					figureBase = new Ball()
 					{
 						Radius = Convert.ToDouble(
-							ballUserControl.textBoxRadius.Text),
+							_ballUserControl.textBoxRadius.Text),
 					};
 				}
 
-				if (parallelepipedUserControl.Visible)
+				if (_parallelepipedUserControl.Visible)
 				{
 					figureBase = new Parallelepiped()
 					{
 						Length = Convert.ToDouble(
-							parallelepipedUserControl.textBoxLength.Text),
+							_parallelepipedUserControl.textBoxLength.Text),
 						Width = Convert.ToDouble(
-							parallelepipedUserControl.textBoxWidth.Text),
+							_parallelepipedUserControl.textBoxWidth.Text),
 						Height = Convert.ToDouble(
-							parallelepipedUserControl.textBoxHeight.Text),
+							_parallelepipedUserControl.textBoxHeight.Text),
 						AngleLengthWidth = Convert.ToDouble(
-							parallelepipedUserControl.textBoxAngleLengthWidth.Text),
+							_parallelepipedUserControl.textBoxAngleLengthWidth.Text),
 						AngleLengthHeight = Convert.ToDouble(
-							parallelepipedUserControl.textBoxAngleLengthHeight.Text),
+							_parallelepipedUserControl.textBoxAngleLengthHeight.Text),
 					};
 				}
 
-				if (pyramidUserControl.Visible)
+				if (_pyramidUserControl.Visible)
 				{
 					figureBase = new Pyramid()
 					{
 						AreaOfBase = Convert.ToDouble(
-							pyramidUserControl.textBoxAreaOfBase.Text),
+							_pyramidUserControl.textBoxAreaOfBase.Text),
 						Height = Convert.ToInt32(
-							pyramidUserControl.textBoxPyramidHeight.Text),
+							_pyramidUserControl.textBoxPyramidHeight.Text),
 					};
 				}
 
@@ -120,9 +120,9 @@ namespace FigureWindowsForms
 		private void RadioButtonCheckedChanged(object sender, EventArgs e)
 		{
 			//TODO: RSDN
-			ballUserControl.Visible = true;
-			parallelepipedUserControl.Visible = false;
-			pyramidUserControl.Visible = false;
+			_ballUserControl.Visible = true;
+			_parallelepipedUserControl.Visible = false;
+			_pyramidUserControl.Visible = false;
 		}
 
 		/// <summary>
@@ -132,9 +132,9 @@ namespace FigureWindowsForms
 		/// <param name="e">Данные о событие.</param>
 		private void RadioButtonParallelepipedCheckedChanged(object sender, EventArgs e)
 		{
-			ballUserControl.Visible = false;
-			parallelepipedUserControl.Visible = true;
-			pyramidUserControl.Visible = false;
+			_ballUserControl.Visible = false;
+			_parallelepipedUserControl.Visible = true;
+			_pyramidUserControl.Visible = false;
 		}
 
 		/// <summary>
@@ -144,9 +144,9 @@ namespace FigureWindowsForms
 		/// <param name="e">Данные о событие.</param>
 		private void RadioButtonPyramidaCheckedChanged(object sender, EventArgs e)
 		{
-			ballUserControl.Visible = false;
-			parallelepipedUserControl.Visible = false;
-			pyramidUserControl.Visible = true;
+			_ballUserControl.Visible = false;
+			_parallelepipedUserControl.Visible = false;
+			_pyramidUserControl.Visible = true;
 		}
 	}
 }
