@@ -127,6 +127,11 @@ namespace FigureWindowsForms
 					if (row.DataBoundItem is FigureBase figure)
 					{
 						_volumeFigureList.Remove(figure);
+						if (_filterVolumeFigureList != null
+							&& _filterVolumeFigureList.Count > 0)
+						{
+							_filterVolumeFigureList.Remove(figure);
+						}
 					}
 				}
 			}
@@ -168,6 +173,25 @@ namespace FigureWindowsForms
 			foreach (DataGridViewRow row in dataGridView.Rows)
 			{
 				row.Selected = true;
+			}
+
+			dataGridView.ClearSelection();
+			foreach (DataGridViewRow row in dataGridView.Rows)
+			{
+				row.Selected = true;
+			}
+			foreach (DataGridViewRow row in
+					dataGridView.SelectedRows)
+			{
+				if (row.DataBoundItem is FigureBase salary)
+				{
+					_volumeFigureList.Remove(salary);
+					if (_filterVolumeFigureList != null
+						&& _filterVolumeFigureList.Count > 0)
+					{
+						_filterVolumeFigureList.Remove(salary);
+					}
+				}
 			}
 		}
 

@@ -53,8 +53,8 @@ namespace Library
 				Length = GetRandomDouble(1, 300),
 				Width = GetRandomDouble(1, 200),
 				Height = GetRandomDouble(1, 150),
-				AngleLengthWidth = GetRandomDouble(0, 180),
-				AngleLengthHeight = GetRandomDouble(0, 180)
+				AngleLengthWidth = GetRandomDouble(1, 179),
+				AngleLengthHeight = GetRandomDouble(1, 179)
 			};
 			return parallelepiped;
 		}

@@ -175,14 +175,14 @@ namespace FigureWindowsForms
 			// toolStripMenuItem1
 			// 
 			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(166, 26);
 			this.toolStripMenuItem1.Text = "Сохранить";
 			this.toolStripMenuItem1.Click += new System.EventHandler(this.SaveToolStripMenuItem1);
 			// 
 			// toolStripMenuItem2
 			// 
 			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-			this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+			this.toolStripMenuItem2.Size = new System.Drawing.Size(166, 26);
 			this.toolStripMenuItem2.Text = "Загрузить";
 			this.toolStripMenuItem2.Click += new System.EventHandler(this.OpenToolStripMenuItem2);
 			// 
