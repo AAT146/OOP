@@ -131,6 +131,7 @@ namespace FigureWindowsForms
 			this._buttonRandom.Size = new System.Drawing.Size(221, 31);
 			this._buttonRandom.TabIndex = 6;
 			this._buttonRandom.Text = "Случайная фигура";
+			this._buttonRandom.UseVisualStyleBackColor = true;
 			this._buttonRandom.Click += new System.EventHandler(this.ButtonRandomClick);
 #endif
 			// 
