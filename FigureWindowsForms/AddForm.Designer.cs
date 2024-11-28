@@ -31,7 +31,7 @@ namespace FigureWindowsForms
 		private void InitializeComponent()
 		{
 			this._groupBoxListFigure = new System.Windows.Forms.GroupBox();
-			this._radioButtonPyramida = new System.Windows.Forms.RadioButton();
+			this._radioButtonPyramid = new System.Windows.Forms.RadioButton();
 			this._radioButtonParallelepiped = new System.Windows.Forms.RadioButton();
 			this._radioButtonBall = new System.Windows.Forms.RadioButton();
 			this._groupBoxParameters = new System.Windows.Forms.GroupBox();
@@ -45,7 +45,7 @@ namespace FigureWindowsForms
 			// 
 			// _groupBoxListFigure
 			// 
-			this._groupBoxListFigure.Controls.Add(this._radioButtonPyramida);
+			this._groupBoxListFigure.Controls.Add(this._radioButtonPyramid);
 			this._groupBoxListFigure.Controls.Add(this._radioButtonParallelepiped);
 			this._groupBoxListFigure.Controls.Add(this._radioButtonBall);
 			this._groupBoxListFigure.Location = new System.Drawing.Point(14, 12);
@@ -57,14 +57,14 @@ namespace FigureWindowsForms
 			// 
 			// _radioButtonPyramida
 			// 
-			this._radioButtonPyramida.AutoSize = true;
-			this._radioButtonPyramida.Location = new System.Drawing.Point(17, 151);
-			this._radioButtonPyramida.Name = "_radioButtonPyramida";
-			this._radioButtonPyramida.Size = new System.Drawing.Size(95, 20);
-			this._radioButtonPyramida.TabIndex = 0;
-			this._radioButtonPyramida.Text = "Пирамида";
-			this._radioButtonPyramida.UseVisualStyleBackColor = true;
-			this._radioButtonPyramida.CheckedChanged += new System.EventHandler(this.RadioButtonPyramidaCheckedChanged);
+			this._radioButtonPyramid.AutoSize = true;
+			this._radioButtonPyramid.Location = new System.Drawing.Point(17, 151);
+			this._radioButtonPyramid.Name = "_radioButtonPyramida";
+			this._radioButtonPyramid.Size = new System.Drawing.Size(95, 20);
+			this._radioButtonPyramid.TabIndex = 0;
+			this._radioButtonPyramid.Text = "Пирамида";
+			this._radioButtonPyramid.UseVisualStyleBackColor = true;
+			this._radioButtonPyramid.CheckedChanged += new System.EventHandler(this.ChangeUserControlVisibility);
 			// 
 			// _radioButtonParallelepiped
 			// 
@@ -75,7 +75,7 @@ namespace FigureWindowsForms
 			this._radioButtonParallelepiped.TabIndex = 0;
 			this._radioButtonParallelepiped.Text = "Параллелепипед";
 			this._radioButtonParallelepiped.UseVisualStyleBackColor = true;
-			this._radioButtonParallelepiped.CheckedChanged += new System.EventHandler(this.RadioButtonParallelepipedCheckedChanged);
+			this._radioButtonParallelepiped.CheckedChanged += new System.EventHandler(this.ChangeUserControlVisibility);
 			// 
 			// _radioButtonBall
 			// 
@@ -86,7 +86,7 @@ namespace FigureWindowsForms
 			this._radioButtonBall.TabIndex = 0;
 			this._radioButtonBall.Text = "Шар";
 			this._radioButtonBall.UseVisualStyleBackColor = true;
-			this._radioButtonBall.CheckedChanged += new System.EventHandler(this.RadioButtonCheckedChanged);
+			this._radioButtonBall.CheckedChanged += new System.EventHandler(this.ChangeUserControlVisibility);
 			// 
 			// _groupBoxParameters
 			// 
@@ -160,7 +160,7 @@ namespace FigureWindowsForms
 		internal BallUserControl _ballUserControl;
 		internal ParallelepipedUserControl _parallelepipedUserControl;
 		internal PyramidUserControl _pyramidUserControl;
-		internal RadioButton _radioButtonPyramida;
+		internal RadioButton _radioButtonPyramid;
 		internal RadioButton _radioButtonBall;
 		internal RadioButton _radioButtonParallelepiped;
 	}

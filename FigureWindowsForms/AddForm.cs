@@ -22,9 +22,9 @@ namespace FigureWindowsForms
 		public EventHandler FigureAdded;
 
 		/// <summary>
-		/// Список UserControls.
+		/// Словарь взаимодействия с UserControls.
 		/// </summary>
-		private List<InterfaceAddFigure> _figureAddUserControls;
+		private Dictionary<RadioButton, UserControl> _figureAddableControls;
 
 		/// <summary>
 		/// Конструктор AddForm.
@@ -60,11 +60,11 @@ namespace FigureWindowsForms
 			_pyramidUserControl._textBoxPyramidHeight.KeyPress += new
 				KeyPressEventHandler(CheckTextBox.TextBoxCheck);
 
-			_figureAddUserControls = new List<InterfaceAddFigure>()
+			_figureAddableControls = new Dictionary<RadioButton, UserControl>()
 			{
-				_ballUserControl,
-				_parallelepipedUserControl,
-				_pyramidUserControl,
+				{ _radioButtonBall, _ballUserControl },
+				{ _radioButtonParallelepiped , _parallelepipedUserControl },
+				{ _radioButtonPyramid, _pyramidUserControl }
 			};
 		}
 
@@ -77,17 +77,14 @@ namespace FigureWindowsForms
 		{
 			try
 			{
-				FigureBase figureBase = null;
-				
-				foreach (var userControl in _figureAddUserControls)
+				foreach (var element in _figureAddableControls)
 				{
-					if (((UserControl)userControl).Visible)
+					if (element.Value.Visible)
 					{
-						figureBase = userControl.FigureInterface;
+						FigureAdded?.Invoke(this,
+							new VolumeAddedEvent(((InterfaceAddFigure)element.Value).FigureInterface));
 					}
 				}
-
-				FigureAdded?.Invoke(this, new VolumeAddedEvent(figureBase));
 			}
 			catch (ArgumentException exeption)
 			{
@@ -102,39 +99,16 @@ namespace FigureWindowsForms
 		}
 
 		/// <summary>
-		/// Загрузка формы данных Шар.
+		///  Метод обработки событий от UserControl для форм.
 		/// </summary>
 		/// <param name="sender">Данные.</param>
 		/// <param name="e">Данные о событие.</param>
-		private void RadioButtonCheckedChanged(object sender, EventArgs e)
+		private void ChangeUserControlVisibility(object sender, EventArgs e)
 		{
-			_ballUserControl.Visible = true;
-			_parallelepipedUserControl.Visible = false;
-			_pyramidUserControl.Visible = false;
-		}
-
-		/// <summary>
-		/// Загрузка формы данных Параллелепипед.
-		/// </summary>
-		/// <param name="sender">Данные.</param>
-		/// <param name="e">Данные о событие.</param>
-		private void RadioButtonParallelepipedCheckedChanged(object sender, EventArgs e)
-		{
-			_ballUserControl.Visible = false;
-			_parallelepipedUserControl.Visible = true;
-			_pyramidUserControl.Visible = false;
-		}
-
-		/// <summary>
-		/// Загрузка формы данных Пирамида.
-		/// </summary>
-		/// <param name="sender">Данные.</param>
-		/// <param name="e">Данные о событие.</param>
-		private void RadioButtonPyramidaCheckedChanged(object sender, EventArgs e)
-		{
-			_ballUserControl.Visible = false;
-			_parallelepipedUserControl.Visible = false;
-			_pyramidUserControl.Visible = true;
+			foreach (var element in _figureAddableControls)
+			{
+				element.Value.Visible = element.Key == sender;
+			}
 		}
 	}
 }
