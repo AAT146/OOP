@@ -223,7 +223,7 @@ namespace FigureWindowsForms
 				}
 			}
 		}
-
+#if DEBUG
 		/// <summary>
 		/// Добавление расчета по случайной фигуре.
 		/// </summary>
@@ -233,7 +233,7 @@ namespace FigureWindowsForms
 		{
 			_volumeFigureList.Add(RandomFigure.GetRandomFigure());
 		}
-
+#endif
 		/// <summary>
 		/// Метод для сброса наcтроек фильтра.
 		/// </summary>
@@ -329,9 +329,10 @@ namespace FigureWindowsForms
 				!_isFilterFormOpen;
 
 			_toolStripDropDownButton1.Enabled = !_isFilter;
-			
+#if DEBUG
 			_buttonRandom.Enabled = !_isFilterFormOpen && 
 				_toolStripDropDownButton1.Enabled;
+#endif
 		}
 	}
 }

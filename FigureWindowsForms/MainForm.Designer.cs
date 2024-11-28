@@ -37,7 +37,9 @@ namespace FigureWindowsForms
 			this._buttonDeleteList = new System.Windows.Forms.Button();
 			this._buttonResertFilter = new System.Windows.Forms.Button();
 			this._buttonDelete = new System.Windows.Forms.Button();
+#if DEBUG
 			this._buttonRandom = new System.Windows.Forms.Button();
+#endif
 			this._buttonFilter = new System.Windows.Forms.Button();
 			this._buttonAdd = new System.Windows.Forms.Button();
 			this._toolStrip = new System.Windows.Forms.ToolStrip();
@@ -80,7 +82,9 @@ namespace FigureWindowsForms
 			this._groupBoxButton.Controls.Add(this._buttonDeleteList);
 			this._groupBoxButton.Controls.Add(this._buttonResertFilter);
 			this._groupBoxButton.Controls.Add(this._buttonDelete);
+#if DEBUG
 			this._groupBoxButton.Controls.Add(this._buttonRandom);
+#endif
 			this._groupBoxButton.Controls.Add(this._buttonFilter);
 			this._groupBoxButton.Controls.Add(this._buttonAdd);
 			this._groupBoxButton.Location = new System.Drawing.Point(12, 341);
@@ -118,6 +122,7 @@ namespace FigureWindowsForms
 			this._buttonDelete.Text = "Удалить фигуру";
 			this._buttonDelete.UseVisualStyleBackColor = true;
 			this._buttonDelete.Click += new System.EventHandler(this.ButtonDeleteClick);
+#if DEBUG
 			// 
 			// _buttonRandom
 			// 
@@ -127,6 +132,7 @@ namespace FigureWindowsForms
 			this._buttonRandom.TabIndex = 6;
 			this._buttonRandom.Text = "Случайная фигура";
 			this._buttonRandom.Click += new System.EventHandler(this.ButtonRandomClick);
+#endif
 			// 
 			// _buttonFilter
 			// 
@@ -224,6 +230,8 @@ namespace FigureWindowsForms
 		private ToolStripMenuItem _toolStripMenuItem1;
 		private ToolStripMenuItem _toolStripMenuItem2;
 		private ToolStripDropDownButton _toolStripDropDownButton1;
+#if DEBUG
 		private Button _buttonRandom;
+#endif
 	}
 }
