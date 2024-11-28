@@ -55,11 +55,11 @@ namespace FigureWindowsForms
 			this._groupBoxListFigure.TabStop = false;
 			this._groupBoxListFigure.Text = "Список фигур";
 			// 
-			// _radioButtonPyramida
+			// _radioButtonPyramid
 			// 
 			this._radioButtonPyramid.AutoSize = true;
 			this._radioButtonPyramid.Location = new System.Drawing.Point(17, 151);
-			this._radioButtonPyramid.Name = "_radioButtonPyramida";
+			this._radioButtonPyramid.Name = "_radioButtonPyramid";
 			this._radioButtonPyramid.Size = new System.Drawing.Size(95, 20);
 			this._radioButtonPyramid.TabIndex = 0;
 			this._radioButtonPyramid.Text = "Пирамида";
@@ -98,7 +98,7 @@ namespace FigureWindowsForms
 			this._groupBoxParameters.Size = new System.Drawing.Size(281, 184);
 			this._groupBoxParameters.TabIndex = 1;
 			this._groupBoxParameters.TabStop = false;
-			this._groupBoxParameters.Text = "Параметры, см";
+			this._groupBoxParameters.Text = "Параметры:";
 			// 
 			// _parallelepipedUserControl
 			// 
@@ -126,11 +126,11 @@ namespace FigureWindowsForms
 			// 
 			// _buttonVolume
 			// 
-			this._buttonVolume.Location = new System.Drawing.Point(218, 202);
+			this._buttonVolume.Location = new System.Drawing.Point(14, 202);
 			this._buttonVolume.Name = "_buttonVolume";
-			this._buttonVolume.Size = new System.Drawing.Size(281, 25);
+			this._buttonVolume.Size = new System.Drawing.Size(187, 31);
 			this._buttonVolume.TabIndex = 2;
-			this._buttonVolume.Text = "Рассчитать объём фигуры";
+			this._buttonVolume.Text = "Добавить фигуру";
 			this._buttonVolume.UseVisualStyleBackColor = true;
 			this._buttonVolume.Click += new System.EventHandler(this.ButtonClick);
 			// 

@@ -59,7 +59,7 @@ namespace FigureWindowsForms
 			this._groupBoxCalculator.Margin = new System.Windows.Forms.Padding(2);
 			this._groupBoxCalculator.Name = "_groupBoxCalculator";
 			this._groupBoxCalculator.Padding = new System.Windows.Forms.Padding(2);
-			this._groupBoxCalculator.Size = new System.Drawing.Size(776, 305);
+			this._groupBoxCalculator.Size = new System.Drawing.Size(744, 305);
 			this._groupBoxCalculator.TabIndex = 0;
 			this._groupBoxCalculator.TabStop = false;
 			// 
@@ -74,7 +74,7 @@ namespace FigureWindowsForms
 			this._dataGridView.Name = "_dataGridView";
 			this._dataGridView.RowHeadersWidth = 51;
 			this._dataGridView.RowTemplate.Height = 24;
-			this._dataGridView.Size = new System.Drawing.Size(764, 283);
+			this._dataGridView.Size = new System.Drawing.Size(730, 283);
 			this._dataGridView.TabIndex = 0;
 			// 
 			// _groupBoxButton
@@ -89,7 +89,7 @@ namespace FigureWindowsForms
 			this._groupBoxButton.Controls.Add(this._buttonAdd);
 			this._groupBoxButton.Location = new System.Drawing.Point(12, 341);
 			this._groupBoxButton.Name = "_groupBoxButton";
-			this._groupBoxButton.Size = new System.Drawing.Size(776, 97);
+			this._groupBoxButton.Size = new System.Drawing.Size(744, 97);
 			this._groupBoxButton.TabIndex = 1;
 			this._groupBoxButton.TabStop = false;
 			// 
@@ -97,7 +97,7 @@ namespace FigureWindowsForms
 			// 
 			this._buttonDeleteList.Location = new System.Drawing.Point(549, 58);
 			this._buttonDeleteList.Name = "_buttonDeleteList";
-			this._buttonDeleteList.Size = new System.Drawing.Size(221, 31);
+			this._buttonDeleteList.Size = new System.Drawing.Size(187, 31);
 			this._buttonDeleteList.TabIndex = 5;
 			this._buttonDeleteList.Text = "Очистить список";
 			this._buttonDeleteList.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@ namespace FigureWindowsForms
 			// 
 			this._buttonResertFilter.Location = new System.Drawing.Point(279, 58);
 			this._buttonResertFilter.Name = "_buttonResertFilter";
-			this._buttonResertFilter.Size = new System.Drawing.Size(221, 31);
+			this._buttonResertFilter.Size = new System.Drawing.Size(187, 31);
 			this._buttonResertFilter.TabIndex = 4;
 			this._buttonResertFilter.Text = "Сбросить фильтр";
 			this._buttonResertFilter.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@ namespace FigureWindowsForms
 			// 
 			this._buttonDelete.Location = new System.Drawing.Point(6, 58);
 			this._buttonDelete.Name = "_buttonDelete";
-			this._buttonDelete.Size = new System.Drawing.Size(221, 31);
+			this._buttonDelete.Size = new System.Drawing.Size(187, 31);
 			this._buttonDelete.TabIndex = 3;
 			this._buttonDelete.Text = "Удалить фигуру";
 			this._buttonDelete.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@ namespace FigureWindowsForms
 			// 
 			this._buttonRandom.Location = new System.Drawing.Point(549, 14);
 			this._buttonRandom.Name = "_buttonRandom";
-			this._buttonRandom.Size = new System.Drawing.Size(221, 31);
+			this._buttonRandom.Size = new System.Drawing.Size(187, 31);
 			this._buttonRandom.TabIndex = 6;
 			this._buttonRandom.Text = "Случайная фигура";
 			this._buttonRandom.UseVisualStyleBackColor = true;
@@ -139,7 +139,7 @@ namespace FigureWindowsForms
 			// 
 			this._buttonFilter.Location = new System.Drawing.Point(279, 14);
 			this._buttonFilter.Name = "_buttonFilter";
-			this._buttonFilter.Size = new System.Drawing.Size(221, 31);
+			this._buttonFilter.Size = new System.Drawing.Size(187, 31);
 			this._buttonFilter.TabIndex = 1;
 			this._buttonFilter.Text = "Фильтр";
 			this._buttonFilter.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@ namespace FigureWindowsForms
 			// 
 			this._buttonAdd.Location = new System.Drawing.Point(6, 14);
 			this._buttonAdd.Name = "_buttonAdd";
-			this._buttonAdd.Size = new System.Drawing.Size(221, 31);
+			this._buttonAdd.Size = new System.Drawing.Size(187, 31);
 			this._buttonAdd.TabIndex = 0;
 			this._buttonAdd.Text = "Добавить фигуру";
 			this._buttonAdd.UseVisualStyleBackColor = true;
@@ -162,7 +162,7 @@ namespace FigureWindowsForms
             this._toolStripDropDownButton1});
 			this._toolStrip.Location = new System.Drawing.Point(0, 0);
 			this._toolStrip.Name = "_toolStrip";
-			this._toolStrip.Size = new System.Drawing.Size(800, 27);
+			this._toolStrip.Size = new System.Drawing.Size(767, 27);
 			this._toolStrip.TabIndex = 2;
 			this._toolStrip.Text = "toolStrip";
 			// 
@@ -196,7 +196,7 @@ namespace FigureWindowsForms
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(767, 447);
 			this.Controls.Add(this._groupBoxCalculator);
 			this.Controls.Add(this._toolStrip);
 			this.Controls.Add(this._groupBoxButton);

@@ -29,13 +29,13 @@
 		private void InitializeComponent()
 		{
 			this._groupBoxTypeFigure = new System.Windows.Forms.GroupBox();
+			this._checkBoxPyramid = new System.Windows.Forms.CheckBox();
+			this._checkBoxParallelepiped = new System.Windows.Forms.CheckBox();
+			this._checkBoxBall = new System.Windows.Forms.CheckBox();
 			this._buttonFound = new System.Windows.Forms.Button();
 			this._groupBox1 = new System.Windows.Forms.GroupBox();
-			this._textBoxValue = new System.Windows.Forms.TextBox();
-			this._checkBoxBall = new System.Windows.Forms.CheckBox();
-			this._checkBoxParallelepiped = new System.Windows.Forms.CheckBox();
-			this._checkBoxPyramid = new System.Windows.Forms.CheckBox();
 			this._checkBoxVolume = new System.Windows.Forms.CheckBox();
+			this._textBoxValue = new System.Windows.Forms.TextBox();
 			this._groupBoxTypeFigure.SuspendLayout();
 			this._groupBox1.SuspendLayout();
 			this.SuspendLayout();
@@ -47,16 +47,46 @@
 			this._groupBoxTypeFigure.Controls.Add(this._checkBoxBall);
 			this._groupBoxTypeFigure.Location = new System.Drawing.Point(12, 12);
 			this._groupBoxTypeFigure.Name = "_groupBoxTypeFigure";
-			this._groupBoxTypeFigure.Size = new System.Drawing.Size(185, 149);
+			this._groupBoxTypeFigure.Size = new System.Drawing.Size(187, 149);
 			this._groupBoxTypeFigure.TabIndex = 0;
 			this._groupBoxTypeFigure.TabStop = false;
 			this._groupBoxTypeFigure.Text = "Основное условие";
 			// 
+			// _checkBoxPyramid
+			// 
+			this._checkBoxPyramid.AutoSize = true;
+			this._checkBoxPyramid.Location = new System.Drawing.Point(20, 110);
+			this._checkBoxPyramid.Name = "_checkBoxPyramid";
+			this._checkBoxPyramid.Size = new System.Drawing.Size(96, 20);
+			this._checkBoxPyramid.TabIndex = 2;
+			this._checkBoxPyramid.Text = "Пирамида";
+			this._checkBoxPyramid.UseVisualStyleBackColor = true;
+			// 
+			// _checkBoxParallelepiped
+			// 
+			this._checkBoxParallelepiped.AutoSize = true;
+			this._checkBoxParallelepiped.Location = new System.Drawing.Point(20, 69);
+			this._checkBoxParallelepiped.Name = "_checkBoxParallelepiped";
+			this._checkBoxParallelepiped.Size = new System.Drawing.Size(143, 20);
+			this._checkBoxParallelepiped.TabIndex = 1;
+			this._checkBoxParallelepiped.Text = "Параллелепипед";
+			this._checkBoxParallelepiped.UseVisualStyleBackColor = true;
+			// 
+			// _checkBoxBall
+			// 
+			this._checkBoxBall.AutoSize = true;
+			this._checkBoxBall.Location = new System.Drawing.Point(20, 30);
+			this._checkBoxBall.Name = "_checkBoxBall";
+			this._checkBoxBall.Size = new System.Drawing.Size(56, 20);
+			this._checkBoxBall.TabIndex = 0;
+			this._checkBoxBall.Text = "Шар";
+			this._checkBoxBall.UseVisualStyleBackColor = true;
+			// 
 			// _buttonFound
 			// 
-			this._buttonFound.Location = new System.Drawing.Point(122, 170);
+			this._buttonFound.Location = new System.Drawing.Point(12, 166);
 			this._buttonFound.Name = "_buttonFound";
-			this._buttonFound.Size = new System.Drawing.Size(213, 26);
+			this._buttonFound.Size = new System.Drawing.Size(187, 31);
 			this._buttonFound.TabIndex = 1;
 			this._buttonFound.Text = "Найти";
 			this._buttonFound.UseVisualStyleBackColor = true;
@@ -73,43 +103,6 @@
 			this._groupBox1.TabStop = false;
 			this._groupBox1.Text = "Дополнительное условие";
 			// 
-			// _textBoxValue
-			// 
-			this._textBoxValue.Location = new System.Drawing.Point(19, 65);
-			this._textBoxValue.Name = "_textBoxValue";
-			this._textBoxValue.Size = new System.Drawing.Size(100, 22);
-			this._textBoxValue.TabIndex = 1;
-			// 
-			// _checkBoxBall
-			// 
-			this._checkBoxBall.AutoSize = true;
-			this._checkBoxBall.Location = new System.Drawing.Point(20, 30);
-			this._checkBoxBall.Name = "_checkBoxBall";
-			this._checkBoxBall.Size = new System.Drawing.Size(56, 20);
-			this._checkBoxBall.TabIndex = 0;
-			this._checkBoxBall.Text = "Шар";
-			this._checkBoxBall.UseVisualStyleBackColor = true;
-			// 
-			// _checkBoxParallelepiped
-			// 
-			this._checkBoxParallelepiped.AutoSize = true;
-			this._checkBoxParallelepiped.Location = new System.Drawing.Point(20, 69);
-			this._checkBoxParallelepiped.Name = "_checkBoxParallelepiped";
-			this._checkBoxParallelepiped.Size = new System.Drawing.Size(143, 20);
-			this._checkBoxParallelepiped.TabIndex = 1;
-			this._checkBoxParallelepiped.Text = "Параллелепипед";
-			this._checkBoxParallelepiped.UseVisualStyleBackColor = true;
-			// 
-			// _checkBoxPyramid
-			// 
-			this._checkBoxPyramid.AutoSize = true;
-			this._checkBoxPyramid.Location = new System.Drawing.Point(20, 110);
-			this._checkBoxPyramid.Name = "_checkBoxPyramid";
-			this._checkBoxPyramid.Size = new System.Drawing.Size(96, 20);
-			this._checkBoxPyramid.TabIndex = 2;
-			this._checkBoxPyramid.Text = "Пирамида";
-			this._checkBoxPyramid.UseVisualStyleBackColor = true;
-			// 
 			// _checkBoxVolume
 			// 
 			this._checkBoxVolume.AutoSize = true;
@@ -120,11 +113,18 @@
 			this._checkBoxVolume.Text = "Задать величину объема";
 			this._checkBoxVolume.UseVisualStyleBackColor = true;
 			// 
+			// _textBoxValue
+			// 
+			this._textBoxValue.Location = new System.Drawing.Point(19, 65);
+			this._textBoxValue.Name = "_textBoxValue";
+			this._textBoxValue.Size = new System.Drawing.Size(100, 22);
+			this._textBoxValue.TabIndex = 1;
+			// 
 			// FilterForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(466, 205);
+			this.ClientSize = new System.Drawing.Size(466, 204);
 			this.Controls.Add(this._groupBox1);
 			this.Controls.Add(this._buttonFound);
 			this.Controls.Add(this._groupBoxTypeFigure);
