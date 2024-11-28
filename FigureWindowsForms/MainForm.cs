@@ -229,7 +229,7 @@ namespace FigureWindowsForms
 		/// </summary>
 		/// <param name="sender">Данные.</param>
 		/// <param name="e">Данные о событие.</param>
-		private void ButtonRandomListClick(object sender, EventArgs e)
+		private void ButtonRandomClick(object sender, EventArgs e)
 		{
 			_volumeFigureList.Add(RandomFigure.GetRandomFigure());
 		}
@@ -329,8 +329,8 @@ namespace FigureWindowsForms
 				!_isFilterFormOpen;
 
 			_toolStripDropDownButton1.Enabled = !_isFilter;
-
-			_buttonRandomList.Enabled = !_isFilterFormOpen && 
+			
+			_buttonRandom.Enabled = !_isFilterFormOpen && 
 				_toolStripDropDownButton1.Enabled;
 		}
 	}
