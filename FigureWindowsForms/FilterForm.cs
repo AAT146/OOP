@@ -11,7 +11,10 @@ using System.Windows.Forms;
 
 namespace FigureWindowsForms
 {
-	//TODO: XML
+	//TODO+: XML
+	/// <summary>
+	/// Форма Фильтр.
+	/// </summary>
 	public partial class FilterForm : Form
 	{
 		/// <summary>

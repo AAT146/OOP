@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 namespace FigureWindowsForms
 {
 	/// <summary>
-	/// Свойство интервейса.
+	/// Интерфейс для взаимодействия с UserControl.
 	/// </summary>
 	internal interface InterfaceAddFigure
 	{
-		//TODO: XML
+		//TODO+: XML
+		/// <summary>
+		/// Свойство, предоставляющее интерфейс.
+		/// </summary>
 		FigureBase FigureInterface { get; }
 	}
 }

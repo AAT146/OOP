@@ -45,7 +45,7 @@ namespace Library
 		/// если заданое число отрицательное</exception>
 		protected static double CheckNumber(double number)
 		{
-			if (number <= 0)
+			if (number <= 0 || double.IsNaN(number))
 			{
 				throw new ArgumentException("Величина должна быть больше 0.");
 			}
@@ -64,7 +64,7 @@ namespace Library
 		/// если заданное число не входит в диапазон.</exception>
 		protected static double CheckNumberAngle(double number)
 		{
-			if (number <= 0 || number >= 180)
+			if (number <= 0 || number >= 180 || double.IsNaN(number))
 			{
 				throw new ArgumentException("Величины углов должны быть\n"+ 
 					"больше 0, но меньше 180.");

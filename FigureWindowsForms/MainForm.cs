@@ -14,7 +14,7 @@ using System.Xml.Serialization;
 namespace FigureWindowsForms
 {
 	/// <summary>
-	/// Класс программы для расчета объема фигур.
+	/// Главная форма программы.
 	/// </summary>
 	public partial class MainForm : Form
 	{
@@ -50,11 +50,6 @@ namespace FigureWindowsForms
 		/// Поле для хранения состояния формы фильтра.
 		/// </summary>
 		private bool _isFilterFormOpen = false;
-
-		/// <summary>
-		/// Поле для хранения состояния кнопки Сбросить фильтр.
-		/// </summary>
-		private bool _isDeleteListOpen = false;
 
 		/// <summary>
 		/// Конструктор MainForm.
@@ -303,8 +298,8 @@ namespace FigureWindowsForms
 			{
 				using (var file = new StreamReader(path))
 				{
-					_volumeFigureList = (BindingList<FigureBase>)
-					_serializer.Deserialize(file);
+					_volumeFigureList = 
+						(BindingList<FigureBase>)_serializer.Deserialize(file);
 				}
 
 				_dataGridView.DataSource = _volumeFigureList;

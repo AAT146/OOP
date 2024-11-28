@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace FigureWindowsForms
 {
+	/// <summary>
+	/// Форма Добавить Фигуру.
+	/// </summary>
 	public partial class AddForm : Form
 	{
 		/// <summary>
@@ -24,7 +27,7 @@ namespace FigureWindowsForms
 		private List<InterfaceAddFigure> _figureAddUserControls;
 
 		/// <summary>
-		/// 
+		/// Конструктор AddForm.
 		/// </summary>
 		public AddForm()
 		{
