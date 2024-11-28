@@ -12,6 +12,7 @@ namespace FigureWindowsForms
 	/// </summary>
 	internal interface InterfaceAddFigure
 	{
+		//TODO: XML
 		FigureBase FigureInterface { get; }
 	}
 }

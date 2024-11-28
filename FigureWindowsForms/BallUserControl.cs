@@ -11,7 +11,6 @@ using System.Windows.Forms;
 
 namespace FigureWindowsForms
 {
-	//TODO+: добавить интерфейс для возможности обработки этих контролов по ссылке на интерфейс
 	/// <summary>
 	/// Класс интерфейса Шар.
 	/// </summary>
