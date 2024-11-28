@@ -12,13 +12,22 @@ using System.Windows.Forms;
 
 namespace FigureWindowsForms
 {
+	/// <summary>
+	/// Класс интерфейса Пирамида.
+	/// </summary>
 	public partial class PyramidUserControl : UserControl, InterfaceAddFigure
 	{
+		/// <summary>
+		/// Конструктор.
+		/// </summary>
 		public PyramidUserControl()
 		{
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// Чтение данных.
+		/// </summary>
 		public FigureBase FigureInterface
 		{
 			get

@@ -12,13 +12,22 @@ using System.Windows.Forms;
 namespace FigureWindowsForms
 {
 	//TODO+: добавить интерфейс для возможности обработки этих контролов по ссылке на интерфейс
+	/// <summary>
+	/// Класс интерфейса Шар.
+	/// </summary>
 	public partial class BallUserControl : UserControl, InterfaceAddFigure
 	{
+		/// <summary>
+		/// Конструктор.
+		/// </summary>
 		public BallUserControl()
 		{
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// Чтение данных.
+		/// </summary>
 		public FigureBase FigureInterface
 		{
 			get

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace FigureWindowsForms
 {
+	/// <summary>
+	/// Свойство интервейса.
+	/// </summary>
 	internal interface InterfaceAddFigure
 	{
 		FigureBase FigureInterface { get; }

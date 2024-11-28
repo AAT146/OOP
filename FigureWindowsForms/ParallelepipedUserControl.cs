@@ -11,19 +11,22 @@ using System.Windows.Forms;
 
 namespace FigureWindowsForms
 {
+	/// <summary>
+	/// Класс интерфейса Параллелепипед.
+	/// </summary>
 	public partial class ParallelepipedUserControl : UserControl, InterfaceAddFigure
 	{
+		/// <summary>
+		/// Конструктор.
+		/// </summary>
 		public ParallelepipedUserControl()
 		{
 			InitializeComponent();
 		}
 
 		/// <summary>
-		/// Свойство для получения фигуры.
+		/// Чтение данных.
 		/// </summary>
-		public Parallelepiped Parallelepiped { get; }
-
-
 		public FigureBase FigureInterface
 		{
 			get

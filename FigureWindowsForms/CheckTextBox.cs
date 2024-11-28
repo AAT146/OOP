@@ -32,12 +32,9 @@ namespace FigureWindowsForms
 				e.Handled = true;
 			}
 
-			if (e.KeyChar == '0')
+			if (e.KeyChar == '0' && string.IsNullOrEmpty(textBox.Text.Trim('0')))
 			{
-				if (textBox.Text == "0," && textBox.SelectionStart == textBox.Text.Length)
-				{
-					e.Handled = true;
-				}
+				e.Handled = true;
 			}
 		}
 	}
