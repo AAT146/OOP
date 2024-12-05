@@ -12,7 +12,6 @@ namespace FigureWindowsForms
 	/// </summary>
 	internal interface InterfaceAddFigure
 	{
-		//TODO+: XML
 		/// <summary>
 		/// Свойство, предоставляющее интерфейс.
 		/// </summary>

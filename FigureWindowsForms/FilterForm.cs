@@ -11,7 +11,6 @@ using System.Windows.Forms;
 
 namespace FigureWindowsForms
 {
-	//TODO+: XML
 	/// <summary>
 	/// Форма Фильтр.
 	/// </summary>
